@@ -1,0 +1,993 @@
+[
+  {
+    "run_id": "20261017-213452_file_both",
+    "timestamp": "2026-10-17T21:34:59",
+    "mode": "file",
+    "model": "BAAI/bge-small-en-v1.5",
+    "metric": "cosine",
+    "index": "parent",
+    "num_chunks": 47,
+    "chunks_path": "C:\\Users\\NishantDubey\\OneDrive - Blend 360\\Desktop\\Day 4 Rag\\rag\\data\\chunks\\metadata_semantic.json",
+    "document": "Acme Corp IT and HR Policy Handbook",
+    "document_id": "ACME-POL-2026-014",
+    "top_k": 3,
+    "id": "q1",
+    "category": "Semantic Paraphrase",
+    "question": "How many vacation days do employees get each year?",
+    "expected_evidence": "Annual leave entitlement (3.1 Annual Leave: 21 days per calendar year)",
+    "unsupported": false,
+    "evaluation": {
+      "status": "YES",
+      "evidence_rank": 1,
+      "partial_rank": null,
+      "evidence_score": 0.6811,
+      "best_irrelevant_score": 0.6284,
+      "margin": 0.0527,
+      "expected_section": "3.1 Annual Leave",
+      "evidence_hit_section": "2.2 Password and Access Requirements",
+      "label_correct": false
+    },
+    "results": [
+      {
+        "rank": 1,
+        "similarity_score": 0.6811,
+        "chunk_id": "cleaned_policy::semantic::012::090bcde6",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            2
+          ],
+          "section": "2.2 Password and Access Requirements",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 2. IT Equipment and Security > 2.2 Password and Access Requirements",
+          "parent_chunk_id": null
+        },
+        "chunk_text": "Do\nnot store any customer data on the device until encryption is confirmed.\n## 3. Leave and Time Off\n\n### 3.1 Annual Leave\n\nFull-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per\ncalendar year. Up to 5 unused days may be carried forward into the first quarter of the following\nyear; any remaining days expire on March 31.\n\n### 3.2 Sick Leave\n\nEmployees are entitled to 10 days of paid sick leave per year. A medical certificate is required for\nabsences longer than 3 consecutive working days.\n\n### 3.3 Requesting Leave\n\n1. Submit the request in the HR portal at least 10 working days in advance for planned leave.\n2. Your manager approves or declines within 3 working days.",
+        "relevance": "full"
+      },
+      {
+        "rank": 2,
+        "similarity_score": 0.6284,
+        "chunk_id": "cleaned_policy::semantic::031::5b14006f",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            5
+          ],
+          "section": "6.2 Daily Allowances",
+          "section_path": "This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.2 Daily Allowances",
+          "parent_chunk_id": null
+        },
+        "chunk_text": "Partial days (departure and return) are\npaid at 75% of the daily rate.\n                                                                                       Hotel Cap\n Region                       Meals (USD/day)             Incidentals (USD/day)        (USD/night)\n North America                75                          15                           250\n Western Europe               70                          15                           220\n India                        40                          10                           130\n Southeast Asia               45                          10                           150\n Major hubs (NYC,\n London, SF)                  90                          20                           350\n\n### 6.3 Submitting Expense Claims\n\nExpense claims must be submitted within 30 days of the expense being incurred.",
+        "relevance": null
+      },
+      {
+        "rank": 3,
+        "similarity_score": 0.6278,
+        "chunk_id": "cleaned_policy::semantic::030::5b4da755",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            5
+          ],
+          "section": "6.2 Daily Allowances",
+          "section_path": "This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.2 Daily Allowances",
+          "parent_chunk_id": null
+        },
+        "chunk_text": "### 6.2 Daily Allowances\n\nMeal and incidental allowances are paid per full travel day.",
+        "relevance": null
+      }
+    ]
+  },
+  {
+    "run_id": "20261017-213452_file_both",
+    "timestamp": "2026-10-17T21:34:59",
+    "mode": "file",
+    "model": "BAAI/bge-small-en-v1.5",
+    "metric": "cosine",
+    "index": "parent",
+    "num_chunks": 47,
+    "chunks_path": "C:\\Users\\NishantDubey\\OneDrive - Blend 360\\Desktop\\Day 4 Rag\\rag\\data\\chunks\\metadata_semantic.json",
+    "document": "Acme Corp IT and HR Policy Handbook",
+    "document_id": "ACME-POL-2026-014",
+    "top_k": 3,
+    "id": "q2",
+    "category": "Approval Rule",
+    "question": "I want to take five consecutive days off. Is manager approval required?",
+    "expected_evidence": "3.3 Requesting Leave: manager approves or declines every leave request",
+    "notes": "The handbook has no 'more than 3 consecutive days' approval rule. The only '3 consecutive working days' text is the sick-leave medical-certificate rule (a distractor).",
+    "unsupported": false,
+    "evaluation": {
+      "status": "YES",
+      "evidence_rank": 1,
+      "partial_rank": 11,
+      "evidence_score": 0.6575,
+      "best_irrelevant_score": 0.6296,
+      "margin": 0.028,
+      "expected_section": "3.3 Requesting Leave",
+      "evidence_hit_section": "2.2 Password and Access Requirements",
+      "label_correct": false
+    },
+    "results": [
+      {
+        "rank": 1,
+        "similarity_score": 0.6575,
+        "chunk_id": "cleaned_policy::semantic::012::090bcde6",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            2
+          ],
+          "section": "2.2 Password and Access Requirements",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 2. IT Equipment and Security > 2.2 Password and Access Requirements",
+          "parent_chunk_id": null
+        },
+        "chunk_text": "Do\nnot store any customer data on the device until encryption is confirmed.\n## 3. Leave and Time Off\n\n### 3.1 Annual Leave\n\nFull-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per\ncalendar year. Up to 5 unused days may be carried forward into the first quarter of the following\nyear; any remaining days expire on March 31.\n\n### 3.2 Sick Leave\n\nEmployees are entitled to 10 days of paid sick leave per year. A medical certificate is required for\nabsences longer than 3 consecutive working days.\n\n### 3.3 Requesting Leave\n\n1. Submit the request in the HR portal at least 10 working days in advance for planned leave.\n2. Your manager approves or declines within 3 working days.",
+        "relevance": "full"
+      },
+      {
+        "rank": 2,
+        "similarity_score": 0.6296,
+        "chunk_id": "cleaned_policy::semantic::001::d8f71e7d",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            1
+          ],
+          "section": "1.1 Eligibility and Philosophy",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 1. Remote Work Policy > 1.1 Eligibility and Philosophy",
+          "parent_chunk_id": null
+        },
+        "chunk_text": "## 1. Remote Work Policy\n\n### 1.1 Eligibility and Philosophy\n\nAcme Corp believes that great work can happen anywhere, provided that the conditions for focus,\ncollaboration, and security are met, and this belief has shaped our hybrid model since 2021 when\nthe company first moved away from a mandatory five-day office presence; employees whose roles\ndo not require physical access to labs, warehouses, or customer sites are eligible to work remotely\nfor up to three days per week after completing their 90-day probation period, although managers\nretain the discretion to request in-office attendance for onboarding sessions, quarterly planning\nevents, client workshops, and any situation where in-person collaboration is judged to be materially\nbetter for the outcome, and employees who wish to work remotely for more than three days per",
+        "relevance": null
+      },
+      {
+        "rank": 3,
+        "similarity_score": 0.6252,
+        "chunk_id": "cleaned_policy::semantic::026::50cb42e6",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            4
+          ],
+          "section": "This line is part of a quote, not a heading.",
+          "section_path": "This line is part of a quote, not a heading.",
+          "parent_chunk_id": null
+        },
+        "chunk_text": "# This line is part of a quote, not a heading.\nDisconnect from the network and wait for instructions from the Security team.\n## 5. Software and SaaS Procurement\n\n### 5.1 Approved Software\n\nThe IT team maintains a catalogue of pre-approved software that any employee can install through\nthe self-service portal without additional approval. This includes office productivity suites, approved\nbrowsers, password managers, communication tools, and common developer tools such as Git,\nDocker Desktop, and VS Code.\n\n### 5.2 Requesting New Software\n\nTo request software that is not in the catalogue, follow these steps:\n1. Search the catalogue first to confirm no approved alternative exists.\n2. Submit a Software Request ticket that includes:",
+        "relevance": null
+      }
+    ]
+  },
+  {
+    "run_id": "20261017-213452_file_both",
+    "timestamp": "2026-10-17T21:34:59",
+    "mode": "file",
+    "model": "BAAI/bge-small-en-v1.5",
+    "metric": "cosine",
+    "index": "parent",
+    "num_chunks": 47,
+    "chunks_path": "C:\\Users\\NishantDubey\\OneDrive - Blend 360\\Desktop\\Day 4 Rag\\rag\\data\\chunks\\metadata_semantic.json",
+    "document": "Acme Corp IT and HR Policy Handbook",
+    "document_id": "ACME-POL-2026-014",
+    "top_k": 3,
+    "id": "q3",
+    "category": "Travel Approval",
+    "question": "Who needs to approve an overseas business trip?",
+    "expected_evidence": "International travel approval requirements",
+    "notes": "No overseas/international travel rule exists. Closest is 6.1: business class requires executive-team approval, so PARTIAL is the best achievable grade.",
+    "unsupported": false,
+    "evaluation": {
+      "status": "PARTIAL",
+      "evidence_rank": null,
+      "partial_rank": 2,
+      "evidence_score": null,
+      "best_irrelevant_score": 0.7147,
+      "margin": null,
+      "expected_section": "6.1 Booking Business Travel",
+      "evidence_hit_section": "6.1 Booking Business Travel",
+      "label_correct": true
+    },
+    "results": [
+      {
+        "rank": 1,
+        "similarity_score": 0.7147,
+        "chunk_id": "cleaned_policy::semantic::028::b4be9b9b",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            4,
+            5
+          ],
+          "section": "5.3 Software License Costs",
+          "section_path": "This line is part of a quote, not a heading. > 5. Software and SaaS Procurement > 5.3 Software License Costs",
+          "parent_chunk_id": null
+        },
+        "chunk_text": "The approval thresholds\nare:\n Annual Cost (USD)                                         Approver\n Under 1,000                                               Team manager\n\n[[PAGE 5]]\n Annual Cost (USD)                                        Approver\n 1,000 – 10,000                                           Department head\n 10,001 – 50,000                                          Department head + Finance\n Over 50,000                                              CFO and CTO (joint approval)\n## 6. Travel and Expenses\n\n### 6.1 Booking Business Travel\n\nAll flights, hotels, and rail travel must be booked through the corporate travel platform so that the\ncompany can locate and support employees in an emergency.",
+        "relevance": null
+      },
+      {
+        "rank": 2,
+        "similarity_score": 0.6449,
+        "chunk_id": "cleaned_policy::semantic::029::9aff9182",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            5
+          ],
+          "section": "6.1 Booking Business Travel",
+          "section_path": "This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.1 Booking Business Travel",
+          "parent_chunk_id": null
+        },
+        "chunk_text": "Economy class is the default for all\nflights; premium economy is permitted for flights longer than 8 hours, and business class requires\nprior written approval from a member of the executive team.",
+        "relevance": "partial"
+      },
+      {
+        "rank": 3,
+        "similarity_score": 0.6297,
+        "chunk_id": "cleaned_policy::semantic::032::c21461dc",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            5
+          ],
+          "section": "6.3 Submitting Expense Claims",
+          "section_path": "This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.3 Submitting Expense Claims",
+          "parent_chunk_id": null
+        },
+        "chunk_text": "Every claim\nrequires:\n- An itemized receipt (a credit card statement alone is not sufficient).\n- The business purpose and, for meals, the names of attendees.",
+        "relevance": null
+      }
+    ]
+  },
+  {
+    "run_id": "20261017-213452_file_both",
+    "timestamp": "2026-10-17T21:34:59",
+    "mode": "file",
+    "model": "BAAI/bge-small-en-v1.5",
+    "metric": "cosine",
+    "index": "parent",
+    "num_chunks": 47,
+    "chunks_path": "C:\\Users\\NishantDubey\\OneDrive - Blend 360\\Desktop\\Day 4 Rag\\rag\\data\\chunks\\metadata_semantic.json",
+    "document": "Acme Corp IT and HR Policy Handbook",
+    "document_id": "ACME-POL-2026-014",
+    "top_k": 3,
+    "id": "q4",
+    "category": "Expense Detail",
+    "question": "When are receipts required for travel expenses?",
+    "expected_evidence": "6.3 Submitting Expense Claims: every claim requires an itemized receipt",
+    "notes": "There is no dollar threshold for receipts in the handbook.",
+    "unsupported": false,
+    "evaluation": {
+      "status": "YES",
+      "evidence_rank": 1,
+      "partial_rank": 2,
+      "evidence_score": 0.7377,
+      "best_irrelevant_score": 0.6774,
+      "margin": 0.0603,
+      "expected_section": "6.3 Submitting Expense Claims",
+      "evidence_hit_section": "6.3 Submitting Expense Claims",
+      "label_correct": true
+    },
+    "results": [
+      {
+        "rank": 1,
+        "similarity_score": 0.7377,
+        "chunk_id": "cleaned_policy::semantic::032::c21461dc",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            5
+          ],
+          "section": "6.3 Submitting Expense Claims",
+          "section_path": "This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.3 Submitting Expense Claims",
+          "parent_chunk_id": null
+        },
+        "chunk_text": "Every claim\nrequires:\n- An itemized receipt (a credit card statement alone is not sufficient).\n- The business purpose and, for meals, the names of attendees.",
+        "relevance": "full"
+      },
+      {
+        "rank": 2,
+        "similarity_score": 0.7144,
+        "chunk_id": "cleaned_policy::semantic::031::5b14006f",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            5
+          ],
+          "section": "6.2 Daily Allowances",
+          "section_path": "This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.2 Daily Allowances",
+          "parent_chunk_id": null
+        },
+        "chunk_text": "Partial days (departure and return) are\npaid at 75% of the daily rate.\n                                                                                       Hotel Cap\n Region                       Meals (USD/day)             Incidentals (USD/day)        (USD/night)\n North America                75                          15                           250\n Western Europe               70                          15                           220\n India                        40                          10                           130\n Southeast Asia               45                          10                           150\n Major hubs (NYC,\n London, SF)                  90                          20                           350\n\n### 6.3 Submitting Expense Claims\n\nExpense claims must be submitted within 30 days of the expense being incurred.",
+        "relevance": "partial"
+      },
+      {
+        "rank": 3,
+        "similarity_score": 0.6774,
+        "chunk_id": "cleaned_policy::semantic::030::5b4da755",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            5
+          ],
+          "section": "6.2 Daily Allowances",
+          "section_path": "This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.2 Daily Allowances",
+          "parent_chunk_id": null
+        },
+        "chunk_text": "### 6.2 Daily Allowances\n\nMeal and incidental allowances are paid per full travel day.",
+        "relevance": null
+      }
+    ]
+  },
+  {
+    "run_id": "20261017-213452_file_both",
+    "timestamp": "2026-10-17T21:34:59",
+    "mode": "file",
+    "model": "BAAI/bge-small-en-v1.5",
+    "metric": "cosine",
+    "index": "parent",
+    "num_chunks": 47,
+    "chunks_path": "C:\\Users\\NishantDubey\\OneDrive - Blend 360\\Desktop\\Day 4 Rag\\rag\\data\\chunks\\metadata_semantic.json",
+    "document": "Acme Corp IT and HR Policy Handbook",
+    "document_id": "ACME-POL-2026-014",
+    "top_k": 3,
+    "id": "q5",
+    "category": "Exact Terminology",
+    "question": "Find the policy section about Sick Leave.",
+    "expected_evidence": "The '3.2 Sick Leave' section header, not general health or policy text",
+    "unsupported": false,
+    "evaluation": {
+      "status": "YES",
+      "evidence_rank": 1,
+      "partial_rank": null,
+      "evidence_score": 0.6141,
+      "best_irrelevant_score": 0.5927,
+      "margin": 0.0214,
+      "expected_section": "3.2 Sick Leave",
+      "evidence_hit_section": "2.2 Password and Access Requirements",
+      "label_correct": false
+    },
+    "results": [
+      {
+        "rank": 1,
+        "similarity_score": 0.6141,
+        "chunk_id": "cleaned_policy::semantic::012::090bcde6",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            2
+          ],
+          "section": "2.2 Password and Access Requirements",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 2. IT Equipment and Security > 2.2 Password and Access Requirements",
+          "parent_chunk_id": null
+        },
+        "chunk_text": "Do\nnot store any customer data on the device until encryption is confirmed.\n## 3. Leave and Time Off\n\n### 3.1 Annual Leave\n\nFull-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per\ncalendar year. Up to 5 unused days may be carried forward into the first quarter of the following\nyear; any remaining days expire on March 31.\n\n### 3.2 Sick Leave\n\nEmployees are entitled to 10 days of paid sick leave per year. A medical certificate is required for\nabsences longer than 3 consecutive working days.\n\n### 3.3 Requesting Leave\n\n1. Submit the request in the HR portal at least 10 working days in advance for planned leave.\n2. Your manager approves or declines within 3 working days.",
+        "relevance": "full"
+      },
+      {
+        "rank": 2,
+        "similarity_score": 0.5927,
+        "chunk_id": "cleaned_policy::semantic::046::89704cbc",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            7
+          ],
+          "section": "10. Glossary",
+          "section_path": "This line is part of a quote, not a heading. > 10. Glossary",
+          "parent_chunk_id": null
+        },
+        "chunk_text": "SEV – Severity level used to prioritize security incidents (see Section 4.4.1).\n## 11. Contacts\n\nFor questions about this policy, contact the People & Technology Office at\npolicy@acme-corp.example or the IT Service Desk at extension 4000.",
+        "relevance": null
+      },
+      {
+        "rank": 3,
+        "similarity_score": 0.5789,
+        "chunk_id": "cleaned_policy::semantic::000::fe52a93c",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            1
+          ],
+          "section": "",
+          "section_path": "",
+          "parent_chunk_id": null
+        },
+        "chunk_text": "[[PAGE 1]]\n# Acme Corp IT and HR Policy Handbook\n\nDocument ID: ACME-POL-2026-014 | Version: 4.0 | Owner: People & Technology Office | Last\nReviewed: 2026-09-01\nThis handbook applies to all full-time employees, contractors, and interns of Acme Corp across all\nregional offices. Where local law is stricter than this policy, local law prevails.",
+        "relevance": null
+      }
+    ]
+  },
+  {
+    "run_id": "20261017-213452_file_both",
+    "timestamp": "2026-10-17T21:34:59",
+    "mode": "file",
+    "model": "BAAI/bge-small-en-v1.5",
+    "metric": "cosine",
+    "index": "parent",
+    "num_chunks": 47,
+    "chunks_path": "C:\\Users\\NishantDubey\\OneDrive - Blend 360\\Desktop\\Day 4 Rag\\rag\\data\\chunks\\metadata_semantic.json",
+    "document": "Acme Corp IT and HR Policy Handbook",
+    "document_id": "ACME-POL-2026-014",
+    "top_k": 3,
+    "id": "q6",
+    "category": "Unsupported",
+    "question": "What is the company's parental leave duration?",
+    "expected_evidence": "None (unsupported negative control)",
+    "unsupported": true,
+    "evaluation": {
+      "status": "NO EVIDENCE (expected) - 3 false positives",
+      "evidence_rank": null,
+      "partial_rank": null,
+      "evidence_score": null,
+      "best_irrelevant_score": 0.6877,
+      "margin": null,
+      "expected_section": null,
+      "evidence_hit_section": null,
+      "label_correct": null
+    },
+    "results": [
+      {
+        "rank": 1,
+        "similarity_score": 0.6877,
+        "chunk_id": "cleaned_policy::semantic::012::090bcde6",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            2
+          ],
+          "section": "2.2 Password and Access Requirements",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 2. IT Equipment and Security > 2.2 Password and Access Requirements",
+          "parent_chunk_id": null
+        },
+        "chunk_text": "Do\nnot store any customer data on the device until encryption is confirmed.\n## 3. Leave and Time Off\n\n### 3.1 Annual Leave\n\nFull-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per\ncalendar year. Up to 5 unused days may be carried forward into the first quarter of the following\nyear; any remaining days expire on March 31.\n\n### 3.2 Sick Leave\n\nEmployees are entitled to 10 days of paid sick leave per year. A medical certificate is required for\nabsences longer than 3 consecutive working days.\n\n### 3.3 Requesting Leave\n\n1. Submit the request in the HR portal at least 10 working days in advance for planned leave.\n2. Your manager approves or declines within 3 working days.",
+        "relevance": null
+      },
+      {
+        "rank": 2,
+        "similarity_score": 0.6341,
+        "chunk_id": "cleaned_policy::semantic::001::d8f71e7d",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            1
+          ],
+          "section": "1.1 Eligibility and Philosophy",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 1. Remote Work Policy > 1.1 Eligibility and Philosophy",
+          "parent_chunk_id": null
+        },
+        "chunk_text": "## 1. Remote Work Policy\n\n### 1.1 Eligibility and Philosophy\n\nAcme Corp believes that great work can happen anywhere, provided that the conditions for focus,\ncollaboration, and security are met, and this belief has shaped our hybrid model since 2021 when\nthe company first moved away from a mandatory five-day office presence; employees whose roles\ndo not require physical access to labs, warehouses, or customer sites are eligible to work remotely\nfor up to three days per week after completing their 90-day probation period, although managers\nretain the discretion to request in-office attendance for onboarding sessions, quarterly planning\nevents, client workshops, and any situation where in-person collaboration is judged to be materially\nbetter for the outcome, and employees who wish to work remotely for more than three days per",
+        "relevance": null
+      },
+      {
+        "rank": 3,
+        "similarity_score": 0.6125,
+        "chunk_id": "cleaned_policy::semantic::043::80d7a4d0",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            7
+          ],
+          "section": "9.1 New Joiner Checklist",
+          "section_path": "This line is part of a quote, not a heading. > 9. Onboarding and Offboarding > 9.1 New Joiner Checklist",
+          "parent_chunk_id": null
+        },
+        "chunk_text": "4. Meet with their assigned onboarding buddy.\n\n### 9.2 Leaving Acme Corp\n\nEmployees who resign must give the notice period stated in their contract. On or before the last\nworking day, the departing employee and their manager must ensure that all company equipment is\nreturned, all access is revoked, and knowledge is handed over.\n\nImportant: Access to all systems is disabled automatically at 18:00 local time on the employee's\nlast working day.",
+        "relevance": null
+      }
+    ]
+  },
+  {
+    "run_id": "20261017-213452_file_both",
+    "timestamp": "2026-10-17T21:35:02",
+    "mode": "file",
+    "model": "BAAI/bge-small-en-v1.5",
+    "metric": "cosine",
+    "index": "child",
+    "num_chunks": 69,
+    "chunks_path": "C:\\Users\\NishantDubey\\OneDrive - Blend 360\\Desktop\\Day 4 Rag\\rag\\data\\chunks\\metadata_semantic.json",
+    "document": "Acme Corp IT and HR Policy Handbook",
+    "document_id": "ACME-POL-2026-014",
+    "top_k": 3,
+    "id": "q1",
+    "category": "Semantic Paraphrase",
+    "question": "How many vacation days do employees get each year?",
+    "expected_evidence": "Annual leave entitlement (3.1 Annual Leave: 21 days per calendar year)",
+    "unsupported": false,
+    "evaluation": {
+      "status": "YES",
+      "evidence_rank": 1,
+      "partial_rank": null,
+      "evidence_score": 0.7372,
+      "best_irrelevant_score": 0.7067,
+      "margin": 0.0306,
+      "expected_section": "3.1 Annual Leave",
+      "evidence_hit_section": "3.1 Annual Leave",
+      "label_correct": true
+    },
+    "results": [
+      {
+        "rank": 1,
+        "similarity_score": 0.7372,
+        "chunk_id": "cleaned_policy::semantic::012::090bcde6::c1",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            2
+          ],
+          "section": "3.1 Annual Leave",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.1 Annual Leave",
+          "parent_chunk_id": "cleaned_policy::semantic::012::090bcde6"
+        },
+        "chunk_text": "## 3. Leave and Time Off\n\n### 3.1 Annual Leave\n\nFull-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per\ncalendar year. Up to 5 unused days may be carried forward into the first quarter of the following\nyear; any remaining days expire on March 31.",
+        "relevance": "full"
+      },
+      {
+        "rank": 2,
+        "similarity_score": 0.7067,
+        "chunk_id": "cleaned_policy::semantic::012::090bcde6::c2",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            2
+          ],
+          "section": "3.2 Sick Leave",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.2 Sick Leave",
+          "parent_chunk_id": "cleaned_policy::semantic::012::090bcde6"
+        },
+        "chunk_text": "### 3.2 Sick Leave\n\nEmployees are entitled to 10 days of paid sick leave per year. A medical certificate is required for\nabsences longer than 3 consecutive working days.",
+        "relevance": null
+      },
+      {
+        "rank": 3,
+        "similarity_score": 0.6636,
+        "chunk_id": "cleaned_policy::semantic::007::3c4eada9::c1",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            1
+          ],
+          "section": "2.1 Hardware Allowance",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 2. IT Equipment and Security > 2.1 Hardware Allowance",
+          "parent_chunk_id": "cleaned_policy::semantic::007::3c4eada9"
+        },
+        "chunk_text": "## 2. IT Equipment and Security\n\n### 2.1 Hardware Allowance\n\nEach employee receives a one-time hardware allowance at joining and a refresh allowance every\nthree years.",
+        "relevance": null
+      }
+    ]
+  },
+  {
+    "run_id": "20261017-213452_file_both",
+    "timestamp": "2026-10-17T21:35:02",
+    "mode": "file",
+    "model": "BAAI/bge-small-en-v1.5",
+    "metric": "cosine",
+    "index": "child",
+    "num_chunks": 69,
+    "chunks_path": "C:\\Users\\NishantDubey\\OneDrive - Blend 360\\Desktop\\Day 4 Rag\\rag\\data\\chunks\\metadata_semantic.json",
+    "document": "Acme Corp IT and HR Policy Handbook",
+    "document_id": "ACME-POL-2026-014",
+    "top_k": 3,
+    "id": "q2",
+    "category": "Approval Rule",
+    "question": "I want to take five consecutive days off. Is manager approval required?",
+    "expected_evidence": "3.3 Requesting Leave: manager approves or declines every leave request",
+    "notes": "The handbook has no 'more than 3 consecutive days' approval rule. The only '3 consecutive working days' text is the sick-leave medical-certificate rule (a distractor).",
+    "unsupported": false,
+    "evaluation": {
+      "status": "YES",
+      "evidence_rank": 1,
+      "partial_rank": 2,
+      "evidence_score": 0.6683,
+      "best_irrelevant_score": 0.6296,
+      "margin": 0.0387,
+      "expected_section": "3.3 Requesting Leave",
+      "evidence_hit_section": "3.3 Requesting Leave",
+      "label_correct": true
+    },
+    "results": [
+      {
+        "rank": 1,
+        "similarity_score": 0.6683,
+        "chunk_id": "cleaned_policy::semantic::012::090bcde6::c3",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            2
+          ],
+          "section": "3.3 Requesting Leave",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.3 Requesting Leave",
+          "parent_chunk_id": "cleaned_policy::semantic::012::090bcde6"
+        },
+        "chunk_text": "### 3.3 Requesting Leave\n\n1. Submit the request in the HR portal at least 10 working days in advance for planned leave.\n2. Your manager approves or declines within 3 working days.",
+        "relevance": "full"
+      },
+      {
+        "rank": 2,
+        "similarity_score": 0.6546,
+        "chunk_id": "cleaned_policy::semantic::013::d7f30abf::c0",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            2
+          ],
+          "section": "3.3 Requesting Leave",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.3 Requesting Leave",
+          "parent_chunk_id": "cleaned_policy::semantic::013::d7f30abf"
+        },
+        "chunk_text": "3. Update your Slack status and calendar once approved.",
+        "relevance": "partial"
+      },
+      {
+        "rank": 3,
+        "similarity_score": 0.6296,
+        "chunk_id": "cleaned_policy::semantic::001::d8f71e7d::c0",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            1
+          ],
+          "section": "1.1 Eligibility and Philosophy",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 1. Remote Work Policy > 1.1 Eligibility and Philosophy",
+          "parent_chunk_id": "cleaned_policy::semantic::001::d8f71e7d"
+        },
+        "chunk_text": "## 1. Remote Work Policy\n\n### 1.1 Eligibility and Philosophy\n\nAcme Corp believes that great work can happen anywhere, provided that the conditions for focus,\ncollaboration, and security are met, and this belief has shaped our hybrid model since 2021 when\nthe company first moved away from a mandatory five-day office presence; employees whose roles\ndo not require physical access to labs, warehouses, or customer sites are eligible to work remotely\nfor up to three days per week after completing their 90-day probation period, although managers\nretain the discretion to request in-office attendance for onboarding sessions, quarterly planning\nevents, client workshops, and any situation where in-person collaboration is judged to be materially\nbetter for the outcome, and employees who wish to work remotely for more than three days per",
+        "relevance": null
+      }
+    ]
+  },
+  {
+    "run_id": "20261017-213452_file_both",
+    "timestamp": "2026-10-17T21:35:02",
+    "mode": "file",
+    "model": "BAAI/bge-small-en-v1.5",
+    "metric": "cosine",
+    "index": "child",
+    "num_chunks": 69,
+    "chunks_path": "C:\\Users\\NishantDubey\\OneDrive - Blend 360\\Desktop\\Day 4 Rag\\rag\\data\\chunks\\metadata_semantic.json",
+    "document": "Acme Corp IT and HR Policy Handbook",
+    "document_id": "ACME-POL-2026-014",
+    "top_k": 3,
+    "id": "q3",
+    "category": "Travel Approval",
+    "question": "Who needs to approve an overseas business trip?",
+    "expected_evidence": "International travel approval requirements",
+    "notes": "No overseas/international travel rule exists. Closest is 6.1: business class requires executive-team approval, so PARTIAL is the best achievable grade.",
+    "unsupported": false,
+    "evaluation": {
+      "status": "PARTIAL",
+      "evidence_rank": null,
+      "partial_rank": 2,
+      "evidence_score": null,
+      "best_irrelevant_score": 0.6816,
+      "margin": null,
+      "expected_section": "6.1 Booking Business Travel",
+      "evidence_hit_section": "6.1 Booking Business Travel",
+      "label_correct": true
+    },
+    "results": [
+      {
+        "rank": 1,
+        "similarity_score": 0.6816,
+        "chunk_id": "cleaned_policy::semantic::028::b4be9b9b::c1",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            5
+          ],
+          "section": "6.1 Booking Business Travel",
+          "section_path": "This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.1 Booking Business Travel",
+          "parent_chunk_id": "cleaned_policy::semantic::028::b4be9b9b"
+        },
+        "chunk_text": "## 6. Travel and Expenses\n\n### 6.1 Booking Business Travel\n\nAll flights, hotels, and rail travel must be booked through the corporate travel platform so that the\ncompany can locate and support employees in an emergency.",
+        "relevance": null
+      },
+      {
+        "rank": 2,
+        "similarity_score": 0.6449,
+        "chunk_id": "cleaned_policy::semantic::029::9aff9182::c0",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            5
+          ],
+          "section": "6.1 Booking Business Travel",
+          "section_path": "This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.1 Booking Business Travel",
+          "parent_chunk_id": "cleaned_policy::semantic::029::9aff9182"
+        },
+        "chunk_text": "Economy class is the default for all\nflights; premium economy is permitted for flights longer than 8 hours, and business class requires\nprior written approval from a member of the executive team.",
+        "relevance": "partial"
+      },
+      {
+        "rank": 3,
+        "similarity_score": 0.6297,
+        "chunk_id": "cleaned_policy::semantic::032::c21461dc::c0",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            5
+          ],
+          "section": "6.3 Submitting Expense Claims",
+          "section_path": "This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.3 Submitting Expense Claims",
+          "parent_chunk_id": "cleaned_policy::semantic::032::c21461dc"
+        },
+        "chunk_text": "Every claim\nrequires:\n- An itemized receipt (a credit card statement alone is not sufficient).\n- The business purpose and, for meals, the names of attendees.",
+        "relevance": null
+      }
+    ]
+  },
+  {
+    "run_id": "20261017-213452_file_both",
+    "timestamp": "2026-10-17T21:35:02",
+    "mode": "file",
+    "model": "BAAI/bge-small-en-v1.5",
+    "metric": "cosine",
+    "index": "child",
+    "num_chunks": 69,
+    "chunks_path": "C:\\Users\\NishantDubey\\OneDrive - Blend 360\\Desktop\\Day 4 Rag\\rag\\data\\chunks\\metadata_semantic.json",
+    "document": "Acme Corp IT and HR Policy Handbook",
+    "document_id": "ACME-POL-2026-014",
+    "top_k": 3,
+    "id": "q4",
+    "category": "Expense Detail",
+    "question": "When are receipts required for travel expenses?",
+    "expected_evidence": "6.3 Submitting Expense Claims: every claim requires an itemized receipt",
+    "notes": "There is no dollar threshold for receipts in the handbook.",
+    "unsupported": false,
+    "evaluation": {
+      "status": "YES",
+      "evidence_rank": 1,
+      "partial_rank": 3,
+      "evidence_score": 0.7377,
+      "best_irrelevant_score": 0.7209,
+      "margin": 0.0168,
+      "expected_section": "6.3 Submitting Expense Claims",
+      "evidence_hit_section": "6.3 Submitting Expense Claims",
+      "label_correct": true
+    },
+    "results": [
+      {
+        "rank": 1,
+        "similarity_score": 0.7377,
+        "chunk_id": "cleaned_policy::semantic::032::c21461dc::c0",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            5
+          ],
+          "section": "6.3 Submitting Expense Claims",
+          "section_path": "This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.3 Submitting Expense Claims",
+          "parent_chunk_id": "cleaned_policy::semantic::032::c21461dc"
+        },
+        "chunk_text": "Every claim\nrequires:\n- An itemized receipt (a credit card statement alone is not sufficient).\n- The business purpose and, for meals, the names of attendees.",
+        "relevance": "full"
+      },
+      {
+        "rank": 2,
+        "similarity_score": 0.7209,
+        "chunk_id": "cleaned_policy::semantic::028::b4be9b9b::c1",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            5
+          ],
+          "section": "6.1 Booking Business Travel",
+          "section_path": "This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.1 Booking Business Travel",
+          "parent_chunk_id": "cleaned_policy::semantic::028::b4be9b9b"
+        },
+        "chunk_text": "## 6. Travel and Expenses\n\n### 6.1 Booking Business Travel\n\nAll flights, hotels, and rail travel must be booked through the corporate travel platform so that the\ncompany can locate and support employees in an emergency.",
+        "relevance": null
+      },
+      {
+        "rank": 3,
+        "similarity_score": 0.71,
+        "chunk_id": "cleaned_policy::semantic::031::5b14006f::c1",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            5
+          ],
+          "section": "6.3 Submitting Expense Claims",
+          "section_path": "This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.3 Submitting Expense Claims",
+          "parent_chunk_id": "cleaned_policy::semantic::031::5b14006f"
+        },
+        "chunk_text": "### 6.3 Submitting Expense Claims\n\nExpense claims must be submitted within 30 days of the expense being incurred.",
+        "relevance": "partial"
+      }
+    ]
+  },
+  {
+    "run_id": "20261017-213452_file_both",
+    "timestamp": "2026-10-17T21:35:02",
+    "mode": "file",
+    "model": "BAAI/bge-small-en-v1.5",
+    "metric": "cosine",
+    "index": "child",
+    "num_chunks": 69,
+    "chunks_path": "C:\\Users\\NishantDubey\\OneDrive - Blend 360\\Desktop\\Day 4 Rag\\rag\\data\\chunks\\metadata_semantic.json",
+    "document": "Acme Corp IT and HR Policy Handbook",
+    "document_id": "ACME-POL-2026-014",
+    "top_k": 3,
+    "id": "q5",
+    "category": "Exact Terminology",
+    "question": "Find the policy section about Sick Leave.",
+    "expected_evidence": "The '3.2 Sick Leave' section header, not general health or policy text",
+    "unsupported": false,
+    "evaluation": {
+      "status": "YES",
+      "evidence_rank": 1,
+      "partial_rank": null,
+      "evidence_score": 0.6616,
+      "best_irrelevant_score": 0.562,
+      "margin": 0.0997,
+      "expected_section": "3.2 Sick Leave",
+      "evidence_hit_section": "3.2 Sick Leave",
+      "label_correct": true
+    },
+    "results": [
+      {
+        "rank": 1,
+        "similarity_score": 0.6616,
+        "chunk_id": "cleaned_policy::semantic::012::090bcde6::c2",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            2
+          ],
+          "section": "3.2 Sick Leave",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.2 Sick Leave",
+          "parent_chunk_id": "cleaned_policy::semantic::012::090bcde6"
+        },
+        "chunk_text": "### 3.2 Sick Leave\n\nEmployees are entitled to 10 days of paid sick leave per year. A medical certificate is required for\nabsences longer than 3 consecutive working days.",
+        "relevance": "full"
+      },
+      {
+        "rank": 2,
+        "similarity_score": 0.562,
+        "chunk_id": "cleaned_policy::semantic::001::d8f71e7d::c0",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            1
+          ],
+          "section": "1.1 Eligibility and Philosophy",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 1. Remote Work Policy > 1.1 Eligibility and Philosophy",
+          "parent_chunk_id": "cleaned_policy::semantic::001::d8f71e7d"
+        },
+        "chunk_text": "## 1. Remote Work Policy\n\n### 1.1 Eligibility and Philosophy\n\nAcme Corp believes that great work can happen anywhere, provided that the conditions for focus,\ncollaboration, and security are met, and this belief has shaped our hybrid model since 2021 when\nthe company first moved away from a mandatory five-day office presence; employees whose roles\ndo not require physical access to labs, warehouses, or customer sites are eligible to work remotely\nfor up to three days per week after completing their 90-day probation period, although managers\nretain the discretion to request in-office attendance for onboarding sessions, quarterly planning\nevents, client workshops, and any situation where in-person collaboration is judged to be materially\nbetter for the outcome, and employees who wish to work remotely for more than three days per",
+        "relevance": null
+      },
+      {
+        "rank": 3,
+        "similarity_score": 0.561,
+        "chunk_id": "cleaned_policy::semantic::046::89704cbc::c1",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            7
+          ],
+          "section": "11. Contacts",
+          "section_path": "This line is part of a quote, not a heading. > 11. Contacts",
+          "parent_chunk_id": "cleaned_policy::semantic::046::89704cbc"
+        },
+        "chunk_text": "## 11. Contacts\n\nFor questions about this policy, contact the People & Technology Office at\npolicy@acme-corp.example or the IT Service Desk at extension 4000.",
+        "relevance": null
+      }
+    ]
+  },
+  {
+    "run_id": "20261017-213452_file_both",
+    "timestamp": "2026-10-17T21:35:02",
+    "mode": "file",
+    "model": "BAAI/bge-small-en-v1.5",
+    "metric": "cosine",
+    "index": "child",
+    "num_chunks": 69,
+    "chunks_path": "C:\\Users\\NishantDubey\\OneDrive - Blend 360\\Desktop\\Day 4 Rag\\rag\\data\\chunks\\metadata_semantic.json",
+    "document": "Acme Corp IT and HR Policy Handbook",
+    "document_id": "ACME-POL-2026-014",
+    "top_k": 3,
+    "id": "q6",
+    "category": "Unsupported",
+    "question": "What is the company's parental leave duration?",
+    "expected_evidence": "None (unsupported negative control)",
+    "unsupported": true,
+    "evaluation": {
+      "status": "NO EVIDENCE (expected) - 3 false positives",
+      "evidence_rank": null,
+      "partial_rank": null,
+      "evidence_score": null,
+      "best_irrelevant_score": 0.7002,
+      "margin": null,
+      "expected_section": null,
+      "evidence_hit_section": null,
+      "label_correct": null
+    },
+    "results": [
+      {
+        "rank": 1,
+        "similarity_score": 0.7002,
+        "chunk_id": "cleaned_policy::semantic::012::090bcde6::c1",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            2
+          ],
+          "section": "3.1 Annual Leave",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.1 Annual Leave",
+          "parent_chunk_id": "cleaned_policy::semantic::012::090bcde6"
+        },
+        "chunk_text": "## 3. Leave and Time Off\n\n### 3.1 Annual Leave\n\nFull-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per\ncalendar year. Up to 5 unused days may be carried forward into the first quarter of the following\nyear; any remaining days expire on March 31.",
+        "relevance": null
+      },
+      {
+        "rank": 2,
+        "similarity_score": 0.6499,
+        "chunk_id": "cleaned_policy::semantic::012::090bcde6::c2",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            2
+          ],
+          "section": "3.2 Sick Leave",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.2 Sick Leave",
+          "parent_chunk_id": "cleaned_policy::semantic::012::090bcde6"
+        },
+        "chunk_text": "### 3.2 Sick Leave\n\nEmployees are entitled to 10 days of paid sick leave per year. A medical certificate is required for\nabsences longer than 3 consecutive working days.",
+        "relevance": null
+      },
+      {
+        "rank": 3,
+        "similarity_score": 0.6404,
+        "chunk_id": "cleaned_policy::semantic::012::090bcde6::c3",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            2
+          ],
+          "section": "3.3 Requesting Leave",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.3 Requesting Leave",
+          "parent_chunk_id": "cleaned_policy::semantic::012::090bcde6"
+        },
+        "chunk_text": "### 3.3 Requesting Leave\n\n1. Submit the request in the HR portal at least 10 working days in advance for planned leave.\n2. Your manager approves or declines within 3 working days.",
+        "relevance": null
+      }
+    ]
+  }
+]

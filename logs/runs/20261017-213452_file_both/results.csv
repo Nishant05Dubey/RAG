@@ -1,0 +1,295 @@
+﻿run_id,timestamp,mode,index,model,top_k,id,category,question,status,rank,similarity_score,chunk_id,document,pages,section,section_path,parent_chunk_id,relevance,chunk_text
+20261017-213452_file_both,2026-10-17T21:34:59,file,parent,BAAI/bge-small-en-v1.5,3,q1,Semantic Paraphrase,How many vacation days do employees get each year?,YES,1,0.6811,cleaned_policy::semantic::012::090bcde6,Acme_Corp_IT_and_HR_Policy.pdf,2,2.2 Password and Access Requirements,Acme Corp IT and HR Policy Handbook > 2. IT Equipment and Security > 2.2 Password and Access Requirements,,full,"Do
+not store any customer data on the device until encryption is confirmed.
+## 3. Leave and Time Off
+
+### 3.1 Annual Leave
+
+Full-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per
+calendar year. Up to 5 unused days may be carried forward into the first quarter of the following
+year; any remaining days expire on March 31.
+
+### 3.2 Sick Leave
+
+Employees are entitled to 10 days of paid sick leave per year. A medical certificate is required for
+absences longer than 3 consecutive working days.
+
+### 3.3 Requesting Leave
+
+1. Submit the request in the HR portal at least 10 working days in advance for planned leave.
+2. Your manager approves or declines within 3 working days."
+20261017-213452_file_both,2026-10-17T21:34:59,file,parent,BAAI/bge-small-en-v1.5,3,q1,Semantic Paraphrase,How many vacation days do employees get each year?,YES,2,0.6284,cleaned_policy::semantic::031::5b14006f,Acme_Corp_IT_and_HR_Policy.pdf,5,6.2 Daily Allowances,"This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.2 Daily Allowances",,,"Partial days (departure and return) are
+paid at 75% of the daily rate.
+                                                                                       Hotel Cap
+ Region                       Meals (USD/day)             Incidentals (USD/day)        (USD/night)
+ North America                75                          15                           250
+ Western Europe               70                          15                           220
+ India                        40                          10                           130
+ Southeast Asia               45                          10                           150
+ Major hubs (NYC,
+ London, SF)                  90                          20                           350
+
+### 6.3 Submitting Expense Claims
+
+Expense claims must be submitted within 30 days of the expense being incurred."
+20261017-213452_file_both,2026-10-17T21:34:59,file,parent,BAAI/bge-small-en-v1.5,3,q1,Semantic Paraphrase,How many vacation days do employees get each year?,YES,3,0.6278,cleaned_policy::semantic::030::5b4da755,Acme_Corp_IT_and_HR_Policy.pdf,5,6.2 Daily Allowances,"This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.2 Daily Allowances",,,"### 6.2 Daily Allowances
+
+Meal and incidental allowances are paid per full travel day."
+20261017-213452_file_both,2026-10-17T21:34:59,file,parent,BAAI/bge-small-en-v1.5,3,q2,Approval Rule,I want to take five consecutive days off. Is manager approval required?,YES,1,0.6575,cleaned_policy::semantic::012::090bcde6,Acme_Corp_IT_and_HR_Policy.pdf,2,2.2 Password and Access Requirements,Acme Corp IT and HR Policy Handbook > 2. IT Equipment and Security > 2.2 Password and Access Requirements,,full,"Do
+not store any customer data on the device until encryption is confirmed.
+## 3. Leave and Time Off
+
+### 3.1 Annual Leave
+
+Full-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per
+calendar year. Up to 5 unused days may be carried forward into the first quarter of the following
+year; any remaining days expire on March 31.
+
+### 3.2 Sick Leave
+
+Employees are entitled to 10 days of paid sick leave per year. A medical certificate is required for
+absences longer than 3 consecutive working days.
+
+### 3.3 Requesting Leave
+
+1. Submit the request in the HR portal at least 10 working days in advance for planned leave.
+2. Your manager approves or declines within 3 working days."
+20261017-213452_file_both,2026-10-17T21:34:59,file,parent,BAAI/bge-small-en-v1.5,3,q2,Approval Rule,I want to take five consecutive days off. Is manager approval required?,YES,2,0.6296,cleaned_policy::semantic::001::d8f71e7d,Acme_Corp_IT_and_HR_Policy.pdf,1,1.1 Eligibility and Philosophy,Acme Corp IT and HR Policy Handbook > 1. Remote Work Policy > 1.1 Eligibility and Philosophy,,,"## 1. Remote Work Policy
+
+### 1.1 Eligibility and Philosophy
+
+Acme Corp believes that great work can happen anywhere, provided that the conditions for focus,
+collaboration, and security are met, and this belief has shaped our hybrid model since 2021 when
+the company first moved away from a mandatory five-day office presence; employees whose roles
+do not require physical access to labs, warehouses, or customer sites are eligible to work remotely
+for up to three days per week after completing their 90-day probation period, although managers
+retain the discretion to request in-office attendance for onboarding sessions, quarterly planning
+events, client workshops, and any situation where in-person collaboration is judged to be materially
+better for the outcome, and employees who wish to work remotely for more than three days per"
+20261017-213452_file_both,2026-10-17T21:34:59,file,parent,BAAI/bge-small-en-v1.5,3,q2,Approval Rule,I want to take five consecutive days off. Is manager approval required?,YES,3,0.6252,cleaned_policy::semantic::026::50cb42e6,Acme_Corp_IT_and_HR_Policy.pdf,4,"This line is part of a quote, not a heading.","This line is part of a quote, not a heading.",,,"# This line is part of a quote, not a heading.
+Disconnect from the network and wait for instructions from the Security team.
+## 5. Software and SaaS Procurement
+
+### 5.1 Approved Software
+
+The IT team maintains a catalogue of pre-approved software that any employee can install through
+the self-service portal without additional approval. This includes office productivity suites, approved
+browsers, password managers, communication tools, and common developer tools such as Git,
+Docker Desktop, and VS Code.
+
+### 5.2 Requesting New Software
+
+To request software that is not in the catalogue, follow these steps:
+1. Search the catalogue first to confirm no approved alternative exists.
+2. Submit a Software Request ticket that includes:"
+20261017-213452_file_both,2026-10-17T21:34:59,file,parent,BAAI/bge-small-en-v1.5,3,q3,Travel Approval,Who needs to approve an overseas business trip?,PARTIAL,1,0.7147,cleaned_policy::semantic::028::b4be9b9b,Acme_Corp_IT_and_HR_Policy.pdf,4 5,5.3 Software License Costs,"This line is part of a quote, not a heading. > 5. Software and SaaS Procurement > 5.3 Software License Costs",,,"The approval thresholds
+are:
+ Annual Cost (USD)                                         Approver
+ Under 1,000                                               Team manager
+
+[[PAGE 5]]
+ Annual Cost (USD)                                        Approver
+ 1,000 – 10,000                                           Department head
+ 10,001 – 50,000                                          Department head + Finance
+ Over 50,000                                              CFO and CTO (joint approval)
+## 6. Travel and Expenses
+
+### 6.1 Booking Business Travel
+
+All flights, hotels, and rail travel must be booked through the corporate travel platform so that the
+company can locate and support employees in an emergency."
+20261017-213452_file_both,2026-10-17T21:34:59,file,parent,BAAI/bge-small-en-v1.5,3,q3,Travel Approval,Who needs to approve an overseas business trip?,PARTIAL,2,0.6449,cleaned_policy::semantic::029::9aff9182,Acme_Corp_IT_and_HR_Policy.pdf,5,6.1 Booking Business Travel,"This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.1 Booking Business Travel",,partial,"Economy class is the default for all
+flights; premium economy is permitted for flights longer than 8 hours, and business class requires
+prior written approval from a member of the executive team."
+20261017-213452_file_both,2026-10-17T21:34:59,file,parent,BAAI/bge-small-en-v1.5,3,q3,Travel Approval,Who needs to approve an overseas business trip?,PARTIAL,3,0.6297,cleaned_policy::semantic::032::c21461dc,Acme_Corp_IT_and_HR_Policy.pdf,5,6.3 Submitting Expense Claims,"This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.3 Submitting Expense Claims",,,"Every claim
+requires:
+- An itemized receipt (a credit card statement alone is not sufficient).
+- The business purpose and, for meals, the names of attendees."
+20261017-213452_file_both,2026-10-17T21:34:59,file,parent,BAAI/bge-small-en-v1.5,3,q4,Expense Detail,When are receipts required for travel expenses?,YES,1,0.7377,cleaned_policy::semantic::032::c21461dc,Acme_Corp_IT_and_HR_Policy.pdf,5,6.3 Submitting Expense Claims,"This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.3 Submitting Expense Claims",,full,"Every claim
+requires:
+- An itemized receipt (a credit card statement alone is not sufficient).
+- The business purpose and, for meals, the names of attendees."
+20261017-213452_file_both,2026-10-17T21:34:59,file,parent,BAAI/bge-small-en-v1.5,3,q4,Expense Detail,When are receipts required for travel expenses?,YES,2,0.7144,cleaned_policy::semantic::031::5b14006f,Acme_Corp_IT_and_HR_Policy.pdf,5,6.2 Daily Allowances,"This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.2 Daily Allowances",,partial,"Partial days (departure and return) are
+paid at 75% of the daily rate.
+                                                                                       Hotel Cap
+ Region                       Meals (USD/day)             Incidentals (USD/day)        (USD/night)
+ North America                75                          15                           250
+ Western Europe               70                          15                           220
+ India                        40                          10                           130
+ Southeast Asia               45                          10                           150
+ Major hubs (NYC,
+ London, SF)                  90                          20                           350
+
+### 6.3 Submitting Expense Claims
+
+Expense claims must be submitted within 30 days of the expense being incurred."
+20261017-213452_file_both,2026-10-17T21:34:59,file,parent,BAAI/bge-small-en-v1.5,3,q4,Expense Detail,When are receipts required for travel expenses?,YES,3,0.6774,cleaned_policy::semantic::030::5b4da755,Acme_Corp_IT_and_HR_Policy.pdf,5,6.2 Daily Allowances,"This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.2 Daily Allowances",,,"### 6.2 Daily Allowances
+
+Meal and incidental allowances are paid per full travel day."
+20261017-213452_file_both,2026-10-17T21:34:59,file,parent,BAAI/bge-small-en-v1.5,3,q5,Exact Terminology,Find the policy section about Sick Leave.,YES,1,0.6141,cleaned_policy::semantic::012::090bcde6,Acme_Corp_IT_and_HR_Policy.pdf,2,2.2 Password and Access Requirements,Acme Corp IT and HR Policy Handbook > 2. IT Equipment and Security > 2.2 Password and Access Requirements,,full,"Do
+not store any customer data on the device until encryption is confirmed.
+## 3. Leave and Time Off
+
+### 3.1 Annual Leave
+
+Full-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per
+calendar year. Up to 5 unused days may be carried forward into the first quarter of the following
+year; any remaining days expire on March 31.
+
+### 3.2 Sick Leave
+
+Employees are entitled to 10 days of paid sick leave per year. A medical certificate is required for
+absences longer than 3 consecutive working days.
+
+### 3.3 Requesting Leave
+
+1. Submit the request in the HR portal at least 10 working days in advance for planned leave.
+2. Your manager approves or declines within 3 working days."
+20261017-213452_file_both,2026-10-17T21:34:59,file,parent,BAAI/bge-small-en-v1.5,3,q5,Exact Terminology,Find the policy section about Sick Leave.,YES,2,0.5927,cleaned_policy::semantic::046::89704cbc,Acme_Corp_IT_and_HR_Policy.pdf,7,10. Glossary,"This line is part of a quote, not a heading. > 10. Glossary",,,"SEV – Severity level used to prioritize security incidents (see Section 4.4.1).
+## 11. Contacts
+
+For questions about this policy, contact the People & Technology Office at
+policy@acme-corp.example or the IT Service Desk at extension 4000."
+20261017-213452_file_both,2026-10-17T21:34:59,file,parent,BAAI/bge-small-en-v1.5,3,q5,Exact Terminology,Find the policy section about Sick Leave.,YES,3,0.5789,cleaned_policy::semantic::000::fe52a93c,Acme_Corp_IT_and_HR_Policy.pdf,1,,,,,"[[PAGE 1]]
+# Acme Corp IT and HR Policy Handbook
+
+Document ID: ACME-POL-2026-014 | Version: 4.0 | Owner: People & Technology Office | Last
+Reviewed: 2026-09-01
+This handbook applies to all full-time employees, contractors, and interns of Acme Corp across all
+regional offices. Where local law is stricter than this policy, local law prevails."
+20261017-213452_file_both,2026-10-17T21:34:59,file,parent,BAAI/bge-small-en-v1.5,3,q6,Unsupported,What is the company's parental leave duration?,NO EVIDENCE (expected) - 3 false positives,1,0.6877,cleaned_policy::semantic::012::090bcde6,Acme_Corp_IT_and_HR_Policy.pdf,2,2.2 Password and Access Requirements,Acme Corp IT and HR Policy Handbook > 2. IT Equipment and Security > 2.2 Password and Access Requirements,,,"Do
+not store any customer data on the device until encryption is confirmed.
+## 3. Leave and Time Off
+
+### 3.1 Annual Leave
+
+Full-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per
+calendar year. Up to 5 unused days may be carried forward into the first quarter of the following
+year; any remaining days expire on March 31.
+
+### 3.2 Sick Leave
+
+Employees are entitled to 10 days of paid sick leave per year. A medical certificate is required for
+absences longer than 3 consecutive working days.
+
+### 3.3 Requesting Leave
+
+1. Submit the request in the HR portal at least 10 working days in advance for planned leave.
+2. Your manager approves or declines within 3 working days."
+20261017-213452_file_both,2026-10-17T21:34:59,file,parent,BAAI/bge-small-en-v1.5,3,q6,Unsupported,What is the company's parental leave duration?,NO EVIDENCE (expected) - 3 false positives,2,0.6341,cleaned_policy::semantic::001::d8f71e7d,Acme_Corp_IT_and_HR_Policy.pdf,1,1.1 Eligibility and Philosophy,Acme Corp IT and HR Policy Handbook > 1. Remote Work Policy > 1.1 Eligibility and Philosophy,,,"## 1. Remote Work Policy
+
+### 1.1 Eligibility and Philosophy
+
+Acme Corp believes that great work can happen anywhere, provided that the conditions for focus,
+collaboration, and security are met, and this belief has shaped our hybrid model since 2021 when
+the company first moved away from a mandatory five-day office presence; employees whose roles
+do not require physical access to labs, warehouses, or customer sites are eligible to work remotely
+for up to three days per week after completing their 90-day probation period, although managers
+retain the discretion to request in-office attendance for onboarding sessions, quarterly planning
+events, client workshops, and any situation where in-person collaboration is judged to be materially
+better for the outcome, and employees who wish to work remotely for more than three days per"
+20261017-213452_file_both,2026-10-17T21:34:59,file,parent,BAAI/bge-small-en-v1.5,3,q6,Unsupported,What is the company's parental leave duration?,NO EVIDENCE (expected) - 3 false positives,3,0.6125,cleaned_policy::semantic::043::80d7a4d0,Acme_Corp_IT_and_HR_Policy.pdf,7,9.1 New Joiner Checklist,"This line is part of a quote, not a heading. > 9. Onboarding and Offboarding > 9.1 New Joiner Checklist",,,"4. Meet with their assigned onboarding buddy.
+
+### 9.2 Leaving Acme Corp
+
+Employees who resign must give the notice period stated in their contract. On or before the last
+working day, the departing employee and their manager must ensure that all company equipment is
+returned, all access is revoked, and knowledge is handed over.
+
+Important: Access to all systems is disabled automatically at 18:00 local time on the employee's
+last working day."
+20261017-213452_file_both,2026-10-17T21:35:02,file,child,BAAI/bge-small-en-v1.5,3,q1,Semantic Paraphrase,How many vacation days do employees get each year?,YES,1,0.7372,cleaned_policy::semantic::012::090bcde6::c1,Acme_Corp_IT_and_HR_Policy.pdf,2,3.1 Annual Leave,Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.1 Annual Leave,cleaned_policy::semantic::012::090bcde6,full,"## 3. Leave and Time Off
+
+### 3.1 Annual Leave
+
+Full-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per
+calendar year. Up to 5 unused days may be carried forward into the first quarter of the following
+year; any remaining days expire on March 31."
+20261017-213452_file_both,2026-10-17T21:35:02,file,child,BAAI/bge-small-en-v1.5,3,q1,Semantic Paraphrase,How many vacation days do employees get each year?,YES,2,0.7067,cleaned_policy::semantic::012::090bcde6::c2,Acme_Corp_IT_and_HR_Policy.pdf,2,3.2 Sick Leave,Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.2 Sick Leave,cleaned_policy::semantic::012::090bcde6,,"### 3.2 Sick Leave
+
+Employees are entitled to 10 days of paid sick leave per year. A medical certificate is required for
+absences longer than 3 consecutive working days."
+20261017-213452_file_both,2026-10-17T21:35:02,file,child,BAAI/bge-small-en-v1.5,3,q1,Semantic Paraphrase,How many vacation days do employees get each year?,YES,3,0.6636,cleaned_policy::semantic::007::3c4eada9::c1,Acme_Corp_IT_and_HR_Policy.pdf,1,2.1 Hardware Allowance,Acme Corp IT and HR Policy Handbook > 2. IT Equipment and Security > 2.1 Hardware Allowance,cleaned_policy::semantic::007::3c4eada9,,"## 2. IT Equipment and Security
+
+### 2.1 Hardware Allowance
+
+Each employee receives a one-time hardware allowance at joining and a refresh allowance every
+three years."
+20261017-213452_file_both,2026-10-17T21:35:02,file,child,BAAI/bge-small-en-v1.5,3,q2,Approval Rule,I want to take five consecutive days off. Is manager approval required?,YES,1,0.6683,cleaned_policy::semantic::012::090bcde6::c3,Acme_Corp_IT_and_HR_Policy.pdf,2,3.3 Requesting Leave,Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.3 Requesting Leave,cleaned_policy::semantic::012::090bcde6,full,"### 3.3 Requesting Leave
+
+1. Submit the request in the HR portal at least 10 working days in advance for planned leave.
+2. Your manager approves or declines within 3 working days."
+20261017-213452_file_both,2026-10-17T21:35:02,file,child,BAAI/bge-small-en-v1.5,3,q2,Approval Rule,I want to take five consecutive days off. Is manager approval required?,YES,2,0.6546,cleaned_policy::semantic::013::d7f30abf::c0,Acme_Corp_IT_and_HR_Policy.pdf,2,3.3 Requesting Leave,Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.3 Requesting Leave,cleaned_policy::semantic::013::d7f30abf,partial,3. Update your Slack status and calendar once approved.
+20261017-213452_file_both,2026-10-17T21:35:02,file,child,BAAI/bge-small-en-v1.5,3,q2,Approval Rule,I want to take five consecutive days off. Is manager approval required?,YES,3,0.6296,cleaned_policy::semantic::001::d8f71e7d::c0,Acme_Corp_IT_and_HR_Policy.pdf,1,1.1 Eligibility and Philosophy,Acme Corp IT and HR Policy Handbook > 1. Remote Work Policy > 1.1 Eligibility and Philosophy,cleaned_policy::semantic::001::d8f71e7d,,"## 1. Remote Work Policy
+
+### 1.1 Eligibility and Philosophy
+
+Acme Corp believes that great work can happen anywhere, provided that the conditions for focus,
+collaboration, and security are met, and this belief has shaped our hybrid model since 2021 when
+the company first moved away from a mandatory five-day office presence; employees whose roles
+do not require physical access to labs, warehouses, or customer sites are eligible to work remotely
+for up to three days per week after completing their 90-day probation period, although managers
+retain the discretion to request in-office attendance for onboarding sessions, quarterly planning
+events, client workshops, and any situation where in-person collaboration is judged to be materially
+better for the outcome, and employees who wish to work remotely for more than three days per"
+20261017-213452_file_both,2026-10-17T21:35:02,file,child,BAAI/bge-small-en-v1.5,3,q3,Travel Approval,Who needs to approve an overseas business trip?,PARTIAL,1,0.6816,cleaned_policy::semantic::028::b4be9b9b::c1,Acme_Corp_IT_and_HR_Policy.pdf,5,6.1 Booking Business Travel,"This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.1 Booking Business Travel",cleaned_policy::semantic::028::b4be9b9b,,"## 6. Travel and Expenses
+
+### 6.1 Booking Business Travel
+
+All flights, hotels, and rail travel must be booked through the corporate travel platform so that the
+company can locate and support employees in an emergency."
+20261017-213452_file_both,2026-10-17T21:35:02,file,child,BAAI/bge-small-en-v1.5,3,q3,Travel Approval,Who needs to approve an overseas business trip?,PARTIAL,2,0.6449,cleaned_policy::semantic::029::9aff9182::c0,Acme_Corp_IT_and_HR_Policy.pdf,5,6.1 Booking Business Travel,"This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.1 Booking Business Travel",cleaned_policy::semantic::029::9aff9182,partial,"Economy class is the default for all
+flights; premium economy is permitted for flights longer than 8 hours, and business class requires
+prior written approval from a member of the executive team."
+20261017-213452_file_both,2026-10-17T21:35:02,file,child,BAAI/bge-small-en-v1.5,3,q3,Travel Approval,Who needs to approve an overseas business trip?,PARTIAL,3,0.6297,cleaned_policy::semantic::032::c21461dc::c0,Acme_Corp_IT_and_HR_Policy.pdf,5,6.3 Submitting Expense Claims,"This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.3 Submitting Expense Claims",cleaned_policy::semantic::032::c21461dc,,"Every claim
+requires:
+- An itemized receipt (a credit card statement alone is not sufficient).
+- The business purpose and, for meals, the names of attendees."
+20261017-213452_file_both,2026-10-17T21:35:02,file,child,BAAI/bge-small-en-v1.5,3,q4,Expense Detail,When are receipts required for travel expenses?,YES,1,0.7377,cleaned_policy::semantic::032::c21461dc::c0,Acme_Corp_IT_and_HR_Policy.pdf,5,6.3 Submitting Expense Claims,"This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.3 Submitting Expense Claims",cleaned_policy::semantic::032::c21461dc,full,"Every claim
+requires:
+- An itemized receipt (a credit card statement alone is not sufficient).
+- The business purpose and, for meals, the names of attendees."
+20261017-213452_file_both,2026-10-17T21:35:02,file,child,BAAI/bge-small-en-v1.5,3,q4,Expense Detail,When are receipts required for travel expenses?,YES,2,0.7209,cleaned_policy::semantic::028::b4be9b9b::c1,Acme_Corp_IT_and_HR_Policy.pdf,5,6.1 Booking Business Travel,"This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.1 Booking Business Travel",cleaned_policy::semantic::028::b4be9b9b,,"## 6. Travel and Expenses
+
+### 6.1 Booking Business Travel
+
+All flights, hotels, and rail travel must be booked through the corporate travel platform so that the
+company can locate and support employees in an emergency."
+20261017-213452_file_both,2026-10-17T21:35:02,file,child,BAAI/bge-small-en-v1.5,3,q4,Expense Detail,When are receipts required for travel expenses?,YES,3,0.71,cleaned_policy::semantic::031::5b14006f::c1,Acme_Corp_IT_and_HR_Policy.pdf,5,6.3 Submitting Expense Claims,"This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.3 Submitting Expense Claims",cleaned_policy::semantic::031::5b14006f,partial,"### 6.3 Submitting Expense Claims
+
+Expense claims must be submitted within 30 days of the expense being incurred."
+20261017-213452_file_both,2026-10-17T21:35:02,file,child,BAAI/bge-small-en-v1.5,3,q5,Exact Terminology,Find the policy section about Sick Leave.,YES,1,0.6616,cleaned_policy::semantic::012::090bcde6::c2,Acme_Corp_IT_and_HR_Policy.pdf,2,3.2 Sick Leave,Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.2 Sick Leave,cleaned_policy::semantic::012::090bcde6,full,"### 3.2 Sick Leave
+
+Employees are entitled to 10 days of paid sick leave per year. A medical certificate is required for
+absences longer than 3 consecutive working days."
+20261017-213452_file_both,2026-10-17T21:35:02,file,child,BAAI/bge-small-en-v1.5,3,q5,Exact Terminology,Find the policy section about Sick Leave.,YES,2,0.562,cleaned_policy::semantic::001::d8f71e7d::c0,Acme_Corp_IT_and_HR_Policy.pdf,1,1.1 Eligibility and Philosophy,Acme Corp IT and HR Policy Handbook > 1. Remote Work Policy > 1.1 Eligibility and Philosophy,cleaned_policy::semantic::001::d8f71e7d,,"## 1. Remote Work Policy
+
+### 1.1 Eligibility and Philosophy
+
+Acme Corp believes that great work can happen anywhere, provided that the conditions for focus,
+collaboration, and security are met, and this belief has shaped our hybrid model since 2021 when
+the company first moved away from a mandatory five-day office presence; employees whose roles
+do not require physical access to labs, warehouses, or customer sites are eligible to work remotely
+for up to three days per week after completing their 90-day probation period, although managers
+retain the discretion to request in-office attendance for onboarding sessions, quarterly planning
+events, client workshops, and any situation where in-person collaboration is judged to be materially
+better for the outcome, and employees who wish to work remotely for more than three days per"
+20261017-213452_file_both,2026-10-17T21:35:02,file,child,BAAI/bge-small-en-v1.5,3,q5,Exact Terminology,Find the policy section about Sick Leave.,YES,3,0.561,cleaned_policy::semantic::046::89704cbc::c1,Acme_Corp_IT_and_HR_Policy.pdf,7,11. Contacts,"This line is part of a quote, not a heading. > 11. Contacts",cleaned_policy::semantic::046::89704cbc,,"## 11. Contacts
+
+For questions about this policy, contact the People & Technology Office at
+policy@acme-corp.example or the IT Service Desk at extension 4000."
+20261017-213452_file_both,2026-10-17T21:35:02,file,child,BAAI/bge-small-en-v1.5,3,q6,Unsupported,What is the company's parental leave duration?,NO EVIDENCE (expected) - 3 false positives,1,0.7002,cleaned_policy::semantic::012::090bcde6::c1,Acme_Corp_IT_and_HR_Policy.pdf,2,3.1 Annual Leave,Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.1 Annual Leave,cleaned_policy::semantic::012::090bcde6,,"## 3. Leave and Time Off
+
+### 3.1 Annual Leave
+
+Full-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per
+calendar year. Up to 5 unused days may be carried forward into the first quarter of the following
+year; any remaining days expire on March 31."
+20261017-213452_file_both,2026-10-17T21:35:02,file,child,BAAI/bge-small-en-v1.5,3,q6,Unsupported,What is the company's parental leave duration?,NO EVIDENCE (expected) - 3 false positives,2,0.6499,cleaned_policy::semantic::012::090bcde6::c2,Acme_Corp_IT_and_HR_Policy.pdf,2,3.2 Sick Leave,Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.2 Sick Leave,cleaned_policy::semantic::012::090bcde6,,"### 3.2 Sick Leave
+
+Employees are entitled to 10 days of paid sick leave per year. A medical certificate is required for
+absences longer than 3 consecutive working days."
+20261017-213452_file_both,2026-10-17T21:35:02,file,child,BAAI/bge-small-en-v1.5,3,q6,Unsupported,What is the company's parental leave duration?,NO EVIDENCE (expected) - 3 false positives,3,0.6404,cleaned_policy::semantic::012::090bcde6::c3,Acme_Corp_IT_and_HR_Policy.pdf,2,3.3 Requesting Leave,Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.3 Requesting Leave,cleaned_policy::semantic::012::090bcde6,,"### 3.3 Requesting Leave
+
+1. Submit the request in the HR portal at least 10 working days in advance for planned leave.
+2. Your manager approves or declines within 3 working days."

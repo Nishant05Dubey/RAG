@@ -1,0 +1,338 @@
+[[PAGE 1]]
+             Acme Corp IT and HR Policy Handbook
+
+Document ID: ACME-POL-2026-014 | Version: 4.0 | Owner: People & Technology Office | Last
+Reviewed: 2026-09-01
+This handbook applies to all full-time employees, contractors, and interns of Acme Corp across all
+regional offices. Where local law is stricter than this policy, local law prevails.
+1. Remote Work Policy
+
+1.1 Eligibility and Philosophy
+
+Acme Corp believes that great work can happen anywhere, provided that the conditions for focus,
+collaboration, and security are met, and this belief has shaped our hybrid model since 2021 when
+the company first moved away from a mandatory five-day office presence; employees whose roles
+do not require physical access to labs, warehouses, or customer sites are eligible to work remotely
+for up to three days per week after completing their 90-day probation period, although managers
+retain the discretion to request in-office attendance for onboarding sessions, quarterly planning
+events, client workshops, and any situation where in-person collaboration is judged to be materially
+better for the outcome, and employees who wish to work remotely for more than three days per
+week, or from a country other than their country of employment for longer than 14 consecutive
+calendar days, must submit a Remote Work Exception Request through the HR portal at least 30
+days in advance so that Legal, Payroll, and Information Security can assess tax residency,
+data-protection, and export-control implications before approval is granted.
+
+1.2 Remote Work Rules
+
+All remote employees must follow these rules at all times:
+ Work only from a private, secure location; public spaces such as cafés and airports are permitted
+for a maximum of 2 hours per day.
+ Always connect through the corporate VPN (Acme GlobalConnect) before accessing internal
+systems.
+ Never leave a company laptop unattended and unlocked, even at home.
+ Be reachable on Slack and email during your team's core hours (10:00–15:00 local time).
+ Report any lost or stolen device to the IT Service Desk within 1 hour of noticing.
+ After hours, call the 24/7 security hotline at extension 4357.
+ Do not print confidential documents on personal or shared printers.
+2. IT Equipment and Security
+
+2.1 Hardware Allowance
+
+Each employee receives a one-time hardware allowance at joining and a refresh allowance every
+three years. Amounts depend on role category:
+                                               Monitor
+                        Laptop Budget          Allowance              Accessories
+ Role Category          (USD)                  (USD)                  (USD)                  Refresh Cycle
+ Engineering &
+ Data                   2,500                  600                    250                    3 years
+ Design &
+ Creative               2,800                  900                    300                    3 years
+
+[[PAGE 2]]
+                                              Monitor
+                        Laptop Budget         Allowance              Accessories
+ Role Category          (USD)                 (USD)                  (USD)                  Refresh Cycle
+ Sales &
+ Marketing              1,600                 300                    150                    3 years
+ Operations &
+ Support                1,400                 300                    100                    4 years
+
+Unused allowance does not roll over and cannot be converted to cash. Purchases above the
+allowance require written approval from a department head.
+
+2.2 Password and Access Requirements
+
+Passwords for corporate accounts must be at least 14 characters long and must not be reused
+across systems. Multi-factor authentication (MFA) is mandatory for email, VPN, the HR portal, and
+all production systems.
+To check your laptop's encryption status, IT recommends running the following command:
+         # Check FileVault status on macOS
+         fdesetup status
+         # Expected output: FileVault is On.
+Note: If the output says FileVault is Off, open a P2 ticket with the IT Service Desk immediately. Do
+not store any customer data on the device until encryption is confirmed.
+3. Leave and Time Off
+
+3.1 Annual Leave
+
+Full-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per
+calendar year. Up to 5 unused days may be carried forward into the first quarter of the following
+year; any remaining days expire on March 31.
+
+3.2 Sick Leave
+
+Employees are entitled to 10 days of paid sick leave per year. A medical certificate is required for
+absences longer than 3 consecutive working days.
+
+3.3 Requesting Leave
+
+1. Submit the request in the HR portal at least 10 working days in advance for planned leave.
+2. Your manager approves or declines within 3 working days.
+3. Update your Slack status and calendar once approved.
+4. Information Security and Acceptable Use
+
+4.1 Data Classification
+
+All information created, received, or stored by Acme Corp must be assigned one of four
+classification levels by its owner. When in doubt, classify one level higher and ask the Information
+Security team to review.
+ Level                  Label                 Examples               Storage Allowed        External Sharing
+                                              Press releases,
+                                              published blog         Any approved
+ L1                     Public                posts, job ads         system                 Allowed
+
+[[PAGE 3]]
+ Level                   Label                   Examples                Storage Allowed         External Sharing
+                                                 Org charts, this
+                                                 handbook,               Corporate
+                                                 internal wiki           Google Drive,
+ L2                      Internal                pages                   Notion                  Only under NDA
+                                                 Customer
+                                                 contracts, salary       Restricted Drive        Requires Legal
+ L3                      Confidential            data, roadmaps          folders only            approval
+                                                 Customer PII,
+                                                 payment data,           Approved vault
+ L4                      Restricted              security keys           or encrypted DB         Never
+
+Documents labelled L3 or L4 must display the classification in the file name or document header
+(for example, ROADMAP-2027_L3.pdf).
+
+4.2 Acceptable Use of Company Systems
+
+Company laptops, accounts, networks, and software licenses are provided primarily for business
+purposes, and while Acme Corp permits limited, reasonable personal use such as checking
+personal email during a lunch break, reading the news, or making a short personal video call, this
+privilege must never interfere with work responsibilities, consume significant bandwidth or storage,
+expose the company to legal or reputational risk, or involve activities such as cryptocurrency
+mining, torrenting copyrighted material, operating a personal business, accessing gambling or adult
+content, or installing browser extensions and desktop applications that have not been approved by
+IT; employees should also understand that all activity on company-managed devices and networks
+may be logged and monitored in accordance with applicable law for the purposes of security,
+compliance, and incident investigation, that monitoring is performed by the Information Security
+team under documented procedures with access restricted to authorized personnel, and that
+employees should therefore have no expectation of privacy for personal data they choose to store
+on company systems, which is why we strongly recommend keeping personal files, photos, and
+passwords on personal devices and accounts instead.
+
+4.3 Prohibited Activities
+
+The following are strictly prohibited and may result in disciplinary action up to and including
+termination:
+ Sharing your credentials with anyone, including colleagues and IT staff.
+ IT will never ask for your password by email, chat, or phone.
+ Disabling or bypassing endpoint protection, disk encryption, or the VPN.
+ Forwarding L3 or L4 data to personal email accounts or messaging apps.
+ Uploading customer data or source code into unapproved AI tools or public code-sharing sites.
+ Approved AI tools are listed on the IT wiki page Approved AI Tools Register.
+ If a tool is not on the register, submit a request using the form described in Section 5.2.
+ Connecting unknown USB storage devices to company equipment.
+ Using company resources to harass, threaten, or discriminate against anyone.
+
+4.4 Reporting a Security Incident
+
+If you suspect a phishing email, malware infection, data leak, or unauthorized access, report it
+immediately. Speed matters more than certainty; we would rather investigate ten false alarms than
+miss one real incident.
+
+[[PAGE 4]]
+4.4.1 Severity Matrix
+
+ Severity                     Description                  Example                       Response Target
+                              Active breach or
+                              confirmed data               Customer database
+ SEV-1                        exposure                     visible on the internet       15 minutes
+                                                           Laptop showing
+                              Likely compromise of         ransomware
+ SEV-2                        a user or system             message                       1 hour
+                                                           Phishing email
+                              Suspicious activity,         clicked, no data
+ SEV-3                        no confirmed impact          entered                       4 hours
+                              Policy violation with        Unapproved browser
+ SEV-4                        no security impact           extension installed           2 working days
+
+Remember: Do not attempt to investigate, delete evidence, or "clean up" a suspected incident
+yourself.
+# This line is part of a quote, not a heading.
+Disconnect from the network and wait for instructions from the Security team.
+5. Software and SaaS Procurement
+
+5.1 Approved Software
+
+The IT team maintains a catalogue of pre-approved software that any employee can install through
+the self-service portal without additional approval. This includes office productivity suites, approved
+browsers, password managers, communication tools, and common developer tools such as Git,
+Docker Desktop, and VS Code.
+
+5.2 Requesting New Software
+
+To request software that is not in the catalogue, follow these steps:
+1. Search the catalogue first to confirm no approved alternative exists.
+2. Submit a Software Request ticket that includes:
+1. The business purpose and the expected number of users.
+2. The vendor name and a link to its security or trust page.
+3. The classification level of the data the tool will process.
+3. Information Security completes a vendor risk review within 10 working days.
+4. If the tool will process L3 or L4 data, Legal reviews the vendor's data processing agreement.
+5. Procurement negotiates the contract and IT provisions licenses through single sign-on (SSO).
+Free trials and "freemium" tools are not exempt from this process if they will process any company
+data.
+
+5.3 Software License Costs
+
+Annual license costs are charged to the requesting department's budget. The approval thresholds
+are:
+ Annual Cost (USD)                                         Approver
+ Under 1,000                                               Team manager
+
+[[PAGE 5]]
+ Annual Cost (USD)                                        Approver
+ 1,000 – 10,000                                           Department head
+ 10,001 – 50,000                                          Department head + Finance
+ Over 50,000                                              CFO and CTO (joint approval)
+6. Travel and Expenses
+
+6.1 Booking Business Travel
+
+All flights, hotels, and rail travel must be booked through the corporate travel platform so that the
+company can locate and support employees in an emergency. Economy class is the default for all
+flights; premium economy is permitted for flights longer than 8 hours, and business class requires
+prior written approval from a member of the executive team.
+
+6.2 Daily Allowances
+
+Meal and incidental allowances are paid per full travel day. Partial days (departure and return) are
+paid at 75% of the daily rate.
+                                                                                       Hotel Cap
+ Region                       Meals (USD/day)             Incidentals (USD/day)        (USD/night)
+ North America                75                          15                           250
+ Western Europe               70                          15                           220
+ India                        40                          10                           130
+ Southeast Asia               45                          10                           150
+ Major hubs (NYC,
+ London, SF)                  90                          20                           350
+
+6.3 Submitting Expense Claims
+
+Expense claims must be submitted within 30 days of the expense being incurred. Every claim
+requires:
+ An itemized receipt (a credit card statement alone is not sufficient).
+ The business purpose and, for meals, the names of attendees.
+ The correct cost center code.
+Claims submitted more than 90 days late will not be reimbursed except in exceptional
+circumstances approved by Finance. Alcohol is reimbursable only at client entertainment events
+and is capped at two drinks per person.
+7. Code of Conduct
+
+7.1 Respectful Workplace
+
+Acme Corp is committed to a workplace free from harassment, discrimination, and retaliation. This
+commitment applies in offices, at client sites, at company events, during business travel, and in all
+digital channels including Slack, email, and video calls. Behaviour that would be inappropriate in a
+meeting room is equally inappropriate in a direct message.
+
+7.2 Conflicts of Interest
+
+[[PAGE 6]]
+Employees must disclose any situation in which their personal interests could conflict, or appear to
+conflict, with the interests of Acme Corp. Common examples include:
+ Holding a financial interest in a supplier, customer, or competitor.
+ Hiring or directly managing a close family member or partner.
+ Accepting a second job or board position with a company in a related industry.
+ Accepting gifts or hospitality worth more than USD 100 from a current or prospective business
+partner.
+Disclosures are made through the Conflict of Interest form in the HR portal and are reviewed
+confidentially by HR and Legal. Disclosing a conflict is not a violation; failing to disclose one is.
+
+7.3 Speaking Up
+
+Employees who witness or suspect a breach of this handbook, the law, or our values are
+encouraged to raise it with their manager, HR, or Legal. Reports can also be made anonymously
+through the independent Ethics Hotline, which is available 24/7 in 12 languages. Acme Corp strictly
+prohibits retaliation against anyone who raises a concern in good faith.
+8. Performance and Development
+
+8.1 Review Cycle
+
+Performance reviews take place twice a year, in March and September. Each review consists of a
+self-assessment, peer feedback from at least two colleagues, and a manager assessment. Ratings
+use a five-point scale:
+ Rating                                 Label                                  Meaning
+                                                                               Consistently exceeds
+                                                                               expectations and raises the
+ 5                                      Exceptional                            bar
+                                                                               Frequently exceeds
+ 4                                      Strong                                 expectations in key areas
+                                                                               Fully meets the expectations
+ 3                                      Solid                                  of the role
+                                                                               Meets some expectations;
+ 2                                      Developing                             improvement plan agreed
+                                                                               Does not meet expectations;
+ 1                                      Not Meeting                            formal support plan required
+
+8.2 Learning Budget
+
+Every full-time employee receives an annual learning budget of USD 1,200, which can be spent on
+courses, certifications, conference tickets, and books related to their current role or a realistic future
+role at Acme Corp. Unused budget does not carry over. Employees who receive more than USD
+3,000 in sponsored certification costs in a single year agree to a pro-rated repayment if they resign
+voluntarily within 12 months of completion.
+9. Onboarding and Offboarding
+
+9.1 New Joiner Checklist
+
+During their first week, every new employee must complete the following:
+1. Sign the employment contract, NDA, and this handbook acknowledgement.
+
+[[PAGE 7]]
+2. Collect and set up company hardware:
+ Enable disk encryption (see Section 2.2).
+ Enroll the device in mobile device management (MDM).
+ Install the corporate VPN client.
+3. Complete mandatory training modules:
+ Security Awareness (45 minutes).
+ Data Protection and Privacy (30 minutes).
+ Respectful Workplace (30 minutes).
+4. Meet with their assigned onboarding buddy.
+
+9.2 Leaving Acme Corp
+
+Employees who resign must give the notice period stated in their contract. On or before the last
+working day, the departing employee and their manager must ensure that all company equipment is
+returned, all access is revoked, and knowledge is handed over.
+
+Important: Access to all systems is disabled automatically at 18:00 local time on the employee's
+last working day. Personal files must be removed from company devices before this time.
+10. Glossary
+
+MFA – Multi-factor authentication; logging in with a password plus a second factor such as an
+authenticator app.
+MDM – Mobile device management; software that lets IT secure and update company devices
+remotely.
+SSO – Single sign-on; one corporate login used to access many approved applications.
+PII – Personally identifiable information, such as names, addresses, phone numbers, or ID
+numbers.
+SEV – Severity level used to prioritize security incidents (see Section 4.4.1).
+11. Contacts
+
+For questions about this policy, contact the People & Technology Office at
+policy@acme-corp.example or the IT Service Desk at extension 4000.

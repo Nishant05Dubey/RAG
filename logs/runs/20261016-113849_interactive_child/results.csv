@@ -1,0 +1,20 @@
+﻿run_id,timestamp,mode,index,model,top_k,id,category,question,status,rank,similarity_score,chunk_id,document,pages,section,section_path,parent_chunk_id,relevance,chunk_text
+20261016-113849_interactive_child,2026-10-16T11:43:35,interactive,child,BAAI/bge-small-en-v1.5,3,adhoc1,Ad hoc,How many vacation days do employees get each year? Expected evidence: annual leave entitlement even if the document uses 'annual leave' rather than 'vacation'.,UNGRADED,1,0.7694,cleaned_policy::semantic::012::090bcde6::c1,Acme_Corp_IT_and_HR_Policy.pdf,2,3.1 Annual Leave,Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.1 Annual Leave,cleaned_policy::semantic::012::090bcde6,,"## 3. Leave and Time Off
+
+### 3.1 Annual Leave
+
+Full-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per
+calendar year. Up to 5 unused days may be carried forward into the first quarter of the following
+year; any remaining days expire on March 31."
+20261016-113849_interactive_child,2026-10-16T11:43:35,interactive,child,BAAI/bge-small-en-v1.5,3,adhoc1,Ad hoc,How many vacation days do employees get each year? Expected evidence: annual leave entitlement even if the document uses 'annual leave' rather than 'vacation'.,UNGRADED,2,0.7084,cleaned_policy::semantic::012::090bcde6::c2,Acme_Corp_IT_and_HR_Policy.pdf,2,3.2 Sick Leave,Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.2 Sick Leave,cleaned_policy::semantic::012::090bcde6,,"### 3.2 Sick Leave
+
+Employees are entitled to 10 days of paid sick leave per year. A medical certificate is required for
+absences longer than 3 consecutive working days."
+20261016-113849_interactive_child,2026-10-16T11:43:35,interactive,child,BAAI/bge-small-en-v1.5,3,adhoc1,Ad hoc,How many vacation days do employees get each year? Expected evidence: annual leave entitlement even if the document uses 'annual leave' rather than 'vacation'.,UNGRADED,3,0.6552,cleaned_policy::semantic::043::80d7a4d0::c1,Acme_Corp_IT_and_HR_Policy.pdf,7,9.2 Leaving Acme Corp,"This line is part of a quote, not a heading. > 9. Onboarding and Offboarding > 9.2 Leaving Acme Corp",cleaned_policy::semantic::043::80d7a4d0,,"### 9.2 Leaving Acme Corp
+
+Employees who resign must give the notice period stated in their contract. On or before the last
+working day, the departing employee and their manager must ensure that all company equipment is
+returned, all access is revoked, and knowledge is handed over.
+
+Important: Access to all systems is disabled automatically at 18:00 local time on the employee's
+last working day."

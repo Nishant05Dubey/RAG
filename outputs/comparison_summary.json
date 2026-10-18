@@ -1,0 +1,35 @@
+{
+  "fixed_length": {
+    "chunks": 64,
+    "min_chars": 141,
+    "max_chars": 300,
+    "avg_chars": 290,
+    "orphan_headings": 2,
+    "broken_table_chunks": 0,
+    "chunks_cut_mid_word": 50,
+    "duplicated_chars": 0,
+    "duplication_pct": 0.0
+  },
+  "sliding_window": {
+    "chunks": 66,
+    "min_chars": 89,
+    "max_chars": 943,
+    "avg_chars": 345,
+    "orphan_headings": 6,
+    "broken_table_chunks": 0,
+    "chunks_cut_mid_word": 0,
+    "duplicated_chars": 3724,
+    "duplication_pct": 16.4
+  },
+  "semantic": {
+    "chunks": 47,
+    "min_chars": 85,
+    "max_chars": 881,
+    "avg_chars": 404,
+    "orphan_headings": 0,
+    "broken_table_chunks": 0,
+    "chunks_cut_mid_word": 0,
+    "duplicated_chars": 0,
+    "duplication_pct": 0.0
+  }
+}

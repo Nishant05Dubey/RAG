@@ -1,0 +1,25 @@
+# Local Python environment (recreate with: pip install -r requirements.txt)
+.venv/
+venv/
+env/
+
+# Python bytecode and tool caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Credentials (none are needed, but never commit them)
+.env
+
+# Editor / OS clutter
+*.tmp
+*.swp
+~$*
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# NOTE: data/, outputs/, logs/ and reports/ are deliberately NOT ignored.
+# They hold the source PDF, the Day 05 chunks and the Day 06 results.

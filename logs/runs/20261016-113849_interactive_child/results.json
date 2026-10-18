@@ -1,0 +1,70 @@
+[
+  {
+    "run_id": "20261016-113849_interactive_child",
+    "timestamp": "2026-10-16T11:43:35",
+    "mode": "interactive",
+    "model": "BAAI/bge-small-en-v1.5",
+    "metric": "cosine",
+    "index": "child",
+    "num_chunks": 69,
+    "chunks_path": "C:\\Users\\NishantDubey\\OneDrive - Blend 360\\Desktop\\Day 4 Rag\\day05-chunking\\outputs\\metadata_semantic.json",
+    "document": "Acme Corp IT and HR Policy Handbook",
+    "document_id": "ACME-POL-2026-014",
+    "top_k": 3,
+    "id": "adhoc1",
+    "category": "Ad hoc",
+    "question": "How many vacation days do employees get each year? Expected evidence: annual leave entitlement even if the document uses 'annual leave' rather than 'vacation'.",
+    "unsupported": false,
+    "evaluation": null,
+    "results": [
+      {
+        "rank": 1,
+        "similarity_score": 0.7694,
+        "chunk_id": "cleaned_policy::semantic::012::090bcde6::c1",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            2
+          ],
+          "section": "3.1 Annual Leave",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.1 Annual Leave",
+          "parent_chunk_id": "cleaned_policy::semantic::012::090bcde6"
+        },
+        "chunk_text": "## 3. Leave and Time Off\n\n### 3.1 Annual Leave\n\nFull-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per\ncalendar year. Up to 5 unused days may be carried forward into the first quarter of the following\nyear; any remaining days expire on March 31."
+      },
+      {
+        "rank": 2,
+        "similarity_score": 0.7084,
+        "chunk_id": "cleaned_policy::semantic::012::090bcde6::c2",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            2
+          ],
+          "section": "3.2 Sick Leave",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.2 Sick Leave",
+          "parent_chunk_id": "cleaned_policy::semantic::012::090bcde6"
+        },
+        "chunk_text": "### 3.2 Sick Leave\n\nEmployees are entitled to 10 days of paid sick leave per year. A medical certificate is required for\nabsences longer than 3 consecutive working days."
+      },
+      {
+        "rank": 3,
+        "similarity_score": 0.6552,
+        "chunk_id": "cleaned_policy::semantic::043::80d7a4d0::c1",
+        "source": {
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            7
+          ],
+          "section": "9.2 Leaving Acme Corp",
+          "section_path": "This line is part of a quote, not a heading. > 9. Onboarding and Offboarding > 9.2 Leaving Acme Corp",
+          "parent_chunk_id": "cleaned_policy::semantic::043::80d7a4d0"
+        },
+        "chunk_text": "### 9.2 Leaving Acme Corp\n\nEmployees who resign must give the notice period stated in their contract. On or before the last\nworking day, the departing employee and their manager must ensure that all company equipment is\nreturned, all access is revoked, and knowledge is handed over.\n\nImportant: Access to all systems is disabled automatically at 18:00 local time on the employee's\nlast working day."
+      }
+    ]
+  }
+]

@@ -1,0 +1,44 @@
+Day 05 - Chunking Recommendation
+
+Measured results
+----------------
+Fixed-length:
+  64 chunks
+  50 chunks flagged for mid-word cuts
+  0 chunks flagged for table problems
+
+Sliding window:
+  66 chunks
+  3724 duplicated characters
+  16.4% duplication by the script's definition
+
+TF-IDF lexical topic-shift:
+  47 chunks
+  0 chunks flagged for table problems
+  Maximum chunk size: 881 characters
+
+Recommendation
+--------------
+For this structured policy, provisionally take the TF-IDF lexical
+approach forward if visual inspection confirms that tables, headings,
+and rule relationships remain understandable.
+
+It can preserve recognized tables and code blocks, and it selects
+boundaries using lexical topic changes. However, its size limits,
+threshold, and text-segmentation rules affect the result.
+
+Fixed-length is a useful simple baseline, but it can cut words and
+separate rules from their context.
+
+Sliding windows avoid mid-word cuts and repeat boundary context, but
+they duplicate text and can still split tables or nested lists.
+
+Limitations
+-----------
+The third method approximates topic changes; it does not establish
+semantic understanding. Protected tables/code may exceed 900 chars.
+Quality flags are heuristics, not proof of completeness.
+No retrieval effectiveness was measured.
+
+Inspect the same hardware, remote-work, and long-paragraph sections
+in comparison_console.txt before finalizing this recommendation.

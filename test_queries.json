@@ -1,0 +1,60 @@
+[
+  {
+    "id": "q1",
+    "category": "Semantic Paraphrase",
+    "question": "How many vacation days do employees get each year?",
+    "expected_evidence": "Annual leave entitlement (3.1 Annual Leave: 21 days per calendar year)",
+    "evidence_phrases": ["21 days per"],
+    "partial_phrases": [],
+    "expected_section": "3.1 Annual Leave"
+  },
+  {
+    "id": "q2",
+    "category": "Approval Rule",
+    "question": "I want to take five consecutive days off. Is manager approval required?",
+    "expected_evidence": "3.3 Requesting Leave, step 2: \"Your manager approves or declines within 3 working days.\" (step 1: \"Submit the request in the HR portal at least 10 working days in advance for planned leave.\")",
+    "notes": "Verified in the PDF: no rule makes approval depend on leave length; there is no 'more than 3 consecutive days' approval rule. Step 2 is the only leave-approval statement: it says the manager decides on the request AND sets a 3-working-day response time; it does not use the word 'required'. Distractor: 3.2 'A medical certificate is required for absences longer than 3 consecutive working days.' is a sick-leave certificate rule, not an approval rule.",
+    "evidence_phrases": ["Your manager approves or declines"],
+    "partial_phrases": ["once approved"],
+    "distractor_phrases": ["longer than 3 consecutive working days"],
+    "expected_section": "3.3 Requesting Leave"
+  },
+  {
+    "id": "q3",
+    "category": "Travel Approval",
+    "question": "Who needs to approve an overseas business trip?",
+    "expected_evidence": "None: the PDF has no overseas/international trip approval rule. Closest related rule, 6.1 Booking Business Travel: \"business class requires prior written approval from a member of the executive team.\"",
+    "notes": "Verified in the PDF (text-only, no images): 'overseas', 'international', 'abroad', 'foreign', 'visa' and 'trip' each occur 0 times. PARTIAL is the best achievable grade and means only that the closest related approval rule (cabin class, not the trip) was retrieved; the question itself is not answerable from this corpus. Distractor: the 5.3 software-licence approval table (Team manager ... 'CFO and CTO (joint approval)'). Also not evidence: 1.1 remote work from 'a country other than their country of employment for longer than 14 consecutive calendar days' (remote work, not business travel).",
+    "evidence_phrases": [],
+    "partial_phrases": ["business class requires"],
+    "distractor_phrases": ["CFO and CTO (joint approval)"],
+    "expected_section": "6.1 Booking Business Travel"
+  },
+  {
+    "id": "q4",
+    "category": "Expense Detail",
+    "question": "When are receipts required for travel expenses?",
+    "expected_evidence": "6.3 Submitting Expense Claims: \"Every claim requires: An itemized receipt (a credit card statement alone is not sufficient).\"",
+    "notes": "Verified in the PDF: there is no dollar threshold for receipts (no '$' amounts; 'receipt' occurs once). A receipt is required for every claim. Partial = the 6.3 deadline \"Expense claims must be submitted within 30 days of the expense being incurred.\" The 'Every claim requires' list continues in Day 05 chunk 033 (\"The correct cost center code.\").",
+    "evidence_phrases": ["itemized receipt"],
+    "partial_phrases": ["Expense claims must be submitted"],
+    "expected_section": "6.3 Submitting Expense Claims"
+  },
+  {
+    "id": "q5",
+    "category": "Exact Terminology",
+    "question": "Find the policy section about Sick Leave.",
+    "expected_evidence": "The '3.2 Sick Leave' section header, not general health or policy text",
+    "evidence_phrases": ["### 3.2 Sick Leave"],
+    "partial_phrases": [],
+    "expected_section": "3.2 Sick Leave"
+  },
+  {
+    "id": "q6",
+    "category": "Unsupported",
+    "question": "What is the company's parental leave duration?",
+    "expected_evidence": "None (unsupported negative control)",
+    "notes": "Verified in the PDF: 'parental', 'maternity', 'paternity', 'family leave', 'adoption' and 'birth' each occur 0 times. Every hit is a false positive, whatever its similarity score.",
+    "unsupported": true
+  }
+]

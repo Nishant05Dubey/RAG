@@ -1,0 +1,192 @@
+{
+  "summary": {
+    "parent": {
+      "queries": 6,
+      "graded": 6,
+      "evidence_at_rank_1": "4/4",
+      "labels_correct": "2/5",
+      "mean_margin": 0.0406,
+      "unsupported_separation": -0.0736,
+      "distractor_in_top_k": "2/2"
+    },
+    "child": {
+      "queries": 6,
+      "graded": 6,
+      "evidence_at_rank_1": "4/4",
+      "labels_correct": "5/5",
+      "mean_margin": 0.0464,
+      "unsupported_separation": -0.0386,
+      "distractor_in_top_k": "0/2"
+    }
+  },
+  "per_query": [
+    {
+      "id": "q1",
+      "question": "How many vacation days do employees get each year?",
+      "parent": {
+        "status": "YES",
+        "evidence_rank": 1,
+        "partial_rank": null,
+        "margin": 0.0527,
+        "top1_score": 0.6811,
+        "top1_chunk": "cleaned_policy::semantic::012::090bcde6",
+        "top1_section": "2.2 Password and Access Requirements",
+        "label_correct": false,
+        "distractor_rank": null,
+        "distractor_in_top_k": null
+      },
+      "child": {
+        "status": "YES",
+        "evidence_rank": 1,
+        "partial_rank": null,
+        "margin": 0.0306,
+        "top1_score": 0.7372,
+        "top1_chunk": "cleaned_policy::semantic::012::090bcde6::c1",
+        "top1_section": "3.1 Annual Leave",
+        "label_correct": true,
+        "distractor_rank": null,
+        "distractor_in_top_k": null
+      }
+    },
+    {
+      "id": "q2",
+      "question": "I want to take five consecutive days off. Is manager approval required?",
+      "parent": {
+        "status": "YES",
+        "evidence_rank": 1,
+        "partial_rank": 11,
+        "margin": 0.028,
+        "top1_score": 0.6575,
+        "top1_chunk": "cleaned_policy::semantic::012::090bcde6",
+        "top1_section": "2.2 Password and Access Requirements",
+        "label_correct": false,
+        "distractor_rank": 1,
+        "distractor_in_top_k": true
+      },
+      "child": {
+        "status": "YES",
+        "evidence_rank": 1,
+        "partial_rank": 2,
+        "margin": 0.0387,
+        "top1_score": 0.6683,
+        "top1_chunk": "cleaned_policy::semantic::012::090bcde6::c3",
+        "top1_section": "3.3 Requesting Leave",
+        "label_correct": true,
+        "distractor_rank": 13,
+        "distractor_in_top_k": false
+      }
+    },
+    {
+      "id": "q3",
+      "question": "Who needs to approve an overseas business trip?",
+      "parent": {
+        "status": "PARTIAL",
+        "evidence_rank": null,
+        "partial_rank": 2,
+        "margin": null,
+        "top1_score": 0.7147,
+        "top1_chunk": "cleaned_policy::semantic::028::b4be9b9b",
+        "top1_section": "5.3 Software License Costs",
+        "label_correct": true,
+        "distractor_rank": 1,
+        "distractor_in_top_k": true
+      },
+      "child": {
+        "status": "PARTIAL",
+        "evidence_rank": null,
+        "partial_rank": 2,
+        "margin": null,
+        "top1_score": 0.6816,
+        "top1_chunk": "cleaned_policy::semantic::028::b4be9b9b::c1",
+        "top1_section": "6.1 Booking Business Travel",
+        "label_correct": true,
+        "distractor_rank": 4,
+        "distractor_in_top_k": false
+      }
+    },
+    {
+      "id": "q4",
+      "question": "When are receipts required for travel expenses?",
+      "parent": {
+        "status": "YES",
+        "evidence_rank": 1,
+        "partial_rank": 2,
+        "margin": 0.0603,
+        "top1_score": 0.7377,
+        "top1_chunk": "cleaned_policy::semantic::032::c21461dc",
+        "top1_section": "6.3 Submitting Expense Claims",
+        "label_correct": true,
+        "distractor_rank": null,
+        "distractor_in_top_k": null
+      },
+      "child": {
+        "status": "YES",
+        "evidence_rank": 1,
+        "partial_rank": 3,
+        "margin": 0.0168,
+        "top1_score": 0.7377,
+        "top1_chunk": "cleaned_policy::semantic::032::c21461dc::c0",
+        "top1_section": "6.3 Submitting Expense Claims",
+        "label_correct": true,
+        "distractor_rank": null,
+        "distractor_in_top_k": null
+      }
+    },
+    {
+      "id": "q5",
+      "question": "Find the policy section about Sick Leave.",
+      "parent": {
+        "status": "YES",
+        "evidence_rank": 1,
+        "partial_rank": null,
+        "margin": 0.0214,
+        "top1_score": 0.6141,
+        "top1_chunk": "cleaned_policy::semantic::012::090bcde6",
+        "top1_section": "2.2 Password and Access Requirements",
+        "label_correct": false,
+        "distractor_rank": null,
+        "distractor_in_top_k": null
+      },
+      "child": {
+        "status": "YES",
+        "evidence_rank": 1,
+        "partial_rank": null,
+        "margin": 0.0997,
+        "top1_score": 0.6616,
+        "top1_chunk": "cleaned_policy::semantic::012::090bcde6::c2",
+        "top1_section": "3.2 Sick Leave",
+        "label_correct": true,
+        "distractor_rank": null,
+        "distractor_in_top_k": null
+      }
+    },
+    {
+      "id": "q6",
+      "question": "What is the company's parental leave duration?",
+      "parent": {
+        "status": "NO EVIDENCE (expected) - 3 false positives",
+        "evidence_rank": null,
+        "partial_rank": null,
+        "margin": null,
+        "top1_score": 0.6877,
+        "top1_chunk": "cleaned_policy::semantic::012::090bcde6",
+        "top1_section": "2.2 Password and Access Requirements",
+        "label_correct": null,
+        "distractor_rank": null,
+        "distractor_in_top_k": null
+      },
+      "child": {
+        "status": "NO EVIDENCE (expected) - 3 false positives",
+        "evidence_rank": null,
+        "partial_rank": null,
+        "margin": null,
+        "top1_score": 0.7002,
+        "top1_chunk": "cleaned_policy::semantic::012::090bcde6::c1",
+        "top1_section": "3.1 Annual Leave",
+        "label_correct": null,
+        "distractor_rank": null,
+        "distractor_in_top_k": null
+      }
+    }
+  ]
+}

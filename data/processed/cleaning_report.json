@@ -1,0 +1,16 @@
+{
+  "raw_characters": 18918,
+  "clean_characters": 19041,
+  "empty_pages": [],
+  "replacement_characters": 0,
+  "manual_review_confirmed": true,
+  "review_tasks": [
+    "Check all six logical tables, including page continuations.",
+    "Check nested lists and numbered procedure steps.",
+    "Restore code fences and blockquote markers where needed.",
+    "Check accented characters, dashes, amounts, and times.",
+    "Preserve policy inconsistencies rather than correcting facts."
+  ],
+  "final_clean_characters": 19041,
+  "final_replacement_characters": 0
+}

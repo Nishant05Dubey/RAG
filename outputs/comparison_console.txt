@@ -1,0 +1,299 @@
+Source: cleaned_policy.txt | type: txt | 19041 chars | 38 headings detected
+
+============================== SUMMARY ==============================
+metric                      fixed_length    sliding_window          semantic
+----------------------------------------------------------------------------
+chunks                                64                66                47
+min_chars                            141                89                85
+max_chars                            300               943               881
+avg_chars                            290               345               404
+orphan_headings                        2                 6                 0
+broken_table_chunks                    0                 0                 0
+chunks_cut_mid_word                   50                 0                 0
+duplicated_chars                       0              3724                 0
+duplication_pct                      0.0              16.4               0.0
+
+==================== ORPHANED HEADINGS (chunk ends with a heading) ====================
+fixed_length: 2
+   #13 ends with '### 3.1 Ann'
+   #62 ends with '## 11. Contacts'
+sliding_window: 6
+   #30 ends with '### 4.4 Reporting a Security Incident'
+   #31 ends with '#### 4.4.1'
+   #34 ends with '### 5.1 Approved'
+   #46 ends with '## 7. Code'
+semantic: 0
+
+==================== WHAT THE SLIDING-WINDOW OVERLAP DUPLICATED ====================
+#1 repeats 50 chars: 'Acme Corp across all\nregional offices. Where local'
+#2 repeats 58 chars: 'that the conditions for focus,\ncollaboration, and security'
+#3 repeats 56 chars: 'require physical access to labs, warehouses, or customer'
+#4 repeats 69 chars: 'onboarding sessions, quarterly planning\nevents, client workshops, and'
+
+########################################################################################################################
+SAME SOURCE SECTION: 'Hardware Allowance'  (chars 2268-3533)
+########################################################################################################################
+fixed_length (5 chunks)                | sliding_window (4 chunks)              | semantic (4 chunks)                   
+====================================== | ====================================== | ======================================
+#7 300ch ov=0 MID-WORD                 | #9 283ch ov=47                         | #7 237ch ov=0                         
+- After hours, call the 24/7 security  | noticing.                              | - Do not print confidential documents 
+hotline at extension 4357.             | - After hours, call the 24/7 security  | on personal or shared printers.       
+- Do not print confidential documents  | hotline at extension 4357.             | ## 2. IT Equipment and Security       
+on personal or shared printers.        | - Do not print confidential documents  |                                       
+## 2. IT Equipment and Security        | on personal or shared printers.        | ### 2.1 Hardware Allowance            
+                                       | ## 2. IT Equipment and Security        |                                       
+### 2.1 Hardware Allowance             |                                        | Each employee receives a one-time     
+                                       | ### 2.1 Hardware Allowance             | hardware allowance at joining and a   
+Each employee receives a one-time      |                                        | refresh allowance every               
+hardware allowance at joining and a    | Each employee receives a one-time      | three years.                          
+refresh allowance every                | hardware allowance at joining and a    | --------------------------------------
+three year                             | refresh                                | #8 503ch ov=0                         
+-------------------------------------- | -------------------------------------- | Amounts depend on role category:      
+#8 300ch ov=0 MID-WORD                 | #10 585ch ov=52                        |                                       
+s. Amounts depend on role category:    | one-time hardware allowance at joining |          Monitor                      
+                                       |  and a refresh allowance every         |                         Laptop Budget 
+         Monitor                       | three years. Amounts depend on role    |           Allowance                   
+                        Laptop Budget  | category:                              | Accessories                           
+          Allowance                    |                                        |  Role Category          (USD)         
+Accessories                            |          Monitor                       |                   (USD)               
+ Role Category          (USD)          |                         Laptop Budget  |                   (USD)               
+                  (USD)                |           Allowance                    |                   Refresh Cycle       
+                  (USD)                | Accessories                            |  Engineering &                        
+                  Refresh Cycle        |  Role Category          (USD)          |  Data                   2,500         
+ Engineering &                         |                   (USD)                |                   600                 
+ Data                                  |                   (USD)                |                     250               
+-------------------------------------- |                   Refresh Cycle        |                     3 years           
+#9 281ch ov=0 MID-WORD                 |  Engineering &                         |  Design &                             
+2,500                  600             |  Data                   2,500          |  Creative               2,800         
+                    250                |                   600                  |                   900                 
+                    3 years            |                     250                |                     300               
+ Design &                              |                     3 years            |                     3 years           
+ Creative               2,800          |  Design &                              | --------------------------------------
+                  900                  |  Creative               2,800          | #9 474ch ov=0                         
+                    300                |                   900                  | [[PAGE 2]]                            
+                    3 years            |                     300                |                                       
+                                       |                     3 years            |         Monitor                       
+[[PAGE 2]]                             | -------------------------------------- |                         Laptop Budget 
+                                       | #11 626ch ov=109                       |          Allowance                    
+        Monitor                        | Design &                               | Accessories                           
+                        Lap            |  Creative               2,800          |  Role Category          (USD)         
+-------------------------------------- |                   900                  |                  (USD)                
+#10 291ch ov=0 MID-WORD                |                     300                |                   (USD)               
+top Budget         Allowance           |                     3 years            |                   Refresh Cycle       
+              Accessories              |                                        |  Sales &                              
+ Role Category          (USD)          | [[PAGE 2]]                             |  Marketing              1,600         
+                 (USD)                 |                                        |                  300                  
+                  (USD)                |         Monitor                        |                     150               
+                  Refresh Cycle        |                         Laptop Budget  |                     3 years           
+ Sales &                               |          Allowance                     |  Operations &                         
+ Marketing              1,600          | Accessories                            |  Support                1,400         
+                 300                   |  Role Category          (USD)          |                  300                  
+                    150                |                  (USD)                 |                     100               
+                    3 years            |                   (USD)                |                     4 years           
+ Operations &                          |                   Refresh Cycle        | --------------------------------------
+ Support                               |  Sales &                               | #10 298ch ov=0                        
+-------------------------------------- |  Marketing              1,600          | Unused allowance does not roll over   
+#11 293ch ov=0 MID-WORD                |                  300                   | and cannot be converted to cash.      
+1,400                 300              |                     150                | Purchases above the                   
+                    100                |                     3 years            | allowance require written approval    
+                    4 years            |  Operations &                          | from a department head.               
+                                       |  Support                1,400          |                                       
+Unused allowance does not roll over    |                  300                   | ### 2.2 Password and Access           
+and cannot be converted to cash.       |                     100                | Requirements                          
+Purchases above the                    |                     4 years            |                                       
+allowance require written approval     |                                        | Passwords for corporate accounts must 
+from a department head.                | Unused allowance does not roll over    | be at least 14 characters long and    
+                                       | and                                    | must not be reused                    
+### 2.2 Password and Access            | -------------------------------------- | across systems.                       
+Requirements                           | #12 282ch ov=46                        | --------------------------------------
+                                       | years                                  |                                       
+Passwords for corporate a              |                                        |                                       
+-------------------------------------- | Unused allowance does not roll over    |                                       
+                                       | and cannot be converted to cash.       |                                       
+                                       | Purchases above the                    |                                       
+                                       | allowance require written approval     |                                       
+                                       | from a department head.                |                                       
+                                       |                                        |                                       
+                                       | ### 2.2 Password and Access            |                                       
+                                       | Requirements                           |                                       
+                                       |                                        |                                       
+                                       | Passwords for corporate accounts must  |                                       
+                                       | be at least 14 characters long and     |                                       
+                                       | must not be                            |                                       
+                                       | -------------------------------------- |                                       
+
+########################################################################################################################
+SAME SOURCE SECTION: 'Remote Work Rules'  (chars 1536-2235)
+########################################################################################################################
+fixed_length (3 chunks)                | sliding_window (4 chunks)              | semantic (5 chunks)                   
+====================================== | ====================================== | ======================================
+#5 300ch ov=0 MID-WORD                 | #6 300ch ov=67                         | #3 85ch ov=0                          
+ations before approval is granted.     | and Information Security can assess    | ### 1.2 Remote Work Rules             
+                                       | tax residency,                         |                                       
+### 1.2 Remote Work Rules              | data-protection, and export-control    | All remote employees must follow these
+                                       | implications before approval is        |  rules at all times:                  
+All remote employees must follow these | granted.                               | --------------------------------------
+ rules at all times:                   |                                        | #4 99ch ov=0                          
+- Work only from a private, secure     | ### 1.2 Remote Work Rules              | - Work only from a private, secure    
+location; public spaces such as cafés  |                                        | location; public spaces such as cafés 
+and airports are permitted             | All remote employees must follow these | and airports are permitted            
+for a maximum of 2 hours per day.      |  rules at all times:                   | --------------------------------------
+- Always connect through the corporate | - Work only from a private, secure     | #5 132ch ov=0                         
+ VPN (                                 | location; public spaces such as cafés  | for a maximum of 2 hours per day.     
+-------------------------------------- | and airports                           | - Always connect through the corporate
+#6 299ch ov=0                          | -------------------------------------- |  VPN (Acme GlobalConnect) before      
+Acme GlobalConnect) before accessing   | #7 272ch ov=50                         | accessing internal                    
+internal                               | location; public spaces such as cafés  | systems.                              
+systems.                               | and airports are permitted             | --------------------------------------
+- Never leave a company laptop         | for a maximum of 2 hours per day.      | #6 309ch ov=0                         
+unattended and unlocked, even at home. | - Always connect through the corporate | - Never leave a company laptop        
+- Be reachable on Slack and email      |  VPN (Acme GlobalConnect) before       | unattended and unlocked, even at home.
+during your team's core hours          | accessing internal                     | - Be reachable on Slack and email     
+(10:00–15:00 local time).              | systems.                               | during your team's core hours         
+- Report any lost or stolen device to  | - Never leave a company laptop         | (10:00–15:00 local time).             
+the IT Service Desk within 1 hour of   | unattended and unlocked, even at home. | - Report any lost or stolen device to 
+noticing.                              | - Be                                   | the IT Service Desk within 1 hour of  
+-------------------------------------- | -------------------------------------- | noticing.                             
+#7 300ch ov=0 MID-WORD                 | #8 251ch ov=43                         | - After hours, call the 24/7 security 
+- After hours, call the 24/7 security  | unattended and unlocked, even at home. | hotline at extension 4357.            
+hotline at extension 4357.             | - Be reachable on Slack and email      | --------------------------------------
+- Do not print confidential documents  | during your team's core hours          | #7 237ch ov=0                         
+on personal or shared printers.        | (10:00–15:00 local time).              | - Do not print confidential documents 
+## 2. IT Equipment and Security        | - Report any lost or stolen device to  | on personal or shared printers.       
+                                       | the IT Service Desk within 1 hour of   | ## 2. IT Equipment and Security       
+### 2.1 Hardware Allowance             | noticing.                              |                                       
+                                       | - After hours, call the 24/7 security  | ### 2.1 Hardware Allowance            
+Each employee receives a one-time      | -------------------------------------- |                                       
+hardware allowance at joining and a    | #9 283ch ov=47                         | Each employee receives a one-time     
+refresh allowance every                | noticing.                              | hardware allowance at joining and a   
+three year                             | - After hours, call the 24/7 security  | refresh allowance every               
+-------------------------------------- | hotline at extension 4357.             | three years.                          
+                                       | - Do not print confidential documents  | --------------------------------------
+                                       | on personal or shared printers.        |                                       
+                                       | ## 2. IT Equipment and Security        |                                       
+                                       |                                        |                                       
+                                       | ### 2.1 Hardware Allowance             |                                       
+                                       |                                        |                                       
+                                       | Each employee receives a one-time      |                                       
+                                       | hardware allowance at joining and a    |                                       
+                                       | refresh                                |                                       
+                                       | -------------------------------------- |                                       
+
+########################################################################################################################
+SAME SOURCE SECTION: 'Eligibility and Philosophy'  (chars 369-1536)
+########################################################################################################################
+fixed_length (5 chunks)                | sliding_window (6 chunks)              | semantic (2 chunks)                   
+====================================== | ====================================== | ======================================
+#1 300ch ov=0 MID-WORD                 | #1 290ch ov=50                         | #1 836ch ov=0                         
+cter than this policy, local law       | Acme Corp across all                   | ## 1. Remote Work Policy              
+prevails.                              | regional offices. Where local law is   |                                       
+## 1. Remote Work Policy               | stricter than this policy, local law   | ### 1.1 Eligibility and Philosophy    
+                                       | prevails.                              |                                       
+### 1.1 Eligibility and Philosophy     | ## 1. Remote Work Policy               | Acme Corp believes that great work can
+                                       |                                        |  happen anywhere, provided that the   
+Acme Corp believes that great work can | ### 1.1 Eligibility and Philosophy     | conditions for focus,                 
+ happen anywhere, provided that the    |                                        | collaboration, and security are met,  
+conditions for focus,                  | Acme Corp believes that great work can | and this belief has shaped our hybrid 
+collaboration, and security are met,   |  happen anywhere, provided that the    | model since 2021 when                 
+and this belief has shaped our hybrid  | conditions for focus,                  | the company first moved away from a   
+model since 2021 when                  | collaboration, and security            | mandatory five-day office presence;   
+th                                     | -------------------------------------- | employees whose roles                 
+-------------------------------------- | #2 285ch ov=58                         | do not require physical access to     
+#2 300ch ov=0 MID-WORD                 | that the conditions for focus,         | labs, warehouses, or customer sites   
+e company first moved away from a      | collaboration, and security are met,   | are eligible to work remotely         
+mandatory five-day office presence;    | and this belief has shaped our hybrid  | for up to three days per week after   
+employees whose roles                  | model since 2021 when                  | completing their 90-day probation     
+do not require physical access to      | the company first moved away from a    | period, although managers             
+labs, warehouses, or customer sites    | mandatory five-day office presence;    | retain the discretion to request in-  
+are eligible to work remotely          | employees whose roles                  | office attendance for onboarding      
+for up to three days per week after    | do not require physical access to      | sessions, quarterly planning          
+completing their 90-day probation      | labs, warehouses, or customer          | events, client workshops, and any     
+period, although managers              | -------------------------------------- | situation where in-person             
+retain the d                           | #3 316ch ov=56                         | collaboration is judged to be         
+-------------------------------------- | require physical access to labs,       | materially                            
+#3 300ch ov=0 MID-WORD                 | warehouses, or customer sites are      | better for the outcome, and employees 
+iscretion to request in-office         | eligible to work remotely              | who wish to work remotely for more    
+attendance for onboarding sessions,    | for up to three days per week after    | than three days per                   
+quarterly planning                     | completing their 90-day probation      | --------------------------------------
+events, client workshops, and any      | period, although managers              | #2 354ch ov=0                         
+situation where in-person              | retain the discretion to request in-   | week, or from a country other than    
+collaboration is judged to be          | office attendance for onboarding       | their country of employment for longer
+materially                             | sessions, quarterly planning           |  than 14 consecutive                  
+better for the outcome, and employees  | events, client workshops, and          | calendar days, must submit a Remote   
+who wish to work remotely for more     | -------------------------------------- | Work Exception Request through the HR 
+than three days per                    | #4 285ch ov=69                         | portal at least 30                    
+week, or from a coun                   | onboarding sessions, quarterly         | days in advance so that Legal,        
+-------------------------------------- | planning                               | Payroll, and Information Security can 
+#4 300ch ov=0 MID-WORD                 | events, client workshops, and any      | assess tax residency,                 
+try other than their country of        | situation where in-person              | data-protection, and export-control   
+employment for longer than 14          | collaboration is judged to be          | implications before approval is       
+consecutive                            | materially                             | granted.                              
+calendar days, must submit a Remote    | better for the outcome, and employees  | --------------------------------------
+Work Exception Request through the HR  | who wish to work remotely for more     |                                       
+portal at least 30                     | than three days per                    |                                       
+days in advance so that Legal,         | week, or from a country other than     |                                       
+Payroll, and Information Security can  | their country of                       |                                       
+assess tax residency,                  | -------------------------------------- |                                       
+data-protection, and export-control    | #5 285ch ov=42                         |                                       
+implic                                 | from a country other than their        |                                       
+-------------------------------------- | country of employment for longer than  |                                       
+#5 300ch ov=0 MID-WORD                 | 14 consecutive                         |                                       
+ations before approval is granted.     | calendar days, must submit a Remote    |                                       
+                                       | Work Exception Request through the HR  |                                       
+### 1.2 Remote Work Rules              | portal at least 30                     |                                       
+                                       | days in advance so that Legal,         |                                       
+All remote employees must follow these | Payroll, and Information Security can  |                                       
+ rules at all times:                   | assess tax residency,                  |                                       
+- Work only from a private, secure     | data-protection,                       |                                       
+location; public spaces such as cafés  | -------------------------------------- |                                       
+and airports are permitted             | #6 300ch ov=67                         |                                       
+for a maximum of 2 hours per day.      | and Information Security can assess    |                                       
+- Always connect through the corporate | tax residency,                         |                                       
+ VPN (                                 | data-protection, and export-control    |                                       
+-------------------------------------- | implications before approval is        |                                       
+                                       | granted.                               |                                       
+                                       |                                        |                                       
+                                       | ### 1.2 Remote Work Rules              |                                       
+                                       |                                        |                                       
+                                       | All remote employees must follow these |                                       
+                                       |  rules at all times:                   |                                       
+                                       | - Work only from a private, secure     |                                       
+                                       | location; public spaces such as cafés  |                                       
+                                       | and airports                           |                                       
+                                       | -------------------------------------- |                                       
+
+Sample metadata (semantic chunk):
+{
+  "chunk_id": "cleaned_policy::semantic::005::9c65f280",
+  "source": "cleaned_policy.txt",
+  "file_type": "txt",
+  "strategy": "semantic",
+  "chunk_index": 5,
+  "start_char": 1722,
+  "end_char": 1854,
+  "line_start": 29,
+  "line_end": 31,
+  "char_count": 132,
+  "word_count": 21,
+  "section_path": "Acme Corp IT and HR Policy Handbook > 1. Remote Work Policy > 1.2 Remote Work Rules",
+  "h1": "Acme Corp IT and HR Policy Handbook",
+  "h2": "1. Remote Work Policy",
+  "h3": "1.2 Remote Work Rules",
+  "content_types": [
+    "bullet_list"
+  ],
+  "orphan_heading": false,
+  "broken_table": false,
+  "cut_mid_word": false,
+  "num_units": 3,
+  "unit_kinds": [
+    "list_item",
+    "sentence"
+  ],
+  "boundary_distance": 0.574,
+  "break_threshold": 0.391,
+  "overlap_with_prev_chars": 0
+}
+Saved  64 chunks -> chunks_fixed_length.jsonl
+Saved  66 chunks -> chunks_sliding_window.jsonl
+Saved  47 chunks -> chunks_semantic.jsonl

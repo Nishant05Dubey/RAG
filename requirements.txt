@@ -1,0 +1,7 @@
+# Day 05: PDF text extraction (prepare_dataset.py, chunking_pipeline.py)
+pypdf==6.20.1
+
+# Day 06: embeddings + cosine similarity (retriever.py)
+# sentence-transformers installs torch, transformers and huggingface_hub.
+numpy==2.5.4
+sentence-transformers==6.1.0

@@ -1,0 +1,4 @@
+strategy,chunks,min_chars,max_chars,avg_chars,orphan_headings,broken_table_chunks,chunks_cut_mid_word,duplicated_chars,duplication_pct
+fixed_length,64,141,300,290,2,0,50,0,0.0
+sliding_window,66,89,943,345,6,0,0,3724,16.4
+semantic,47,85,881,404,0,0,0,0,0.0
