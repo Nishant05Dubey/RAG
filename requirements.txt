@@ -5,3 +5,6 @@ pypdf==6.20.1
 # sentence-transformers installs torch, transformers and huggingface_hub.
 numpy==2.5.4
 sentence-transformers==6.1.0
+
+# Day 07: local web app (web_app.py). Ollama is called with the standard library.
+flask==3.1.3

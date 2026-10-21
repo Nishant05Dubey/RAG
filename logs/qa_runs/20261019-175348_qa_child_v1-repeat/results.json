@@ -1,0 +1,659 @@
+[
+  {
+    "run_id": "20261019-175348_qa_child_v1-repeat",
+    "tag": "v1-repeat",
+    "timestamp": "2026-10-19T17:53:48",
+    "model": "llama3.2",
+    "index": "child",
+    "id": "q1",
+    "category": "Semantic Paraphrase",
+    "question": "How many vacation days do employees get each year?",
+    "expected_evidence": "Annual leave entitlement (3.1 Annual Leave: 21 days per calendar year)",
+    "result": {
+      "answer": "Full-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per calendar year.",
+      "citations": [
+        "cleaned_policy::semantic::012::090bcde6::c1"
+      ],
+      "sources": [
+        {
+          "chunk_id": "cleaned_policy::semantic::012::090bcde6::c1",
+          "rank": 1,
+          "similarity_score": 0.7372,
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            2
+          ],
+          "section": "3.1 Annual Leave",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.1 Annual Leave",
+          "parent_chunk_id": "cleaned_policy::semantic::012::090bcde6",
+          "quote": "Full-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per calendar year.",
+          "quote_match": "exact"
+        }
+      ],
+      "debug": {
+        "question": "How many vacation days do employees get each year?",
+        "model": "llama3.2",
+        "index": "child",
+        "top_k": 3,
+        "context_chars": 963,
+        "context_truncated": false,
+        "retrieved": [
+          {
+            "rank": 1,
+            "similarity_score": 0.7372,
+            "chunk_id": "cleaned_policy::semantic::012::090bcde6::c1",
+            "section": "3.1 Annual Leave",
+            "pages": [
+              2
+            ],
+            "text": "## 3. Leave and Time Off\n\n### 3.1 Annual Leave\n\nFull-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per\ncalendar year. Up to 5 unused days may be carried forward into the first quarter of the following\nyear; any remaining days expire on March 31.",
+            "cited": true
+          },
+          {
+            "rank": 2,
+            "similarity_score": 0.7067,
+            "chunk_id": "cleaned_policy::semantic::012::090bcde6::c2",
+            "section": "3.2 Sick Leave",
+            "pages": [
+              2
+            ],
+            "text": "### 3.2 Sick Leave\n\nEmployees are entitled to 10 days of paid sick leave per year. A medical certificate is required for\nabsences longer than 3 consecutive working days.",
+            "cited": false
+          },
+          {
+            "rank": 3,
+            "similarity_score": 0.6636,
+            "chunk_id": "cleaned_policy::semantic::007::3c4eada9::c1",
+            "section": "2.1 Hardware Allowance",
+            "pages": [
+              1
+            ],
+            "text": "## 2. IT Equipment and Security\n\n### 2.1 Hardware Allowance\n\nEach employee receives a one-time hardware allowance at joining and a refresh allowance every\nthree years.",
+            "cited": false
+          }
+        ],
+        "timings_ms": {
+          "retrieval": 5842,
+          "generation": 15807,
+          "total": 21649
+        },
+        "raw_model_output": "{\"supported\": true, \"answer\": \"Full-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per calendar year.\", \"citations\": [{\"chunk_id\": \"cleaned_policy::semantic::012::090bcde6::c1\", \"quote\": \"Full-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per calendar year.\"}]}",
+        "done_reason": "stop",
+        "prompt_tokens": 558,
+        "output_tokens": 91,
+        "status": "answered",
+        "reason": null,
+        "model_supported": true,
+        "model_answer": "Full-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per calendar year.",
+        "model_citations": [
+          {
+            "chunk_id": "cleaned_policy::semantic::012::090bcde6::c1",
+            "quote": "Full-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per calendar year."
+          }
+        ],
+        "rejected_citations": [],
+        "unsupported_numbers": []
+      }
+    },
+    "checks": {
+      "abstained": false,
+      "retrieval_status": "YES",
+      "cites_evidence_chunk": true
+    }
+  },
+  {
+    "run_id": "20261019-175348_qa_child_v1-repeat",
+    "tag": "v1-repeat",
+    "timestamp": "2026-10-19T17:54:10",
+    "model": "llama3.2",
+    "index": "child",
+    "id": "q2",
+    "category": "Approval Rule",
+    "question": "I want to take five consecutive days off. Is manager approval required?",
+    "expected_evidence": "3.3 Requesting Leave, step 2: \"Your manager approves or declines within 3 working days.\" (step 1: \"Submit the request in the HR portal at least 10 working days in advance for planned leave.\")",
+    "result": {
+      "answer": "Manager approval is required for leave, but the excerpt does not specify the duration of approved leave. The excerpt states that managers retain discretion to request in-office attendance for certain situations, but it does not explicitly state that manager approval is required for leave of five consecutive days.",
+      "citations": [
+        "cleaned_policy::semantic::012::090bcde6::c3",
+        "cleaned_policy::semantic::013::d7f30abf::c0"
+      ],
+      "sources": [
+        {
+          "chunk_id": "cleaned_policy::semantic::012::090bcde6::c3",
+          "rank": 1,
+          "similarity_score": 0.6683,
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            2
+          ],
+          "section": "3.3 Requesting Leave",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.3 Requesting Leave",
+          "parent_chunk_id": "cleaned_policy::semantic::012::090bcde6",
+          "quote": "Submit the request in the HR portal at least 10 working days in advance for planned leave.",
+          "quote_match": "exact"
+        },
+        {
+          "chunk_id": "cleaned_policy::semantic::013::d7f30abf::c0",
+          "rank": 2,
+          "similarity_score": 0.6546,
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            2
+          ],
+          "section": "3.3 Requesting Leave",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.3 Requesting Leave",
+          "parent_chunk_id": "cleaned_policy::semantic::013::d7f30abf",
+          "quote": "Update your Slack status and calendar once approved.",
+          "quote_match": "exact"
+        }
+      ],
+      "debug": {
+        "question": "I want to take five consecutive days off. Is manager approval required?",
+        "model": "llama3.2",
+        "index": "child",
+        "top_k": 3,
+        "context_chars": 1435,
+        "context_truncated": false,
+        "retrieved": [
+          {
+            "rank": 1,
+            "similarity_score": 0.6683,
+            "chunk_id": "cleaned_policy::semantic::012::090bcde6::c3",
+            "section": "3.3 Requesting Leave",
+            "pages": [
+              2
+            ],
+            "text": "### 3.3 Requesting Leave\n\n1. Submit the request in the HR portal at least 10 working days in advance for planned leave.\n2. Your manager approves or declines within 3 working days.",
+            "cited": true
+          },
+          {
+            "rank": 2,
+            "similarity_score": 0.6546,
+            "chunk_id": "cleaned_policy::semantic::013::d7f30abf::c0",
+            "section": "3.3 Requesting Leave",
+            "pages": [
+              2
+            ],
+            "text": "3. Update your Slack status and calendar once approved.",
+            "cited": true
+          },
+          {
+            "rank": 3,
+            "similarity_score": 0.6296,
+            "chunk_id": "cleaned_policy::semantic::001::d8f71e7d::c0",
+            "section": "1.1 Eligibility and Philosophy",
+            "pages": [
+              1
+            ],
+            "text": "## 1. Remote Work Policy\n\n### 1.1 Eligibility and Philosophy\n\nAcme Corp believes that great work can happen anywhere, provided that the conditions for focus,\ncollaboration, and security are met, and this belief has shaped our hybrid model since 2021 when\nthe company first moved away from a mandatory five-day office presence; employees whose roles\ndo not require physical access to labs, warehouses, or customer sites are eligible to work remotely\nfor up to three days per week after completing their 90-day probation period, although managers\nretain the discretion to request in-office attendance for onboarding sessions, quarterly planning\nevents, client workshops, and any situation where in-person collaboration is judged to be materially\nbetter for the outcome, and employees who wish to work remotely for more than three days per",
+            "cited": false
+          }
+        ],
+        "timings_ms": {
+          "retrieval": 109,
+          "generation": 18801,
+          "total": 18910
+        },
+        "raw_model_output": "{\"supported\": true, \"answer\": \"Manager approval is required for leave, but the excerpt does not specify the duration of approved leave. The excerpt states that managers retain discretion to request in-office attendance for certain situations, but it does not explicitly state that manager approval is required for leave of five consecutive days.\", \"citations\": [{\"chunk_id\": \"cleaned_policy::semantic::012::090bcde6::c3\", \"quote\": \"Submit the request in the HR portal at least 10 working days in advance for planned leave.\"}, {\"chunk_id\": \"cleaned_policy::semantic::013::d7f30abf::c0\", \"quote\": \"Update your Slack status and calendar once approved.\"}]}",
+        "done_reason": "stop",
+        "prompt_tokens": 641,
+        "output_tokens": 150,
+        "status": "answered",
+        "reason": null,
+        "model_supported": true,
+        "model_answer": "Manager approval is required for leave, but the excerpt does not specify the duration of approved leave. The excerpt states that managers retain discretion to request in-office attendance for certain situations, but it does not explicitly state that manager approval is required for leave of five consecutive days.",
+        "model_citations": [
+          {
+            "chunk_id": "cleaned_policy::semantic::012::090bcde6::c3",
+            "quote": "Submit the request in the HR portal at least 10 working days in advance for planned leave."
+          },
+          {
+            "chunk_id": "cleaned_policy::semantic::013::d7f30abf::c0",
+            "quote": "Update your Slack status and calendar once approved."
+          }
+        ],
+        "rejected_citations": [],
+        "unsupported_numbers": []
+      }
+    },
+    "checks": {
+      "abstained": false,
+      "retrieval_status": "YES",
+      "cites_evidence_chunk": true,
+      "cites_distractor_chunk": false
+    }
+  },
+  {
+    "run_id": "20261019-175348_qa_child_v1-repeat",
+    "tag": "v1-repeat",
+    "timestamp": "2026-10-19T17:54:29",
+    "model": "llama3.2",
+    "index": "child",
+    "id": "q3",
+    "category": "Travel Approval",
+    "question": "Who needs to approve an overseas business trip?",
+    "expected_evidence": "None: the PDF has no overseas/international trip approval rule. Closest related rule, 6.1 Booking Business Travel: \"business class requires prior written approval from a member of the executive team.\"",
+    "result": {
+      "answer": "A member of the executive team needs to approve business class travel, but no specific approval is required for overseas business trips for economy or premium economy classes.",
+      "citations": [
+        "cleaned_policy::semantic::028::b4be9b9b::c1",
+        "cleaned_policy::semantic::032::c21461dc::c0",
+        "cleaned_policy::semantic::029::9aff9182::c0"
+      ],
+      "sources": [
+        {
+          "chunk_id": "cleaned_policy::semantic::028::b4be9b9b::c1",
+          "rank": 1,
+          "similarity_score": 0.6816,
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            5
+          ],
+          "section": "6.1 Booking Business Travel",
+          "section_path": "This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.1 Booking Business Travel",
+          "parent_chunk_id": "cleaned_policy::semantic::028::b4be9b9b",
+          "quote": "All flights, hotels, and rail travel must be booked through the corporate travel platform so that the company can locate and support employees in an emergency.",
+          "quote_match": "exact"
+        },
+        {
+          "chunk_id": "cleaned_policy::semantic::032::c21461dc::c0",
+          "rank": 3,
+          "similarity_score": 0.6297,
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            5
+          ],
+          "section": "6.3 Submitting Expense Claims",
+          "section_path": "This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.3 Submitting Expense Claims",
+          "parent_chunk_id": "cleaned_policy::semantic::032::c21461dc",
+          "quote": "Every claim requires: - An itemized receipt (a credit card statement alone is not sufficient).",
+          "quote_match": "exact"
+        },
+        {
+          "chunk_id": "cleaned_policy::semantic::029::9aff9182::c0",
+          "rank": 2,
+          "similarity_score": 0.6449,
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            5
+          ],
+          "section": "6.1 Booking Business Travel",
+          "section_path": "This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.1 Booking Business Travel",
+          "parent_chunk_id": "cleaned_policy::semantic::029::9aff9182",
+          "quote": "Economy class is the default for all flights; premium economy is permitted for flights longer than 8 hours, and business class requires prior written approval from a member of the executive team.",
+          "quote_match": "exact"
+        }
+      ],
+      "debug": {
+        "question": "Who needs to approve an overseas business trip?",
+        "model": "llama3.2",
+        "index": "child",
+        "top_k": 3,
+        "context_chars": 949,
+        "context_truncated": false,
+        "retrieved": [
+          {
+            "rank": 1,
+            "similarity_score": 0.6816,
+            "chunk_id": "cleaned_policy::semantic::028::b4be9b9b::c1",
+            "section": "6.1 Booking Business Travel",
+            "pages": [
+              5
+            ],
+            "text": "## 6. Travel and Expenses\n\n### 6.1 Booking Business Travel\n\nAll flights, hotels, and rail travel must be booked through the corporate travel platform so that the\ncompany can locate and support employees in an emergency.",
+            "cited": true
+          },
+          {
+            "rank": 2,
+            "similarity_score": 0.6449,
+            "chunk_id": "cleaned_policy::semantic::029::9aff9182::c0",
+            "section": "6.1 Booking Business Travel",
+            "pages": [
+              5
+            ],
+            "text": "Economy class is the default for all\nflights; premium economy is permitted for flights longer than 8 hours, and business class requires\nprior written approval from a member of the executive team.",
+            "cited": true
+          },
+          {
+            "rank": 3,
+            "similarity_score": 0.6297,
+            "chunk_id": "cleaned_policy::semantic::032::c21461dc::c0",
+            "section": "6.3 Submitting Expense Claims",
+            "pages": [
+              5
+            ],
+            "text": "Every claim\nrequires:\n- An itemized receipt (a credit card statement alone is not sufficient).\n- The business purpose and, for meals, the names of attendees.",
+            "cited": true
+          }
+        ],
+        "timings_ms": {
+          "retrieval": 32,
+          "generation": 26071,
+          "total": 26104
+        },
+        "raw_model_output": "{\"supported\": true, \"answer\": \"A member of the executive team needs to approve business class travel, but no specific approval is required for overseas business trips for economy or premium economy classes.\", \"citations\": [{\"chunk_id\": \"cleaned_policy::semantic::028::b4be9b9b::c1\", \"quote\": \"All flights, hotels, and rail travel must be booked through the corporate travel platform so that the company can locate and support employees in an emergency.\"}, {\"chunk_id\": \"cleaned_policy::semantic::032::c21461dc::c0\", \"quote\": \"Every claim requires: - An itemized receipt (a credit card statement alone is not sufficient).\"}, {\"chunk_id\": \"cleaned_policy::semantic::029::9aff9182::c0\", \"quote\": \"Economy class is the default for all flights; premium economy is permitted for flights longer than 8 hours, and business class requires prior written approval from a member of the executive team.\"}]}",
+        "done_reason": "stop",
+        "prompt_tokens": 534,
+        "output_tokens": 211,
+        "status": "answered",
+        "reason": null,
+        "model_supported": true,
+        "model_answer": "A member of the executive team needs to approve business class travel, but no specific approval is required for overseas business trips for economy or premium economy classes.",
+        "model_citations": [
+          {
+            "chunk_id": "cleaned_policy::semantic::028::b4be9b9b::c1",
+            "quote": "All flights, hotels, and rail travel must be booked through the corporate travel platform so that the company can locate and support employees in an emergency."
+          },
+          {
+            "chunk_id": "cleaned_policy::semantic::032::c21461dc::c0",
+            "quote": "Every claim requires: - An itemized receipt (a credit card statement alone is not sufficient)."
+          },
+          {
+            "chunk_id": "cleaned_policy::semantic::029::9aff9182::c0",
+            "quote": "Economy class is the default for all flights; premium economy is permitted for flights longer than 8 hours, and business class requires prior written approval from a member of the executive team."
+          }
+        ],
+        "rejected_citations": [],
+        "unsupported_numbers": []
+      }
+    },
+    "checks": {
+      "abstained": false,
+      "retrieval_status": "PARTIAL",
+      "cites_evidence_chunk": true,
+      "cites_distractor_chunk": false
+    }
+  },
+  {
+    "run_id": "20261019-175348_qa_child_v1-repeat",
+    "tag": "v1-repeat",
+    "timestamp": "2026-10-19T17:54:55",
+    "model": "llama3.2",
+    "index": "child",
+    "id": "q4",
+    "category": "Expense Detail",
+    "question": "When are receipts required for travel expenses?",
+    "expected_evidence": "6.3 Submitting Expense Claims: \"Every claim requires: An itemized receipt (a credit card statement alone is not sufficient).\"",
+    "result": {
+      "answer": "A credit card statement alone is not sufficient; an itemized receipt is required.",
+      "citations": [
+        "cleaned_policy::semantic::032::c21461dc::c0"
+      ],
+      "sources": [
+        {
+          "chunk_id": "cleaned_policy::semantic::032::c21461dc::c0",
+          "rank": 1,
+          "similarity_score": 0.7377,
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            5
+          ],
+          "section": "6.3 Submitting Expense Claims",
+          "section_path": "This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.3 Submitting Expense Claims",
+          "parent_chunk_id": "cleaned_policy::semantic::032::c21461dc",
+          "quote": "Every claim requires: - An itemized receipt (a credit card statement alone is not sufficient).",
+          "quote_match": "exact"
+        }
+      ],
+      "debug": {
+        "question": "When are receipts required for travel expenses?",
+        "model": "llama3.2",
+        "index": "child",
+        "top_k": 3,
+        "context_chars": 869,
+        "context_truncated": false,
+        "retrieved": [
+          {
+            "rank": 1,
+            "similarity_score": 0.7377,
+            "chunk_id": "cleaned_policy::semantic::032::c21461dc::c0",
+            "section": "6.3 Submitting Expense Claims",
+            "pages": [
+              5
+            ],
+            "text": "Every claim\nrequires:\n- An itemized receipt (a credit card statement alone is not sufficient).\n- The business purpose and, for meals, the names of attendees.",
+            "cited": true
+          },
+          {
+            "rank": 2,
+            "similarity_score": 0.7209,
+            "chunk_id": "cleaned_policy::semantic::028::b4be9b9b::c1",
+            "section": "6.1 Booking Business Travel",
+            "pages": [
+              5
+            ],
+            "text": "## 6. Travel and Expenses\n\n### 6.1 Booking Business Travel\n\nAll flights, hotels, and rail travel must be booked through the corporate travel platform so that the\ncompany can locate and support employees in an emergency.",
+            "cited": false
+          },
+          {
+            "rank": 3,
+            "similarity_score": 0.71,
+            "chunk_id": "cleaned_policy::semantic::031::5b14006f::c1",
+            "section": "6.3 Submitting Expense Claims",
+            "pages": [
+              5
+            ],
+            "text": "### 6.3 Submitting Expense Claims\n\nExpense claims must be submitted within 30 days of the expense being incurred.",
+            "cited": false
+          }
+        ],
+        "timings_ms": {
+          "retrieval": 29,
+          "generation": 9292,
+          "total": 9321
+        },
+        "raw_model_output": "{\"supported\": true, \"answer\": \"A credit card statement alone is not sufficient; an itemized receipt is required.\", \"citations\": [{\"chunk_id\": \"cleaned_policy::semantic::032::c21461dc::c0\", \"quote\": \"Every claim requires: - An itemized receipt (a credit card statement alone is not sufficient).\"}]}",
+        "done_reason": "stop",
+        "prompt_tokens": 520,
+        "output_tokens": 76,
+        "status": "answered",
+        "reason": null,
+        "model_supported": true,
+        "model_answer": "A credit card statement alone is not sufficient; an itemized receipt is required.",
+        "model_citations": [
+          {
+            "chunk_id": "cleaned_policy::semantic::032::c21461dc::c0",
+            "quote": "Every claim requires: - An itemized receipt (a credit card statement alone is not sufficient)."
+          }
+        ],
+        "rejected_citations": [],
+        "unsupported_numbers": []
+      }
+    },
+    "checks": {
+      "abstained": false,
+      "retrieval_status": "YES",
+      "cites_evidence_chunk": true
+    }
+  },
+  {
+    "run_id": "20261019-175348_qa_child_v1-repeat",
+    "tag": "v1-repeat",
+    "timestamp": "2026-10-19T17:55:04",
+    "model": "llama3.2",
+    "index": "child",
+    "id": "q5",
+    "category": "Exact Terminology",
+    "question": "Find the policy section about Sick Leave.",
+    "expected_evidence": "The '3.2 Sick Leave' section header, not general health or policy text",
+    "result": {
+      "answer": "Section 3.2 of the policy outlines the entitlement to paid sick leave, which includes 10 days per year.",
+      "citations": [
+        "cleaned_policy::semantic::012::090bcde6::c2"
+      ],
+      "sources": [
+        {
+          "chunk_id": "cleaned_policy::semantic::012::090bcde6::c2",
+          "rank": 1,
+          "similarity_score": 0.6616,
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            2
+          ],
+          "section": "3.2 Sick Leave",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.2 Sick Leave",
+          "parent_chunk_id": "cleaned_policy::semantic::012::090bcde6",
+          "quote": "Employees are entitled to 10 days of paid sick leave per year.",
+          "quote_match": "exact"
+        }
+      ],
+      "debug": {
+        "question": "Find the policy section about Sick Leave.",
+        "model": "llama3.2",
+        "index": "child",
+        "top_k": 3,
+        "context_chars": 1514,
+        "context_truncated": false,
+        "retrieved": [
+          {
+            "rank": 1,
+            "similarity_score": 0.6616,
+            "chunk_id": "cleaned_policy::semantic::012::090bcde6::c2",
+            "section": "3.2 Sick Leave",
+            "pages": [
+              2
+            ],
+            "text": "### 3.2 Sick Leave\n\nEmployees are entitled to 10 days of paid sick leave per year. A medical certificate is required for\nabsences longer than 3 consecutive working days.",
+            "cited": true
+          },
+          {
+            "rank": 2,
+            "similarity_score": 0.562,
+            "chunk_id": "cleaned_policy::semantic::001::d8f71e7d::c0",
+            "section": "1.1 Eligibility and Philosophy",
+            "pages": [
+              1
+            ],
+            "text": "## 1. Remote Work Policy\n\n### 1.1 Eligibility and Philosophy\n\nAcme Corp believes that great work can happen anywhere, provided that the conditions for focus,\ncollaboration, and security are met, and this belief has shaped our hybrid model since 2021 when\nthe company first moved away from a mandatory five-day office presence; employees whose roles\ndo not require physical access to labs, warehouses, or customer sites are eligible to work remotely\nfor up to three days per week after completing their 90-day probation period, although managers\nretain the discretion to request in-office attendance for onboarding sessions, quarterly planning\nevents, client workshops, and any situation where in-person collaboration is judged to be materially\nbetter for the outcome, and employees who wish to work remotely for more than three days per",
+            "cited": false
+          },
+          {
+            "rank": 3,
+            "similarity_score": 0.561,
+            "chunk_id": "cleaned_policy::semantic::046::89704cbc::c1",
+            "section": "11. Contacts",
+            "pages": [
+              7
+            ],
+            "text": "## 11. Contacts\n\nFor questions about this policy, contact the People & Technology Office at\npolicy@acme-corp.example or the IT Service Desk at extension 4000.",
+            "cited": false
+          }
+        ],
+        "timings_ms": {
+          "retrieval": 51,
+          "generation": 14288,
+          "total": 14339
+        },
+        "raw_model_output": "{\"supported\": true, \"answer\": \"Section 3.2 of the policy outlines the entitlement to paid sick leave, which includes 10 days per year.\", \"citations\": [{\"chunk_id\": \"cleaned_policy::semantic::012::090bcde6::c2\", \"quote\": \"Employees are entitled to 10 days of paid sick leave per year.\"}]}",
+        "done_reason": "stop",
+        "prompt_tokens": 651,
+        "output_tokens": 79,
+        "status": "answered",
+        "reason": null,
+        "model_supported": true,
+        "model_answer": "Section 3.2 of the policy outlines the entitlement to paid sick leave, which includes 10 days per year.",
+        "model_citations": [
+          {
+            "chunk_id": "cleaned_policy::semantic::012::090bcde6::c2",
+            "quote": "Employees are entitled to 10 days of paid sick leave per year."
+          }
+        ],
+        "rejected_citations": [],
+        "unsupported_numbers": []
+      }
+    },
+    "checks": {
+      "abstained": false,
+      "retrieval_status": "YES",
+      "cites_evidence_chunk": true
+    }
+  },
+  {
+    "run_id": "20261019-175348_qa_child_v1-repeat",
+    "tag": "v1-repeat",
+    "timestamp": "2026-10-19T17:55:19",
+    "model": "llama3.2",
+    "index": "child",
+    "id": "q6",
+    "category": "Unsupported",
+    "question": "What is the company's parental leave duration?",
+    "expected_evidence": "None (unsupported negative control)",
+    "result": {
+      "answer": "Based on the provided documents, there is insufficient evidence to answer this question.",
+      "citations": [],
+      "sources": [],
+      "debug": {
+        "question": "What is the company's parental leave duration?",
+        "model": "llama3.2",
+        "index": "child",
+        "top_k": 3,
+        "context_chars": 973,
+        "context_truncated": false,
+        "retrieved": [
+          {
+            "rank": 1,
+            "similarity_score": 0.7002,
+            "chunk_id": "cleaned_policy::semantic::012::090bcde6::c1",
+            "section": "3.1 Annual Leave",
+            "pages": [
+              2
+            ],
+            "text": "## 3. Leave and Time Off\n\n### 3.1 Annual Leave\n\nFull-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per\ncalendar year. Up to 5 unused days may be carried forward into the first quarter of the following\nyear; any remaining days expire on March 31.",
+            "cited": false
+          },
+          {
+            "rank": 2,
+            "similarity_score": 0.6499,
+            "chunk_id": "cleaned_policy::semantic::012::090bcde6::c2",
+            "section": "3.2 Sick Leave",
+            "pages": [
+              2
+            ],
+            "text": "### 3.2 Sick Leave\n\nEmployees are entitled to 10 days of paid sick leave per year. A medical certificate is required for\nabsences longer than 3 consecutive working days.",
+            "cited": false
+          },
+          {
+            "rank": 3,
+            "similarity_score": 0.6404,
+            "chunk_id": "cleaned_policy::semantic::012::090bcde6::c3",
+            "section": "3.3 Requesting Leave",
+            "pages": [
+              2
+            ],
+            "text": "### 3.3 Requesting Leave\n\n1. Submit the request in the HR portal at least 10 working days in advance for planned leave.\n2. Your manager approves or declines within 3 working days.",
+            "cited": false
+          }
+        ],
+        "timings_ms": {
+          "retrieval": 32,
+          "generation": 3516,
+          "total": 3547
+        },
+        "raw_model_output": "{\"supported\": false, \"answer\": \"\", \"citations\": []}",
+        "done_reason": "stop",
+        "prompt_tokens": 561,
+        "output_tokens": 16,
+        "status": "insufficient_evidence",
+        "reason": "model abstained",
+        "model_supported": false,
+        "model_answer": "",
+        "model_citations": [],
+        "rejected_citations": [],
+        "unsupported_numbers": []
+      }
+    },
+    "checks": {
+      "abstained": true,
+      "retrieval_status": "NO EVIDENCE (expected) - 3 false positives",
+      "expected_abstain": true
+    }
+  }
+]

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blend RAG Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="layout">
+    <aside class="side">
+      <div class="wordmark">BLEND<span class="wordmark-dot"></span></div>
+      <p class="eyebrow">Local knowledge assistant</p>
+      <h1 class="side-title">Blend RAG Assistant</h1>
+      <p class="side-subtitle">Ask questions. Get answers grounded in your documents.</p>
+
+      <dl class="status" id="status">
+        <div><dt>Document</dt><dd id="status-doc">Checking…</dd></div>
+        <div><dt>Model</dt><dd id="status-model">Checking…</dd></div>
+        <div><dt>Ollama</dt><dd><span class="dot" id="status-dot"></span><span id="status-ollama">Checking…</span></dd></div>
+      </dl>
+    </aside>
+
+    <main class="main">
+      <h2 class="page-title">Ask your documents</h2>
+
+      <form class="card ask" id="ask-form">
+        <label for="question" class="label">Your question</label>
+        <textarea id="question" rows="3" maxlength="{{ max_chars }}"
+                  placeholder="e.g. How many vacation days do employees get each year?" required></textarea>
+        <div class="ask-row">
+          <span class="hint">Answers use only the retrieved policy text. Ctrl+Enter to ask.</span>
+          <button type="submit" id="ask-btn">Ask</button>
+        </div>
+      </form>
+
+      <div class="loading" id="loading" hidden>
+        <span class="spinner"></span>
+        <span>Retrieving the top 3 chunks and generating an answer with the local model…</span>
+      </div>
+
+      <div class="error" id="error" hidden></div>
+
+      <section id="result" hidden>
+        <div class="card">
+          <div class="card-head">
+            <h3>Answer</h3>
+            <span class="pill" id="answer-status"></span>
+          </div>
+          <p class="answer" id="answer"></p>
+          <p class="meta" id="answer-meta"></p>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><h3>Citations and sources</h3></div>
+          <p class="empty" id="no-sources" hidden>No retrieved chunk supports an answer, so nothing is cited.</p>
+          <ol class="sources" id="sources"></ol>
+        </div>
+
+        <details class="card evidence">
+          <summary>View retrieved evidence <span class="muted">(Top-3 chunks and similarity scores)</span></summary>
+          <ol class="chunks" id="chunks"></ol>
+          <p class="meta" id="debug-note"></p>
+        </details>
+      </section>
+    </main>
+  </div>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "h1",
+    "category": "Held-out (answerable)",
+    "question": "How many sick days do employees get per year?",
+    "expected_evidence": "3.2 Sick Leave: \"Employees are entitled to 10 days of paid sick leave per year.\"",
+    "evidence_phrases": ["10 days of paid sick leave"]
+  },
+  {
+    "id": "h2",
+    "category": "Held-out (answerable)",
+    "question": "What is the hotel cap per night in Western Europe?",
+    "expected_evidence": "6.2 Daily Allowances table: Western Europe hotel cap 220 USD/night",
+    "evidence_phrases": ["Western Europe"]
+  },
+  {
+    "id": "h3",
+    "category": "Held-out (answerable)",
+    "question": "How long must corporate passwords be?",
+    "expected_evidence": "2.2: \"Passwords for corporate accounts must be at least 14 characters long\"",
+    "evidence_phrases": ["at least 14 characters"]
+  },
+  {
+    "id": "h4",
+    "category": "Held-out (answerable)",
+    "question": "Within how many days must expense claims be submitted?",
+    "expected_evidence": "6.3: \"Expense claims must be submitted within 30 days of the expense being incurred.\"",
+    "evidence_phrases": ["within 30 days"]
+  },
+  {
+    "id": "h5",
+    "category": "Held-out (answerable)",
+    "question": "Who approves a software license that costs 20,000 USD per year?",
+    "expected_evidence": "5.3 table: 10,001 - 50,000 -> Department head + Finance",
+    "evidence_phrases": ["Department head + Finance"]
+  },
+  {
+    "id": "h6",
+    "category": "Held-out (answerable)",
+    "question": "How many days per week can employees work remotely?",
+    "expected_evidence": "1.1: \"eligible to work remotely for up to three days per week after completing their 90-day probation period\"",
+    "evidence_phrases": ["up to three days per week"]
+  },
+  {
+    "id": "h7",
+    "category": "Held-out (unsupported)",
+    "question": "Does the company offer a pension or retirement plan?",
+    "expected_evidence": "None: 'pension', 'retirement' and '401' occur 0 times in the policy.",
+    "unsupported": true
+  },
+  {
+    "id": "h8",
+    "category": "Held-out (unsupported)",
+    "question": "How much is the relocation allowance for new hires?",
+    "expected_evidence": "None: 'relocation' occurs 0 times in the policy.",
+    "unsupported": true
+  }
+]

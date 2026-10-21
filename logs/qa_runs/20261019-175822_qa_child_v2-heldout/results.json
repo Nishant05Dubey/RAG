@@ -1,0 +1,790 @@
+[
+  {
+    "run_id": "20261019-175822_qa_child_v2-heldout",
+    "tag": "v2-heldout",
+    "timestamp": "2026-10-19T17:58:22",
+    "model": "llama3.2",
+    "index": "child",
+    "id": "h1",
+    "category": "Held-out (answerable)",
+    "question": "How many sick days do employees get per year?",
+    "expected_evidence": "3.2 Sick Leave: \"Employees are entitled to 10 days of paid sick leave per year.\"",
+    "result": {
+      "answer": "Employees are entitled to 10 days of paid sick leave per year.",
+      "citations": [
+        "cleaned_policy::semantic::012::090bcde6::c2"
+      ],
+      "sources": [
+        {
+          "chunk_id": "cleaned_policy::semantic::012::090bcde6::c2",
+          "rank": 1,
+          "similarity_score": 0.8496,
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            2
+          ],
+          "section": "3.2 Sick Leave",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 3. Leave and Time Off > 3.2 Sick Leave",
+          "parent_chunk_id": "cleaned_policy::semantic::012::090bcde6",
+          "quote": "Employees are entitled to 10 days of paid sick leave per year.",
+          "quote_match": "exact"
+        }
+      ],
+      "debug": {
+        "question": "How many sick days do employees get per year?",
+        "model": "llama3.2",
+        "index": "child",
+        "top_k": 3,
+        "context_chars": 963,
+        "context_truncated": false,
+        "retrieved": [
+          {
+            "rank": 1,
+            "similarity_score": 0.8496,
+            "chunk_id": "cleaned_policy::semantic::012::090bcde6::c2",
+            "section": "3.2 Sick Leave",
+            "pages": [
+              2
+            ],
+            "text": "### 3.2 Sick Leave\n\nEmployees are entitled to 10 days of paid sick leave per year. A medical certificate is required for\nabsences longer than 3 consecutive working days.",
+            "cited": true
+          },
+          {
+            "rank": 2,
+            "similarity_score": 0.7298,
+            "chunk_id": "cleaned_policy::semantic::012::090bcde6::c1",
+            "section": "3.1 Annual Leave",
+            "pages": [
+              2
+            ],
+            "text": "## 3. Leave and Time Off\n\n### 3.1 Annual Leave\n\nFull-time employees accrue 1.75 days of paid annual leave per month, totaling 21 days per\ncalendar year. Up to 5 unused days may be carried forward into the first quarter of the following\nyear; any remaining days expire on March 31.",
+            "cited": false
+          },
+          {
+            "rank": 3,
+            "similarity_score": 0.6406,
+            "chunk_id": "cleaned_policy::semantic::007::3c4eada9::c1",
+            "section": "2.1 Hardware Allowance",
+            "pages": [
+              1
+            ],
+            "text": "## 2. IT Equipment and Security\n\n### 2.1 Hardware Allowance\n\nEach employee receives a one-time hardware allowance at joining and a refresh allowance every\nthree years.",
+            "cited": false
+          }
+        ],
+        "timings_ms": {
+          "retrieval": 5603,
+          "generation": 12635,
+          "total": 18239
+        },
+        "raw_model_output": "{\"supported\": true, \"answer\": \"Employees are entitled to 10 days of paid sick leave per year.\", \"citations\": [{\"chunk_id\": \"cleaned_policy::semantic::012::090bcde6::c2\", \"quote\": \"Employees are entitled to 10 days of paid sick leave per year.\"}]}",
+        "done_reason": "stop",
+        "prompt_tokens": 558,
+        "output_tokens": 69,
+        "status": "answered",
+        "reason": null,
+        "model_supported": true,
+        "model_answer": "Employees are entitled to 10 days of paid sick leave per year.",
+        "model_citations": [
+          {
+            "chunk_id": "cleaned_policy::semantic::012::090bcde6::c2",
+            "quote": "Employees are entitled to 10 days of paid sick leave per year."
+          }
+        ],
+        "rejected_citations": [],
+        "removed_sentences": [],
+        "unsupported_numbers": []
+      }
+    },
+    "checks": {
+      "abstained": false,
+      "retrieval_status": "YES",
+      "cites_evidence_chunk": true
+    }
+  },
+  {
+    "run_id": "20261019-175822_qa_child_v2-heldout",
+    "tag": "v2-heldout",
+    "timestamp": "2026-10-19T17:58:40",
+    "model": "llama3.2",
+    "index": "child",
+    "id": "h2",
+    "category": "Held-out (answerable)",
+    "question": "What is the hotel cap per night in Western Europe?",
+    "expected_evidence": "6.2 Daily Allowances table: Western Europe hotel cap 220 USD/night",
+    "result": {
+      "answer": "The hotel cap per night in Western Europe is $220.",
+      "citations": [
+        "cleaned_policy::semantic::031::5b14006f::c0"
+      ],
+      "sources": [
+        {
+          "chunk_id": "cleaned_policy::semantic::031::5b14006f::c0",
+          "rank": 1,
+          "similarity_score": 0.7177,
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            5
+          ],
+          "section": "6.2 Daily Allowances",
+          "section_path": "This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.2 Daily Allowances",
+          "parent_chunk_id": "cleaned_policy::semantic::031::5b14006f",
+          "quote": "Region                       Meals (USD/day)             Incidentals (USD/day)        (USD/night)",
+          "quote_match": "exact"
+        }
+      ],
+      "debug": {
+        "question": "What is the hotel cap per night in Western Europe?",
+        "model": "llama3.2",
+        "index": "child",
+        "top_k": 3,
+        "context_chars": 1440,
+        "context_truncated": false,
+        "retrieved": [
+          {
+            "rank": 1,
+            "similarity_score": 0.7177,
+            "chunk_id": "cleaned_policy::semantic::031::5b14006f::c0",
+            "section": "6.2 Daily Allowances",
+            "pages": [
+              5
+            ],
+            "text": "Partial days (departure and return) are\npaid at 75% of the daily rate.\n                                                                                       Hotel Cap\n Region                       Meals (USD/day)             Incidentals (USD/day)        (USD/night)\n North America                75                          15                           250\n Western Europe               70                          15                           220\n India                        40                          10                           130\n Southeast Asia               45                          10                           150\n Major hubs (NYC,\n London, SF)                  90                          20                           350",
+            "cited": true
+          },
+          {
+            "rank": 2,
+            "similarity_score": 0.5303,
+            "chunk_id": "cleaned_policy::semantic::030::5b4da755::c0",
+            "section": "6.2 Daily Allowances",
+            "pages": [
+              5
+            ],
+            "text": "### 6.2 Daily Allowances\n\nMeal and incidental allowances are paid per full travel day.",
+            "cited": false
+          },
+          {
+            "rank": 3,
+            "similarity_score": 0.5221,
+            "chunk_id": "cleaned_policy::semantic::033::b0955145::c0",
+            "section": "6.3 Submitting Expense Claims",
+            "pages": [
+              5
+            ],
+            "text": "- The correct cost center code.\nClaims submitted more than 90 days late will not be reimbursed except in exceptional\ncircumstances approved by Finance. Alcohol is reimbursable only at client entertainment events\nand is capped at two drinks per person.",
+            "cited": false
+          }
+        ],
+        "timings_ms": {
+          "retrieval": 50,
+          "generation": 9076,
+          "total": 9127
+        },
+        "raw_model_output": "{\"supported\": true, \"answer\": \"The hotel cap per night in Western Europe is $220.\", \"citations\": [{\"chunk_id\": \"cleaned_policy::semantic::031::5b14006f::c0\", \"quote\": \"Region                       Meals (USD/day)             Incidentals (USD/day)        (USD/night)\"}]}",
+        "done_reason": "stop",
+        "prompt_tokens": 596,
+        "output_tokens": 74,
+        "status": "answered",
+        "reason": null,
+        "model_supported": true,
+        "model_answer": "The hotel cap per night in Western Europe is $220.",
+        "model_citations": [
+          {
+            "chunk_id": "cleaned_policy::semantic::031::5b14006f::c0",
+            "quote": "Region                       Meals (USD/day)             Incidentals (USD/day)        (USD/night)"
+          }
+        ],
+        "rejected_citations": [],
+        "removed_sentences": [],
+        "unsupported_numbers": []
+      }
+    },
+    "checks": {
+      "abstained": false,
+      "retrieval_status": "YES",
+      "cites_evidence_chunk": true
+    }
+  },
+  {
+    "run_id": "20261019-175822_qa_child_v2-heldout",
+    "tag": "v2-heldout",
+    "timestamp": "2026-10-19T17:58:49",
+    "model": "llama3.2",
+    "index": "child",
+    "id": "h3",
+    "category": "Held-out (answerable)",
+    "question": "How long must corporate passwords be?",
+    "expected_evidence": "2.2: \"Passwords for corporate accounts must be at least 14 characters long\"",
+    "result": {
+      "answer": "Passwords for corporate accounts must be at least 14 characters long.",
+      "citations": [
+        "cleaned_policy::semantic::010::17693d8e::c1"
+      ],
+      "sources": [
+        {
+          "chunk_id": "cleaned_policy::semantic::010::17693d8e::c1",
+          "rank": 1,
+          "similarity_score": 0.8879,
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            2
+          ],
+          "section": "2.2 Password and Access Requirements",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 2. IT Equipment and Security > 2.2 Password and Access Requirements",
+          "parent_chunk_id": "cleaned_policy::semantic::010::17693d8e",
+          "quote": "Passwords for corporate accounts must be at least 14 characters long and must not be reused across systems.",
+          "quote_match": "exact"
+        }
+      ],
+      "debug": {
+        "question": "How long must corporate passwords be?",
+        "model": "llama3.2",
+        "index": "child",
+        "top_k": 3,
+        "context_chars": 812,
+        "context_truncated": false,
+        "retrieved": [
+          {
+            "rank": 1,
+            "similarity_score": 0.8879,
+            "chunk_id": "cleaned_policy::semantic::010::17693d8e::c1",
+            "section": "2.2 Password and Access Requirements",
+            "pages": [
+              2
+            ],
+            "text": "### 2.2 Password and Access Requirements\n\nPasswords for corporate accounts must be at least 14 characters long and must not be reused\nacross systems.",
+            "cited": true
+          },
+          {
+            "rank": 2,
+            "similarity_score": 0.7057,
+            "chunk_id": "cleaned_policy::semantic::042::eb2d0f88::c0",
+            "section": "9.1 New Joiner Checklist",
+            "pages": [
+              7
+            ],
+            "text": "3. Complete mandatory training modules:\n- Security Awareness (45 minutes).\n- Data Protection and Privacy (30 minutes).\n- Respectful Workplace (30 minutes).",
+            "cited": false
+          },
+          {
+            "rank": 3,
+            "similarity_score": 0.7,
+            "chunk_id": "cleaned_policy::semantic::005::9c65f280::c0",
+            "section": "1.2 Remote Work Rules",
+            "pages": [
+              1
+            ],
+            "text": "for a maximum of 2 hours per day.\n- Always connect through the corporate VPN (Acme GlobalConnect) before accessing internal\nsystems.",
+            "cited": false
+          }
+        ],
+        "timings_ms": {
+          "retrieval": 25,
+          "generation": 8371,
+          "total": 8396
+        },
+        "raw_model_output": "{\"supported\": true, \"answer\": \"Passwords for corporate accounts must be at least 14 characters long.\", \"citations\": [{\"chunk_id\": \"cleaned_policy::semantic::010::17693d8e::c1\", \"quote\": \"Passwords for corporate accounts must be at least 14 characters long and must not be reused across systems.\"}]}",
+        "done_reason": "stop",
+        "prompt_tokens": 505,
+        "output_tokens": 75,
+        "status": "answered",
+        "reason": null,
+        "model_supported": true,
+        "model_answer": "Passwords for corporate accounts must be at least 14 characters long.",
+        "model_citations": [
+          {
+            "chunk_id": "cleaned_policy::semantic::010::17693d8e::c1",
+            "quote": "Passwords for corporate accounts must be at least 14 characters long and must not be reused across systems."
+          }
+        ],
+        "rejected_citations": [],
+        "removed_sentences": [],
+        "unsupported_numbers": []
+      }
+    },
+    "checks": {
+      "abstained": false,
+      "retrieval_status": "YES",
+      "cites_evidence_chunk": true
+    }
+  },
+  {
+    "run_id": "20261019-175822_qa_child_v2-heldout",
+    "tag": "v2-heldout",
+    "timestamp": "2026-10-19T17:58:58",
+    "model": "llama3.2",
+    "index": "child",
+    "id": "h4",
+    "category": "Held-out (answerable)",
+    "question": "Within how many days must expense claims be submitted?",
+    "expected_evidence": "6.3: \"Expense claims must be submitted within 30 days of the expense being incurred.\"",
+    "result": {
+      "answer": "Expense claims must be submitted within 30 days of the expense being incurred.",
+      "citations": [
+        "cleaned_policy::semantic::031::5b14006f::c1"
+      ],
+      "sources": [
+        {
+          "chunk_id": "cleaned_policy::semantic::031::5b14006f::c1",
+          "rank": 1,
+          "similarity_score": 0.9336,
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            5
+          ],
+          "section": "6.3 Submitting Expense Claims",
+          "section_path": "This line is part of a quote, not a heading. > 6. Travel and Expenses > 6.3 Submitting Expense Claims",
+          "parent_chunk_id": "cleaned_policy::semantic::031::5b14006f",
+          "quote": "Expense claims must be submitted within 30 days of the expense being incurred.",
+          "quote_match": "exact"
+        }
+      ],
+      "debug": {
+        "question": "Within how many days must expense claims be submitted?",
+        "model": "llama3.2",
+        "index": "child",
+        "top_k": 3,
+        "context_chars": 903,
+        "context_truncated": false,
+        "retrieved": [
+          {
+            "rank": 1,
+            "similarity_score": 0.9336,
+            "chunk_id": "cleaned_policy::semantic::031::5b14006f::c1",
+            "section": "6.3 Submitting Expense Claims",
+            "pages": [
+              5
+            ],
+            "text": "### 6.3 Submitting Expense Claims\n\nExpense claims must be submitted within 30 days of the expense being incurred.",
+            "cited": true
+          },
+          {
+            "rank": 2,
+            "similarity_score": 0.7478,
+            "chunk_id": "cleaned_policy::semantic::033::b0955145::c0",
+            "section": "6.3 Submitting Expense Claims",
+            "pages": [
+              5
+            ],
+            "text": "- The correct cost center code.\nClaims submitted more than 90 days late will not be reimbursed except in exceptional\ncircumstances approved by Finance. Alcohol is reimbursable only at client entertainment events\nand is capped at two drinks per person.",
+            "cited": false
+          },
+          {
+            "rank": 3,
+            "similarity_score": 0.7052,
+            "chunk_id": "cleaned_policy::semantic::032::c21461dc::c0",
+            "section": "6.3 Submitting Expense Claims",
+            "pages": [
+              5
+            ],
+            "text": "Every claim\nrequires:\n- An itemized receipt (a credit card statement alone is not sufficient).\n- The business purpose and, for meals, the names of attendees.",
+            "cited": false
+          }
+        ],
+        "timings_ms": {
+          "retrieval": 46,
+          "generation": 8286,
+          "total": 8332
+        },
+        "raw_model_output": "{\"supported\": true, \"answer\": \"Expense claims must be submitted within 30 days of the expense being incurred.\", \"citations\": [{\"chunk_id\": \"cleaned_policy::semantic::031::5b14006f::c1\", \"quote\": \"Expense claims must be submitted within 30 days of the expense being incurred.\"}]}",
+        "done_reason": "stop",
+        "prompt_tokens": 524,
+        "output_tokens": 72,
+        "status": "answered",
+        "reason": null,
+        "model_supported": true,
+        "model_answer": "Expense claims must be submitted within 30 days of the expense being incurred.",
+        "model_citations": [
+          {
+            "chunk_id": "cleaned_policy::semantic::031::5b14006f::c1",
+            "quote": "Expense claims must be submitted within 30 days of the expense being incurred."
+          }
+        ],
+        "rejected_citations": [],
+        "removed_sentences": [],
+        "unsupported_numbers": []
+      }
+    },
+    "checks": {
+      "abstained": false,
+      "retrieval_status": "YES",
+      "cites_evidence_chunk": true
+    }
+  },
+  {
+    "run_id": "20261019-175822_qa_child_v2-heldout",
+    "tag": "v2-heldout",
+    "timestamp": "2026-10-19T17:59:06",
+    "model": "llama3.2",
+    "index": "child",
+    "id": "h5",
+    "category": "Held-out (answerable)",
+    "question": "Who approves a software license that costs 20,000 USD per year?",
+    "expected_evidence": "5.3 table: 10,001 - 50,000 -> Department head + Finance",
+    "result": {
+      "answer": "Department head + Finance",
+      "citations": [
+        "cleaned_policy::semantic::028::b4be9b9b::c0"
+      ],
+      "sources": [
+        {
+          "chunk_id": "cleaned_policy::semantic::028::b4be9b9b::c0",
+          "rank": 2,
+          "similarity_score": 0.668,
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            4,
+            5
+          ],
+          "section": "5.3 Software License Costs",
+          "section_path": "This line is part of a quote, not a heading. > 5. Software and SaaS Procurement > 5.3 Software License Costs",
+          "parent_chunk_id": "cleaned_policy::semantic::028::b4be9b9b",
+          "quote": "Annual Cost (USD) 1,000 – 10,000 Department head",
+          "quote_match": "approximate"
+        }
+      ],
+      "debug": {
+        "question": "Who approves a software license that costs 20,000 USD per year?",
+        "model": "llama3.2",
+        "index": "child",
+        "top_k": 3,
+        "context_chars": 1338,
+        "context_truncated": false,
+        "retrieved": [
+          {
+            "rank": 1,
+            "similarity_score": 0.7258,
+            "chunk_id": "cleaned_policy::semantic::027::987a6dae::c1",
+            "section": "5.3 Software License Costs",
+            "pages": [
+              4
+            ],
+            "text": "### 5.3 Software License Costs\n\nAnnual license costs are charged to the requesting department's budget.",
+            "cited": false
+          },
+          {
+            "rank": 2,
+            "similarity_score": 0.668,
+            "chunk_id": "cleaned_policy::semantic::028::b4be9b9b::c0",
+            "section": "5.3 Software License Costs",
+            "pages": [
+              4,
+              5
+            ],
+            "text": "The approval thresholds\nare:\n Annual Cost (USD)                                         Approver\n Under 1,000                                               Team manager\n\n[[PAGE 5]]\n Annual Cost (USD)                                        Approver\n 1,000 – 10,000                                           Department head\n 10,001 – 50,000                                          Department head + Finance\n Over 50,000                                              CFO and CTO (joint approval)",
+            "cited": true
+          },
+          {
+            "rank": 3,
+            "similarity_score": 0.6261,
+            "chunk_id": "cleaned_policy::semantic::026::50cb42e6::c1",
+            "section": "5.1 Approved Software",
+            "pages": [
+              4
+            ],
+            "text": "## 5. Software and SaaS Procurement\n\n### 5.1 Approved Software\n\nThe IT team maintains a catalogue of pre-approved software that any employee can install through\nthe self-service portal without additional approval. This includes office productivity suites, approved\nbrowsers, password managers, communication tools, and common developer tools such as Git,\nDocker Desktop, and VS Code.",
+            "cited": false
+          }
+        ],
+        "timings_ms": {
+          "retrieval": 29,
+          "generation": 7291,
+          "total": 7321
+        },
+        "raw_model_output": "{\"supported\": true, \"answer\": \"Department head + Finance\", \"citations\": [{\"chunk_id\": \"cleaned_policy::semantic::028::b4be9b9b::c0\", \"quote\": \"Annual Cost (USD) 1,000 – 10,000 Department head\"}]}",
+        "done_reason": "stop",
+        "prompt_tokens": 594,
+        "output_tokens": 65,
+        "status": "answered",
+        "reason": null,
+        "model_supported": true,
+        "model_answer": "Department head + Finance",
+        "model_citations": [
+          {
+            "chunk_id": "cleaned_policy::semantic::028::b4be9b9b::c0",
+            "quote": "Annual Cost (USD) 1,000 – 10,000 Department head"
+          }
+        ],
+        "rejected_citations": [],
+        "removed_sentences": [],
+        "unsupported_numbers": []
+      }
+    },
+    "checks": {
+      "abstained": false,
+      "retrieval_status": "YES",
+      "cites_evidence_chunk": true
+    }
+  },
+  {
+    "run_id": "20261019-175822_qa_child_v2-heldout",
+    "tag": "v2-heldout",
+    "timestamp": "2026-10-19T17:59:14",
+    "model": "llama3.2",
+    "index": "child",
+    "id": "h6",
+    "category": "Held-out (answerable)",
+    "question": "How many days per week can employees work remotely?",
+    "expected_evidence": "1.1: \"eligible to work remotely for up to three days per week after completing their 90-day probation period\"",
+    "result": {
+      "answer": "Employees are eligible to work remotely for up to three days per week.",
+      "citations": [
+        "cleaned_policy::semantic::001::d8f71e7d::c0"
+      ],
+      "sources": [
+        {
+          "chunk_id": "cleaned_policy::semantic::001::d8f71e7d::c0",
+          "rank": 1,
+          "similarity_score": 0.7622,
+          "document": "Acme_Corp_IT_and_HR_Policy.pdf",
+          "document_title": "Acme Corp IT and HR Policy Handbook",
+          "pages": [
+            1
+          ],
+          "section": "1.1 Eligibility and Philosophy",
+          "section_path": "Acme Corp IT and HR Policy Handbook > 1. Remote Work Policy > 1.1 Eligibility and Philosophy",
+          "parent_chunk_id": "cleaned_policy::semantic::001::d8f71e7d",
+          "quote": "employees whose roles do not require physical access to labs, warehouses, or customer sites are eligible to work remotely for up to three days per week after completing their 90-day probation period,",
+          "quote_match": "exact"
+        }
+      ],
+      "debug": {
+        "question": "How many days per week can employees work remotely?",
+        "model": "llama3.2",
+        "index": "child",
+        "top_k": 3,
+        "context_chars": 1651,
+        "context_truncated": false,
+        "retrieved": [
+          {
+            "rank": 1,
+            "similarity_score": 0.7622,
+            "chunk_id": "cleaned_policy::semantic::001::d8f71e7d::c0",
+            "section": "1.1 Eligibility and Philosophy",
+            "pages": [
+              1
+            ],
+            "text": "## 1. Remote Work Policy\n\n### 1.1 Eligibility and Philosophy\n\nAcme Corp believes that great work can happen anywhere, provided that the conditions for focus,\ncollaboration, and security are met, and this belief has shaped our hybrid model since 2021 when\nthe company first moved away from a mandatory five-day office presence; employees whose roles\ndo not require physical access to labs, warehouses, or customer sites are eligible to work remotely\nfor up to three days per week after completing their 90-day probation period, although managers\nretain the discretion to request in-office attendance for onboarding sessions, quarterly planning\nevents, client workshops, and any situation where in-person collaboration is judged to be materially\nbetter for the outcome, and employees who wish to work remotely for more than three days per",
+            "cited": true
+          },
+          {
+            "rank": 2,
+            "similarity_score": 0.7401,
+            "chunk_id": "cleaned_policy::semantic::003::2d2a3402::c0",
+            "section": "1.2 Remote Work Rules",
+            "pages": [
+              1
+            ],
+            "text": "### 1.2 Remote Work Rules\n\nAll remote employees must follow these rules at all times:",
+            "cited": false
+          },
+          {
+            "rank": 3,
+            "similarity_score": 0.727,
+            "chunk_id": "cleaned_policy::semantic::002::92dd6b49::c0",
+            "section": "1.1 Eligibility and Philosophy",
+            "pages": [
+              1
+            ],
+            "text": "week, or from a country other than their country of employment for longer than 14 consecutive\ncalendar days, must submit a Remote Work Exception Request through the HR portal at least 30\ndays in advance so that Legal, Payroll, and Information Security can assess tax residency,\ndata-protection, and export-control implications before approval is granted.",
+            "cited": false
+          }
+        ],
+        "timings_ms": {
+          "retrieval": 28,
+          "generation": 12244,
+          "total": 12272
+        },
+        "raw_model_output": "{\"supported\": true, \"answer\": \"Employees are eligible to work remotely for up to three days per week.\", \"citations\": [{\"chunk_id\": \"cleaned_policy::semantic::001::d8f71e7d::c0\", \"quote\": \"employees whose roles do not require physical access to labs, warehouses, or customer sites are eligible to work remotely for up to three days per week after completing their 90-day probation period,\"}]}",
+        "done_reason": "stop",
+        "prompt_tokens": 674,
+        "output_tokens": 95,
+        "status": "answered",
+        "reason": null,
+        "model_supported": true,
+        "model_answer": "Employees are eligible to work remotely for up to three days per week.",
+        "model_citations": [
+          {
+            "chunk_id": "cleaned_policy::semantic::001::d8f71e7d::c0",
+            "quote": "employees whose roles do not require physical access to labs, warehouses, or customer sites are eligible to work remotely for up to three days per week after completing their 90-day probation period,"
+          }
+        ],
+        "rejected_citations": [],
+        "removed_sentences": [],
+        "unsupported_numbers": []
+      }
+    },
+    "checks": {
+      "abstained": false,
+      "retrieval_status": "YES",
+      "cites_evidence_chunk": true
+    }
+  },
+  {
+    "run_id": "20261019-175822_qa_child_v2-heldout",
+    "tag": "v2-heldout",
+    "timestamp": "2026-10-19T17:59:26",
+    "model": "llama3.2",
+    "index": "child",
+    "id": "h7",
+    "category": "Held-out (unsupported)",
+    "question": "Does the company offer a pension or retirement plan?",
+    "expected_evidence": "None: 'pension', 'retirement' and '401' occur 0 times in the policy.",
+    "result": {
+      "answer": "Based on the provided documents, there is insufficient evidence to answer this question.",
+      "citations": [],
+      "sources": [],
+      "debug": {
+        "question": "Does the company offer a pension or retirement plan?",
+        "model": "llama3.2",
+        "index": "child",
+        "top_k": 3,
+        "context_chars": 1753,
+        "context_truncated": false,
+        "retrieved": [
+          {
+            "rank": 1,
+            "similarity_score": 0.6125,
+            "chunk_id": "cleaned_policy::semantic::009::242efeb8::c0",
+            "section": "2.1 Hardware Allowance",
+            "pages": [
+              2
+            ],
+            "text": "[[PAGE 2]]\n                                              Monitor\n                        Laptop Budget         Allowance              Accessories\n Role Category          (USD)                 (USD)                  (USD)                  Refresh Cycle\n Sales &\n Marketing              1,600                 300                    150                    3 years\n Operations &\n Support                1,400                 300                    100                    4 years",
+            "cited": false
+          },
+          {
+            "rank": 2,
+            "similarity_score": 0.5764,
+            "chunk_id": "cleaned_policy::semantic::010::17693d8e::c0",
+            "section": "2.1 Hardware Allowance",
+            "pages": [
+              2
+            ],
+            "text": "Unused allowance does not roll over and cannot be converted to cash. Purchases above the\nallowance require written approval from a department head.",
+            "cited": false
+          },
+          {
+            "rank": 3,
+            "similarity_score": 0.5738,
+            "chunk_id": "cleaned_policy::semantic::018::caf31b43::c0",
+            "section": "4.2 Acceptable Use of Company Systems",
+            "pages": [
+              3
+            ],
+            "text": "### 4.2 Acceptable Use of Company Systems\n\nCompany laptops, accounts, networks, and software licenses are provided primarily for business\npurposes, and while Acme Corp permits limited, reasonable personal use such as checking\npersonal email during a lunch break, reading the news, or making a short personal video call, this\nprivilege must never interfere with work responsibilities, consume significant bandwidth or storage,\nexpose the company to legal or reputational risk, or involve activities such as cryptocurrency\nmining, torrenting copyrighted material, operating a personal business, accessing gambling or adult\ncontent, or installing browser extensions and desktop applications that have not been approved by\nIT; employees should also understand that all activity on company-managed devices and networks",
+            "cited": false
+          }
+        ],
+        "timings_ms": {
+          "retrieval": 38,
+          "generation": 3847,
+          "total": 3885
+        },
+        "raw_model_output": "{\"supported\": false, \"answer\": \"Based on the provided documents, there is insufficient evidence to answer this question.\", \"citations\": []}",
+        "done_reason": "stop",
+        "prompt_tokens": 660,
+        "output_tokens": 31,
+        "status": "insufficient_evidence",
+        "reason": "model abstained",
+        "model_supported": false,
+        "model_answer": "Based on the provided documents, there is insufficient evidence to answer this question.",
+        "model_citations": [],
+        "rejected_citations": [],
+        "removed_sentences": [],
+        "unsupported_numbers": []
+      }
+    },
+    "checks": {
+      "abstained": true,
+      "retrieval_status": "NO EVIDENCE (expected) - 3 false positives",
+      "expected_abstain": true
+    }
+  },
+  {
+    "run_id": "20261019-175822_qa_child_v2-heldout",
+    "tag": "v2-heldout",
+    "timestamp": "2026-10-19T17:59:30",
+    "model": "llama3.2",
+    "index": "child",
+    "id": "h8",
+    "category": "Held-out (unsupported)",
+    "question": "How much is the relocation allowance for new hires?",
+    "expected_evidence": "None: 'relocation' occurs 0 times in the policy.",
+    "result": {
+      "answer": "Based on the provided documents, there is insufficient evidence to answer this question.",
+      "citations": [],
+      "sources": [],
+      "debug": {
+        "question": "How much is the relocation allowance for new hires?",
+        "model": "llama3.2",
+        "index": "child",
+        "top_k": 3,
+        "context_chars": 888,
+        "context_truncated": false,
+        "retrieved": [
+          {
+            "rank": 1,
+            "similarity_score": 0.6529,
+            "chunk_id": "cleaned_policy::semantic::040::0cd91602::c0",
+            "section": "8.2 Learning Budget",
+            "pages": [
+              6
+            ],
+            "text": "Unused budget does not carry over. Employees who receive more than USD\n3,000 in sponsored certification costs in a single year agree to a pro-rated repayment if they resign\nvoluntarily within 12 months of completion.",
+            "cited": false
+          },
+          {
+            "rank": 2,
+            "similarity_score": 0.6197,
+            "chunk_id": "cleaned_policy::semantic::010::17693d8e::c0",
+            "section": "2.1 Hardware Allowance",
+            "pages": [
+              2
+            ],
+            "text": "Unused allowance does not roll over and cannot be converted to cash. Purchases above the\nallowance require written approval from a department head.",
+            "cited": false
+          },
+          {
+            "rank": 3,
+            "similarity_score": 0.6107,
+            "chunk_id": "cleaned_policy::semantic::007::3c4eada9::c1",
+            "section": "2.1 Hardware Allowance",
+            "pages": [
+              1
+            ],
+            "text": "## 2. IT Equipment and Security\n\n### 2.1 Hardware Allowance\n\nEach employee receives a one-time hardware allowance at joining and a refresh allowance every\nthree years.",
+            "cited": false
+          }
+        ],
+        "timings_ms": {
+          "retrieval": 33,
+          "generation": 7242,
+          "total": 7275
+        },
+        "raw_model_output": "{\"supported\": false, \"answer\": \"Based on the provided documents, there is insufficient evidence to answer this question.\", \"citations\": []}",
+        "done_reason": "stop",
+        "prompt_tokens": 522,
+        "output_tokens": 31,
+        "status": "insufficient_evidence",
+        "reason": "model abstained",
+        "model_supported": false,
+        "model_answer": "Based on the provided documents, there is insufficient evidence to answer this question.",
+        "model_citations": [],
+        "rejected_citations": [],
+        "removed_sentences": [],
+        "unsupported_numbers": []
+      }
+    },
+    "checks": {
+      "abstained": true,
+      "retrieval_status": "NO EVIDENCE (expected) - 3 false positives",
+      "expected_abstain": true
+    }
+  }
+]

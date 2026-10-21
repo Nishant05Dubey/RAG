@@ -1,9 +1,12 @@
-"""One entry point for the whole RAG pipeline (Day 05 chunking + Day 06 retrieval).
+"""One entry point for the whole RAG pipeline (Day 05 chunking, Day 06 retrieval,
+Day 07 grounded answers with a local Ollama model).
 
     python run_rag.py all        PDF -> cleaned text -> chunks -> retrieval evaluation
     python run_rag.py prepare    PDF -> cleaned text -> chunks (Day 05 only)
     python run_rag.py chunk      re-chunk the existing cleaned text (after a manual edit)
     python run_rag.py retrieve   retrieval evaluation on the existing chunks (Day 06 only)
+    python run_rag.py qa         answer the test questions with Ollama + log them (Day 07)
+    python run_rag.py web        start the local web app at http://127.0.0.1:5000 (Day 07)
 
 `retrieve` runs all test queries on both indexes (Day 05 chunks = baseline,
 heading-aligned children = experiment) and writes the before/after
@@ -12,6 +15,13 @@ comparison. Any extra options are passed to run_queries.py, for example:
     python run_rag.py retrieve --index parent
     python run_rag.py retrieve -q "How many sick days do I get?"
     python run_rag.py retrieve -i
+
+`qa` and `web` need Ollama running with the llama3.2 model (see README).
+Options are passed on, for example:
+
+    python run_rag.py qa -q "How many sick days do I get?"
+    python run_rag.py qa --file heldout_queries.json
+    python run_rag.py web --port 8000
 """
 import io
 import sys
@@ -19,7 +29,7 @@ from contextlib import redirect_stdout
 
 from paths import CHUNKS_DIR, CLEAN_TXT, LOGS_DIR, OUTPUTS_DIR, SOURCE_PDF, require
 
-COMMANDS = ("all", "prepare", "chunk", "retrieve")
+COMMANDS = ("all", "prepare", "chunk", "retrieve", "qa", "web")
 
 
 def banner(title):
@@ -91,6 +101,22 @@ def retrieve(extra_args):
     print(f"\nLogs and results: {LOGS_DIR}")
 
 
+def qa(extra_args):
+    """Day 07: run test questions through retrieval + local generation."""
+    import run_qa_eval
+
+    banner("Day 07 | Grounded answers (top-3 retrieval + local Ollama model)")
+    return run_qa_eval.main(extra_args)
+
+
+def web(extra_args):
+    """Day 07: the local web app."""
+    import web_app
+
+    banner("Day 07 | Blend RAG Assistant (local web app)")
+    return web_app.main(extra_args)
+
+
 def main(argv=None):
     argv = sys.argv[1:] if argv is None else argv
     if not argv or argv[0] in ("-h", "--help") or argv[0] not in COMMANDS:
@@ -106,6 +132,10 @@ def main(argv=None):
         chunk()
     if command in ("all", "retrieve"):
         retrieve(extra)
+    if command == "qa":
+        return qa(extra)
+    if command == "web":
+        return web(extra)
     return 0
 
 
