@@ -1,0 +1,11 @@
+{
+  "variable": "one system-prompt clarification appended to the existing prompt",
+  "observed_failures": [
+    "Baseline q3 retrieves the business-class approval rule but answers without stating that general overseas-trip approval is unspecified, and incorrectly attaches the eight-hour premium-economy condition to business class.",
+    "Baseline q16 retrieves every-claim/itemized-receipt evidence but returns blanket insufficient evidence instead of rejecting the implied dollar threshold and giving the actual rule."
+  ],
+  "hypothesis": "Clarifying partial support will encourage a bounded useful answer rather than an overgeneralized rule or blanket abstention. This is a development-set experiment, not independent evidence of generalization.",
+  "expected_improvement": "q3 should distinguish missing general approval from the flight-class rule; q16 should explain that the amount is unspecified and cite the every-claim receipt rule. q6 should continue abstaining without a duration or unrelated citations.",
+  "prompt_addition": "Clarification of rules 4 and 5: When a question contains an unsupported premise or asks for a broader rule than the excerpts establish, but the excerpts contain a relevant narrower rule, set supported to true and give a qualified answer: explicitly state what the provided documents do not specify, then give the narrower supported rule with its own conditions and citation. Keep each condition attached to the rule it actually qualifies. Do not replace this qualified answer with blanket abstention; use the insufficient-evidence response only when no relevant rule can be given.",
+  "controls": "Identical dataset, source documents, chunks, embedding model, local llama3.2, Top-K, index, temperature, seed, token limits, citation validation and deterministic evaluator. Only this prompt addition changes; dashboard default remains unchanged."
+}

@@ -341,3 +341,73 @@ the HTTP endpoints. `python run_rag.py qa` is the live end-to-end test with the 
 | **The model returned malformed output** | Ask again. The raw output is in the `debug` field of the server's response. |
 | `ModuleNotFoundError: No module named 'flask'` | `python -m pip install -r requirements.txt` |
 | Port 5000 already in use | `python run_rag.py web --port 8000`, then open `http://127.0.0.1:8000` |
+
+## 8. Day 08: golden evaluation of the existing app
+
+From `rag`, with Ollama running and the existing virtual environment activated:
+
+```powershell
+python evaluation/run_day08_evaluation.py baseline --output outputs/day08_new
+python evaluation/run_day08_evaluation.py experiment --output outputs/day08_new
+```
+
+The first command runs the unchanged dashboard pipeline. The second reuses that baseline,
+then runs the single recorded prompt experiment in `evaluation/experiment.json`.
+To run both phases with one command, choose a fresh output folder:
+
+```powershell
+python evaluation/run_day08_evaluation.py experiment --output outputs/day08_repeat
+```
+
+Do not reuse an output folder containing a completed after run: existing phase results are
+never overwritten. If a run is interrupted, keep its partial output for audit and use a fresh
+folder for a complete rerun. Errors are recorded per case and the runner continues.
+
+The runner uses `QAPipeline.ask()`, exactly as `/api/ask` does. It does not duplicate answer
+logic or call a judge model. It preserves `OLLAMA_MODEL`, `RAG_INDEX`, Top-K, temperature,
+seed, chunking, citation validation and the UI. The experimental prompt addition is scoped
+to the evaluation process; the dashboard retains its existing prompt. The source PDF,
+cleaned text, chunk metadata, dataset, retriever and evaluator are hashed for comparison.
+Changing a controlled input between phases causes comparison to stop.
+
+The supplied JSON dataset is read unchanged from `evaluation/day08_golden_dataset.json`
+(with a project-root fallback). It must contain exactly 16 distinct cases. The existing
+Day 06 `evaluation.py` is separate; do not add an `evaluation/__init__.py` that shadows it.
+
+Outputs include `baseline_results.json/.csv`, `baseline_report.md`, `after_results.json/.csv`,
+`after_report.md`, `before_after_comparison.csv` and `evaluation_report.md`. JSON includes
+all Top-K texts and metadata, raw model output, validated dashboard answer, citations,
+latencies, expected behaviour, phrase matches, missing groups and failure explanations.
+Each case is checkpointed. A full evidence match for q3 still means **partial-only
+answerability**; no general overseas-trip approval rule is implied.
+
+Automatic checks are heuristics. Review paraphrases, conditions, negations, extra claims,
+and claim-level citation support in the JSON. A safe standard abstention can fail the
+supplied answer-wording group while passing the separate abstention check. A duration
+mentioned in a denial goes to manual review rather than automatically being a false claim.
+
+Run all offline tests (no Ollama generation needed):
+
+```powershell
+python -m unittest discover -s tests -v
+```
+
+Launch the existing dashboard as before:
+
+```powershell
+python run_rag.py web
+```
+
+Open `http://127.0.0.1:5000`.
+
+The completed 25 October 2026 run is in [outputs/day08/evaluation_report.md](outputs/day08/evaluation_report.md).
+It includes manual inspection of all 16 cases. The prompt experiment was unsuccessful and
+was not adopted by the dashboard. The recorded review describes this specific run; new
+runs generate fresh automatic reports and require their own case-by-case inspection.
+The original reviewed comparison additionally includes a `reviewed_outcome` column.
+
+Optional real-server launch smoke check (starts an unused local port, then stops its server):
+
+```powershell
+python tests/smoke_launch_day08.py
+```

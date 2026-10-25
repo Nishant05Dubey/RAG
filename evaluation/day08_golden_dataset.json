@@ -1,0 +1,740 @@
+{
+  "dataset_name": "Day 08 RAG Golden Evaluation Dataset",
+  "dataset_version": "1.0",
+  "source_document": {
+    "title": "Acme Corp IT and HR Policy Handbook",
+    "document_id": "ACME-POL-2026-014",
+    "version": "4.0",
+    "last_reviewed": "2026-09-01",
+    "page_count": 7
+  },
+  "purpose": "Reusable evaluation set for the existing Day 07 RAG application. Keep the six common Day 06 questions and add ten cases covering policy details, multi-fact questions, false premises, and missing evidence.",
+  "evaluation_guidance": {
+    "do_not_use_llm_as_judge": "Use deterministic phrase/fact checks and citation metadata checks as the main automatic evaluation. Manually inspect borderline or failed cases.",
+    "required_evidence_groups": "Each item is a group of accepted text variants. Every group should be found in the combined Top-K retrieved text for full retrieval evidence; a subset means partial evidence.",
+    "required_answer_fact_groups": "Each item is a group of accepted answer variants. Each group should appear in the final answer for the fact check to pass. These checks are heuristic, not a complete proof of groundedness.",
+    "citation_check": "For answerable cases, the citation must point to at least one expected section/page and the cited source text must support the answer. For unsupported cases, do not invent a citation to irrelevant text.",
+    "unsupported_handling": "For must_abstain=true cases, the answer must clearly say the answer is not available in the supplied handbook and must not make up a value.",
+    "manual_review": "Save individual case results and inspect failures individually; do not report only an aggregate score."
+  },
+  "cases": [
+    {
+      "id": "q1_annual_leave_days",
+      "origin": "existing_common_question",
+      "category": "answerable_paraphrase",
+      "question": "How many vacation days do employees get each year?",
+      "answerability": "answerable",
+      "expected_response_behavior": "answer_with_evidence",
+      "gold_answer": "Full-time employees receive 21 days of paid annual leave per calendar year. They can carry forward up to 5 unused days into the first quarter of the next year; any remaining days expire on March 31.",
+      "expected_evidence_groups": [
+        [
+          "totaling 21 days per calendar year"
+        ]
+      ],
+      "expected_citation_sections": [
+        "3.1 Annual Leave"
+      ],
+      "expected_source_pages": [
+        2
+      ],
+      "citation_required": true,
+      "required_answer_fact_groups": [
+        [
+          "21 days",
+          "twenty-one days"
+        ],
+        [
+          "annual leave",
+          "paid leave",
+          "vacation"
+        ]
+      ],
+      "must_abstain": false,
+      "must_state_limitation": false,
+      "forbidden_claims": [
+        "unlimited vacation",
+        "30 days of annual leave"
+      ],
+      "notes": "Original common query. Check that the answer uses the leave section, not a misleading source label from the large Day 05 chunk."
+    },
+    {
+      "id": "q2_five_days_manager_approval",
+      "origin": "existing_common_question",
+      "category": "answerable_with_false_premise_check",
+      "question": "I want to take five consecutive days off. Is manager approval required?",
+      "answerability": "answerable_with_qualification",
+      "expected_response_behavior": "answer_with_evidence_and_clarification",
+      "gold_answer": "For planned leave, submit the request in the HR portal at least 10 working days in advance. Your manager approves or declines within 3 working days. The handbook does not give a separate approval rule just because the leave is five consecutive days.",
+      "expected_evidence_groups": [
+        [
+          "Submit the request in the HR portal at least 10 working days in advance for planned leave."
+        ],
+        [
+          "Your manager approves or declines within 3 working days."
+        ]
+      ],
+      "expected_citation_sections": [
+        "3.3 Requesting Leave"
+      ],
+      "expected_source_pages": [
+        2
+      ],
+      "citation_required": true,
+      "required_answer_fact_groups": [
+        [
+          "10 working days in advance",
+          "10 working days before"
+        ],
+        [
+          "approves or declines within 3 working days",
+          "within 3 working days"
+        ]
+      ],
+      "must_abstain": false,
+      "must_state_limitation": true,
+      "forbidden_claims": [
+        "leave over three days must be approved by",
+        "five consecutive days automatically requires special approval",
+        "medical certificate for any leave over three days"
+      ],
+      "notes": "The source has no special five-day approval rule. Do not confuse the sick-leave medical certificate rule with leave approval."
+    },
+    {
+      "id": "q3_overseas_trip_approval",
+      "origin": "existing_common_question",
+      "category": "partial_evidence_trap",
+      "question": "Who needs to approve an overseas business trip?",
+      "answerability": "partial_only",
+      "expected_response_behavior": "answer_with_limit_and_abstain_from_unsupported_part",
+      "gold_answer": "The handbook does not say who approves an overseas business trip in general. It only says that business-class flights need prior written approval from a member of the executive team. That is an approval rule for the flight class, not for the trip itself.",
+      "expected_evidence_groups": [
+        [
+          "business class requires prior written approval from a member of the executive team"
+        ]
+      ],
+      "expected_citation_sections": [
+        "6.1 Booking Business Travel"
+      ],
+      "expected_source_pages": [
+        5
+      ],
+      "citation_required": true,
+      "required_answer_fact_groups": [
+        [
+          "does not say who approves",
+          "does not specify who approves",
+          "no general overseas trip approval",
+          "does not state who approves the trip"
+        ],
+        [
+          "business class",
+          "business-class"
+        ],
+        [
+          "executive team",
+          "member of the executive team"
+        ]
+      ],
+      "must_abstain": false,
+      "must_state_limitation": true,
+      "forbidden_claims": [
+        "the executive team approves all overseas business trips",
+        "all overseas business trips require executive approval",
+        "the handbook says international trips must be approved by the executive team"
+      ],
+      "notes": "The correct result is partial evidence and a clear limitation, not a guessed trip-approval rule."
+    },
+    {
+      "id": "q4_expense_receipts",
+      "origin": "existing_common_question",
+      "category": "answerable_policy_detail",
+      "question": "When are receipts required for travel expenses?",
+      "answerability": "answerable",
+      "expected_response_behavior": "answer_with_evidence",
+      "gold_answer": "Every expense claim requires an itemized receipt. A credit card statement alone is not enough. Claims should be submitted within 30 days of the expense.",
+      "expected_evidence_groups": [
+        [
+          "Every claim requires"
+        ],
+        [
+          "An itemized receipt",
+          "An itemised receipt"
+        ],
+        [
+          "a credit card statement alone is not sufficient"
+        ]
+      ],
+      "expected_citation_sections": [
+        "6.3 Submitting Expense Claims"
+      ],
+      "expected_source_pages": [
+        5
+      ],
+      "citation_required": true,
+      "required_answer_fact_groups": [
+        [
+          "every claim",
+          "all claims",
+          "each claim"
+        ],
+        [
+          "itemized receipt",
+          "itemised receipt"
+        ],
+        [
+          "credit card statement alone is not enough",
+          "credit card statement alone is not sufficient"
+        ]
+      ],
+      "must_abstain": false,
+      "must_state_limitation": false,
+      "forbidden_claims": [
+        "receipts are only required above",
+        "receipts are only required for claims over"
+      ],
+      "notes": "There is no dollar threshold in this policy."
+    },
+    {
+      "id": "q5_find_sick_leave_section",
+      "origin": "existing_common_question",
+      "category": "exact_section_lookup",
+      "question": "Find the policy section about Sick Leave.",
+      "answerability": "answerable",
+      "expected_response_behavior": "answer_with_evidence",
+      "gold_answer": "The section is 3.2 Sick Leave. It says employees get 10 days of paid sick leave per year. A medical certificate is required for absences longer than 3 consecutive working days.",
+      "expected_evidence_groups": [
+        [
+          "3.2 Sick Leave"
+        ],
+        [
+          "Employees are entitled to 10 days of paid sick leave per year"
+        ]
+      ],
+      "expected_citation_sections": [
+        "3.2 Sick Leave"
+      ],
+      "expected_source_pages": [
+        2
+      ],
+      "citation_required": true,
+      "required_answer_fact_groups": [
+        [
+          "3.2 Sick Leave",
+          "section 3.2"
+        ],
+        [
+          "10 days",
+          "ten days"
+        ]
+      ],
+      "must_abstain": false,
+      "must_state_limitation": false,
+      "forbidden_claims": [
+        "20 days of paid sick leave",
+        "medical certificate is required for all sick days"
+      ],
+      "notes": "Expected citation must identify Sick Leave, not a broad chunk label such as Password and Access Requirements."
+    },
+    {
+      "id": "q6_parental_leave_unsupported",
+      "origin": "existing_common_question",
+      "category": "unsupported_negative_control",
+      "question": "What is the company's parental leave duration?",
+      "answerability": "unsupported",
+      "expected_response_behavior": "abstain_and_say_not_in_source",
+      "gold_answer": "The provided handbook does not state a parental leave duration, so I cannot confirm it from this document.",
+      "expected_evidence_groups": [],
+      "expected_citation_sections": [],
+      "expected_source_pages": [],
+      "citation_required": false,
+      "required_answer_fact_groups": [
+        [
+          "does not state",
+          "not stated",
+          "does not specify",
+          "not specified",
+          "could not find",
+          "couldn't find",
+          "cannot confirm",
+          "not in the provided handbook",
+          "not in this document"
+        ]
+      ],
+      "must_abstain": true,
+      "must_state_limitation": true,
+      "forbidden_claims": [
+        "the company provides 12 weeks of parental leave",
+        "the company provides 16 weeks of parental leave",
+        "the company provides 26 weeks of parental leave",
+        "parental leave lasts 12 weeks",
+        "parental leave lasts 16 weeks",
+        "parental leave lasts 26 weeks"
+      ],
+      "notes": "A high similarity score is not proof that the handbook contains the answer. Any confident duration is a failure."
+    },
+    {
+      "id": "q7_remote_work_days",
+      "origin": "additional_test_case",
+      "category": "answerable_policy_detail",
+      "question": "How many days per week can an eligible employee work remotely?",
+      "answerability": "answerable_with_conditions",
+      "expected_response_behavior": "answer_with_evidence_and_conditions",
+      "gold_answer": "Eligible employees can work remotely up to 3 days per week after completing their 90-day probation period, if their role does not require physical access to labs, warehouses, or customer sites. Managers can still ask them to come into the office for certain events or when in-person work is important.",
+      "expected_evidence_groups": [
+        [
+          "up to three days per week after completing their 90-day probation period"
+        ],
+        [
+          "do not require physical access to labs, warehouses, or customer sites"
+        ]
+      ],
+      "expected_citation_sections": [
+        "1.1 Eligibility and Philosophy"
+      ],
+      "expected_source_pages": [
+        1
+      ],
+      "citation_required": true,
+      "required_answer_fact_groups": [
+        [
+          "up to 3 days per week",
+          "up to three days per week",
+          "three days per week"
+        ],
+        [
+          "90-day probation",
+          "90 day probation"
+        ]
+      ],
+      "must_abstain": false,
+      "must_state_limitation": true,
+      "forbidden_claims": [
+        "all employees can work remotely five days",
+        "remote work is guaranteed for every role"
+      ],
+      "notes": "Checks whether the answer keeps the eligibility and probation conditions."
+    },
+    {
+      "id": "q8_remote_work_from_another_country",
+      "origin": "additional_test_case",
+      "category": "answerable_multi_fact",
+      "question": "When does working remotely from another country require an exception request, and how early must it be submitted?",
+      "answerability": "answerable",
+      "expected_response_behavior": "answer_with_evidence",
+      "gold_answer": "If an employee wants to work from a country other than their country of employment for more than 14 consecutive calendar days, they must submit a Remote Work Exception Request through the HR portal at least 30 days in advance.",
+      "expected_evidence_groups": [
+        [
+          "longer than 14 consecutive calendar days"
+        ],
+        [
+          "Remote Work Exception Request through the HR portal at least 30 days in advance"
+        ]
+      ],
+      "expected_citation_sections": [
+        "1.1 Eligibility and Philosophy"
+      ],
+      "expected_source_pages": [
+        1
+      ],
+      "citation_required": true,
+      "required_answer_fact_groups": [
+        [
+          "14 consecutive calendar days",
+          "more than 14 consecutive days"
+        ],
+        [
+          "30 days in advance",
+          "30 days ahead"
+        ],
+        [
+          "HR portal"
+        ]
+      ],
+      "must_abstain": false,
+      "must_state_limitation": false,
+      "forbidden_claims": [
+        "14 business days",
+        "submit it after travel",
+        "no exception request is needed"
+      ],
+      "notes": "Checks whether the system retrieves both the time threshold and the notice period."
+    },
+    {
+      "id": "q9_lost_or_stolen_device",
+      "origin": "additional_test_case",
+      "category": "answerable_multi_fact",
+      "question": "What should I do if my company laptop is lost after work hours?",
+      "answerability": "answerable",
+      "expected_response_behavior": "answer_with_evidence",
+      "gold_answer": "Report a lost or stolen device to the IT Service Desk within 1 hour of noticing. After hours, call the 24/7 security hotline at extension 4357.",
+      "expected_evidence_groups": [
+        [
+          "Report any lost or stolen device to the IT Service Desk within 1 hour of noticing"
+        ],
+        [
+          "call the 24/7 security hotline at extension 4357"
+        ]
+      ],
+      "expected_citation_sections": [
+        "1.2 Remote Work Rules"
+      ],
+      "expected_source_pages": [
+        1
+      ],
+      "citation_required": true,
+      "required_answer_fact_groups": [
+        [
+          "within 1 hour",
+          "within one hour"
+        ],
+        [
+          "4357"
+        ]
+      ],
+      "must_abstain": false,
+      "must_state_limitation": false,
+      "forbidden_claims": [
+        "wait until the next working day",
+        "report it within 24 hours"
+      ],
+      "notes": "Checks a procedure that depends on two separate facts."
+    },
+    {
+      "id": "q10_mfa_coverage",
+      "origin": "additional_test_case",
+      "category": "answerable_exact_list",
+      "question": "Which systems require multi-factor authentication?",
+      "answerability": "answerable",
+      "expected_response_behavior": "answer_with_evidence",
+      "gold_answer": "MFA is mandatory for email, the VPN, the HR portal, and all production systems.",
+      "expected_evidence_groups": [
+        [
+          "MFA is mandatory for email, VPN, the HR portal, and all production systems",
+          "Multi-factor authentication (MFA) is mandatory for email"
+        ]
+      ],
+      "expected_citation_sections": [
+        "2.2 Password and Access Requirements"
+      ],
+      "expected_source_pages": [
+        2
+      ],
+      "citation_required": true,
+      "required_answer_fact_groups": [
+        [
+          "email"
+        ],
+        [
+          "VPN"
+        ],
+        [
+          "HR portal"
+        ],
+        [
+          "production systems"
+        ]
+      ],
+      "must_abstain": false,
+      "must_state_limitation": false,
+      "forbidden_claims": [
+        "MFA is optional for production systems",
+        "MFA is only required for email"
+      ],
+      "notes": "Check list completeness, not just whether MFA is mentioned."
+    },
+    {
+      "id": "q11_unapproved_freemium_tool",
+      "origin": "additional_test_case",
+      "category": "answerable_policy_and_false_premise_check",
+      "question": "Can I use a free trial or freemium tool to process company data if IT has not approved it?",
+      "answerability": "answerable",
+      "expected_response_behavior": "answer_with_evidence",
+      "gold_answer": "No. Free trials and freemium tools are not exempt if they process company data. First check the approved catalogue. If there is no approved alternative, submit a Software Request ticket with the required business, vendor, and data-classification details. Information Security reviews the vendor, and tools processing L3 or L4 data also need Legal review of the data processing agreement.",
+      "expected_evidence_groups": [
+        [
+          "Free trials and 'freemium' tools are not exempt from this process if they will process any company data"
+        ],
+        [
+          "Search the catalogue first to confirm no approved alternative exists"
+        ],
+        [
+          "Submit a Software Request ticket"
+        ],
+        [
+          "Information Security completes a vendor risk review within 10 working days"
+        ]
+      ],
+      "expected_citation_sections": [
+        "5.2 Requesting New Software"
+      ],
+      "expected_source_pages": [
+        4
+      ],
+      "citation_required": true,
+      "required_answer_fact_groups": [
+        [
+          "not exempt",
+          "not allowed just because it is free",
+          "free trials",
+          "freemium"
+        ],
+        [
+          "approved catalogue",
+          "catalogue first",
+          "catalog first"
+        ],
+        [
+          "Software Request ticket",
+          "software request"
+        ]
+      ],
+      "must_abstain": false,
+      "must_state_limitation": false,
+      "forbidden_claims": [
+        "free trials are exempt",
+        "freemium tools can process company data without review",
+        "any tool can be used if it is free"
+      ],
+      "notes": "Tests policy safety and whether the answer avoids the tempting but incorrect free-tool exception."
+    },
+    {
+      "id": "q12_software_license_approval_20000",
+      "origin": "additional_test_case",
+      "category": "answerable_numeric_lookup",
+      "question": "Who must approve an annual software license that costs USD 20,000?",
+      "answerability": "answerable",
+      "expected_response_behavior": "answer_with_evidence",
+      "gold_answer": "For an annual software license costing USD 20,000, approval is required from the department head and Finance, because it falls in the USD 10,001–50,000 range.",
+      "expected_evidence_groups": [
+        [
+          "10,001 – 50,000",
+          "10,001-50,000",
+          "10,001–50,000"
+        ],
+        [
+          "Department head + Finance"
+        ]
+      ],
+      "expected_citation_sections": [
+        "5.3 Software License Costs"
+      ],
+      "expected_source_pages": [
+        5
+      ],
+      "citation_required": true,
+      "required_answer_fact_groups": [
+        [
+          "department head",
+          "department head and finance",
+          "department head + finance"
+        ],
+        [
+          "finance"
+        ]
+      ],
+      "must_abstain": false,
+      "must_state_limitation": false,
+      "forbidden_claims": [
+        "team manager only",
+        "CFO and CTO",
+        "department head only"
+      ],
+      "notes": "Checks numerical range selection and the matching approvers."
+    },
+    {
+      "id": "q13_sev1_response_target",
+      "origin": "additional_test_case",
+      "category": "answerable_numeric_lookup",
+      "question": "What is the response target for a SEV-1 security incident?",
+      "answerability": "answerable",
+      "expected_response_behavior": "answer_with_evidence",
+      "gold_answer": "The response target for a SEV-1 incident is 15 minutes. SEV-1 covers an active breach or confirmed data exposure.",
+      "expected_evidence_groups": [
+        [
+          "SEV-1"
+        ],
+        [
+          "15 minutes"
+        ],
+        [
+          "Active breach",
+          "confirmed data exposure"
+        ]
+      ],
+      "expected_citation_sections": [
+        "4.4.1 Severity Matrix"
+      ],
+      "expected_source_pages": [
+        4
+      ],
+      "citation_required": true,
+      "required_answer_fact_groups": [
+        [
+          "15 minutes",
+          "15 minute"
+        ],
+        [
+          "active breach",
+          "confirmed data exposure"
+        ]
+      ],
+      "must_abstain": false,
+      "must_state_limitation": false,
+      "forbidden_claims": [
+        "1 hour",
+        "4 hours",
+        "2 working days"
+      ],
+      "notes": "Checks that the system does not confuse SEV-1 with other severity levels."
+    },
+    {
+      "id": "q14_disclose_gift_150",
+      "origin": "additional_test_case",
+      "category": "answerable_policy_procedure",
+      "question": "A current supplier offered me a gift worth USD 150. Do I need to disclose it, and where?",
+      "answerability": "answerable",
+      "expected_response_behavior": "answer_with_evidence",
+      "gold_answer": "Yes. Gifts or hospitality worth more than USD 100 from a current or potential business partner must be disclosed using the Conflict of Interest form in the HR portal. HR and Legal review disclosures confidentially.",
+      "expected_evidence_groups": [
+        [
+          "worth more than USD 100 from a current or prospective business partner"
+        ],
+        [
+          "Conflict of Interest form in the HR portal"
+        ],
+        [
+          "reviewed confidentially by HR and Legal"
+        ]
+      ],
+      "expected_citation_sections": [
+        "7.2 Conflicts of Interest"
+      ],
+      "expected_source_pages": [
+        6
+      ],
+      "citation_required": true,
+      "required_answer_fact_groups": [
+        [
+          "more than USD 100",
+          "over $100",
+          "over USD 100",
+          "150"
+        ],
+        [
+          "Conflict of Interest form",
+          "conflict of interest"
+        ],
+        [
+          "HR portal"
+        ]
+      ],
+      "must_abstain": false,
+      "must_state_limitation": false,
+      "forbidden_claims": [
+        "gifts under USD 200 do not need disclosure",
+        "no disclosure is needed"
+      ],
+      "notes": "Checks both the threshold and the reporting route."
+    },
+    {
+      "id": "q15_learning_budget",
+      "origin": "additional_test_case",
+      "category": "answerable_numeric_lookup",
+      "question": "How much is the annual learning budget for a full-time employee, and does unused money carry over?",
+      "answerability": "answerable",
+      "expected_response_behavior": "answer_with_evidence",
+      "gold_answer": "Every full-time employee receives an annual learning budget of USD 1,200. Unused budget does not carry over to the next year.",
+      "expected_evidence_groups": [
+        [
+          "annual learning budget of USD 1,200",
+          "annual learning budget of $1,200"
+        ],
+        [
+          "Unused budget does not carry over"
+        ]
+      ],
+      "expected_citation_sections": [
+        "8.2 Learning Budget"
+      ],
+      "expected_source_pages": [
+        6
+      ],
+      "citation_required": true,
+      "required_answer_fact_groups": [
+        [
+          "1,200",
+          "1200",
+          "one thousand two hundred"
+        ],
+        [
+          "does not carry over",
+          "doesn't carry over",
+          "cannot be carried over"
+        ]
+      ],
+      "must_abstain": false,
+      "must_state_limitation": false,
+      "forbidden_claims": [
+        "unused budget carries over",
+        "annual learning budget is USD 2,000"
+      ],
+      "notes": "Checks a two-part answer: amount and carry-over rule."
+    },
+    {
+      "id": "q16_receipt_minimum_dollar_threshold",
+      "origin": "additional_test_case",
+      "category": "answerable_absent_threshold",
+      "question": "What is the minimum dollar amount before I need to provide a receipt for an expense claim?",
+      "answerability": "answerable_with_qualification",
+      "expected_response_behavior": "state_threshold_not_specified_and_give_actual_rule",
+      "gold_answer": "The handbook does not give a minimum dollar threshold. It says every expense claim requires an itemized receipt, and a credit card statement alone is not sufficient.",
+      "expected_evidence_groups": [
+        [
+          "Every claim requires"
+        ],
+        [
+          "An itemized receipt",
+          "An itemised receipt"
+        ],
+        [
+          "a credit card statement alone is not sufficient"
+        ]
+      ],
+      "expected_citation_sections": [
+        "6.3 Submitting Expense Claims"
+      ],
+      "expected_source_pages": [
+        5
+      ],
+      "citation_required": true,
+      "required_answer_fact_groups": [
+        [
+          "does not give a minimum",
+          "no minimum dollar threshold",
+          "does not specify a dollar threshold",
+          "no dollar threshold is stated"
+        ],
+        [
+          "every expense claim",
+          "every claim",
+          "all claims"
+        ],
+        [
+          "itemized receipt",
+          "itemised receipt"
+        ]
+      ],
+      "must_abstain": false,
+      "must_state_limitation": true,
+      "forbidden_claims": [
+        "receipts are only required for expenses over USD 25",
+        "receipts are only required for expenses over USD 50",
+        "receipts are only required for expenses over USD 100",
+        "the minimum receipt amount is USD 25",
+        "the minimum receipt amount is USD 50",
+        "the minimum receipt amount is USD 100"
+      ],
+      "notes": "A useful false-premise test: explain that no amount is stated while reporting the actual all-claims rule."
+    }
+  ]
+}

@@ -418,6 +418,9 @@ class QAPipeline:
                 "section": h["source"]["section"],
                 "pages": h["source"]["pages"],
                 "text": h["chunk_text"],
+                "document": h["source"].get("document"),
+                "parent_chunk_id": h["source"].get("parent_chunk_id"),
+                "section_path": h["source"].get("section_path"),
             } for h in hits],
             "timings_ms": {"retrieval": round((t1 - t0) * 1000)},
         }

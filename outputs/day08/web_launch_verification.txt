@@ -1,0 +1,18 @@
+
+======================================================================
+Day 07 | Blend RAG Assistant (local web app)
+======================================================================
+Loading the retriever (embedding model + chunks)...
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  85%|########5 | 170/199 [00:00<00:00, 1699.33it/s]Loading weights: 100%|##########| 199/199 [00:00<00:00, 1959.80it/s]
+  69 chunks (child index) from Acme Corp IT and HR Policy Handbook
+Ollama model 'llama3.2': ready
+
+Open http://127.0.0.1:64252 in your browser (Ctrl+C to stop).
+
+ * Serving Flask app 'web_app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:64252
+Press CTRL+C to quit
+127.0.0.1 - - [25/Oct/2026 17:58:43] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 17:58:43] "GET /api/health HTTP/1.1" 200 -
