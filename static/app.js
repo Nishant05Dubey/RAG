@@ -3,6 +3,51 @@
 
 const $ = (id) => document.getElementById(id);
 const REQUEST_TIMEOUT_MS = 200000; // a little above the server's Ollama timeout
+let pendingAction = null;
+
+function renderAction(action) {
+  pendingAction = action.status === "pending" ? action.id : null;
+  $("action-panel").hidden = false;
+  $("action-status").textContent = action.status;
+  $("action-message").textContent = action.message;
+  const r = action.request;
+  $("action-details").textContent = `${r.leave_type} leave · ${r.start_date} to ${r.end_date} · ${r.calendar_days} calendar day(s)` +
+    (r.reason ? ` · Reason: ${r.reason}` : "");
+  $("action-buttons").hidden = !pendingAction;
+  $("ask-btn").disabled = !!pendingAction;
+}
+
+async function decideAction(decision) {
+  if (!pendingAction) return;
+  $("confirm-action").disabled = $("cancel-action").disabled = true;
+  $("error").hidden = true;
+  try {
+    const response = await fetch("/api/action/decision", {
+      method: "POST", headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({action_id: pendingAction, decision}),
+    });
+    const data = await response.json();
+    if (!response.ok) {
+      showError("Action not executed", data.error.message);
+      if ([404, 409].includes(response.status)) {
+        pendingAction = null;
+        $("action-buttons").hidden = true;
+        $("action-status").textContent = "closed";
+        $("action-message").textContent = data.error.message;
+        $("ask-btn").disabled = false;
+      }
+      return;
+    }
+    renderAction(data.action);
+  } catch (error) {
+    showError("Could not confirm the result", "Retry the same button. A repeated confirmation will not execute the simulation twice.");
+  } finally {
+    $("confirm-action").disabled = $("cancel-action").disabled = false;
+  }
+}
+
+$("confirm-action").addEventListener("click", () => decideAction("confirm"));
+$("cancel-action").addEventListener("click", () => decideAction("cancel"));
 
 function el(tag, className, text) {
   const node = document.createElement(tag);
@@ -49,7 +94,7 @@ function render(data) {
   pill.textContent = answered ? "Grounded answer" : "Insufficient evidence";
   pill.className = "pill " + (answered ? "ok" : "warn");
   $("answer-meta").textContent =
-    `${d.model} · ${d.index} index · top ${d.top_k} · retrieval ${d.timings_ms.retrieval} ms · ` +
+    `Read tool · ${d.model} · ${d.index} index · top ${d.top_k} · retrieval ${d.timings_ms.retrieval} ms · ` +
     `generation ${d.timings_ms.generation} ms` + (d.reason && d.reason !== "model abstained" ? ` · ${d.reason}` : "");
 
   const list = $("sources");
@@ -85,7 +130,12 @@ function render(data) {
 
 // ---- ask -------------------------------------------------------------------
 async function ask(question) {
+  if (pendingAction) {
+    showError("Resolve the pending request", "Choose Confirm simulation or Cancel before sending another message.");
+    return;
+  }
   $("error").hidden = true;
+  $("action-panel").hidden = true;
   $("result").hidden = true;
   $("loading").hidden = false;
   $("ask-btn").disabled = true;
@@ -109,11 +159,13 @@ async function ask(question) {
         retrieval_failed: "Retrieval failed",
         malformed_output: "The model returned malformed output",
         bad_request: "Check your question",
+        invalid_input: "Check your leave request",
       };
       showError(titles[err.code] || "Something went wrong", err.message);
       return;
     }
-    render(data);
+    if (data.action) renderAction(data.action);
+    else render(data);
   } catch (e) {
     showError(e.name === "AbortError" ? "The request timed out" : "Cannot reach the app server",
       e.name === "AbortError" ? "No answer within the time limit. Try again; the first question loads the model."
@@ -121,7 +173,7 @@ async function ask(question) {
   } finally {
     clearTimeout(timer);
     $("loading").hidden = true;
-    $("ask-btn").disabled = false;
+    $("ask-btn").disabled = !!pendingAction;
   }
 }
 
@@ -134,3 +186,6 @@ $("question").addEventListener("keydown", (e) => {
   if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) $("ask-form").requestSubmit();
 });
 loadHealth();
+fetch("/api/action/pending").then(r => r.json()).then(data => {
+  if (data.action) renderAction(data.action);
+}).catch(() => {});

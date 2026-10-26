@@ -29,17 +29,28 @@
         <textarea id="question" rows="3" maxlength="{{ max_chars }}"
                   placeholder="e.g. How many vacation days do employees get each year?" required></textarea>
         <div class="ask-row">
-          <span class="hint">Answers use only the retrieved policy text. Ctrl+Enter to ask.</span>
+          <span class="hint">Ask a policy question, or type: Request annual leave from 2026-11-02 to 2026-11-04. Ctrl+Enter to send.</span>
           <button type="submit" id="ask-btn">Ask</button>
         </div>
       </form>
 
       <div class="loading" id="loading" hidden>
         <span class="spinner"></span>
-        <span>Retrieving the top 3 chunks and generating an answer with the local model…</span>
+        <span>Processing your request locally…</span>
       </div>
 
       <div class="error" id="error" hidden></div>
+
+      <section class="card" id="action-panel" aria-live="polite" hidden>
+        <div class="card-head"><h3>Simulated leave request</h3><span class="pill warn" id="action-status"></span></div>
+        <p id="action-message"></p>
+        <p id="action-details"></p>
+        <p class="hint">Simulation only. No HR connection, leave approval, or real submission. Confirmation expires after 15 minutes.</p>
+        <div class="ask-row" id="action-buttons">
+          <button type="button" id="cancel-action">Cancel</button>
+          <button type="button" id="confirm-action">Confirm simulation</button>
+        </div>
+      </section>
 
       <section id="result" hidden>
         <div class="card">

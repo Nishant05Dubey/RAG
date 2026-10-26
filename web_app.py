@@ -14,12 +14,14 @@ Every question asked in the browser is appended to logs/web_qa_log.jsonl.
 import argparse
 import json
 import sys
+import secrets
 from datetime import datetime
 
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, jsonify, render_template, request, session
 
 from paths import LOGS_DIR
 from qa_pipeline import MAX_QUESTION_CHARS, QAError, QAPipeline
+from day10_tools import LocalTools, TOOL_LOG, ToolError, is_leave_request
 
 WEB_LOG = LOGS_DIR / "web_qa_log.jsonl"
 
@@ -45,10 +47,40 @@ def error_response(code, message, status, debug=None):
     return jsonify(body), status
 
 
-def create_app(pipeline=None, log=True):
+def create_app(pipeline=None, log=True, tool_log_path=TOOL_LOG):
     app = Flask(__name__)
+    app.secret_key = secrets.token_hex(32)
+    app.config.update(SESSION_COOKIE_HTTPONLY=True, SESSION_COOKIE_SAMESITE='Strict')
     app.json.sort_keys = False  # keep answer, citations, sources, debug in order
     pipeline = pipeline or QAPipeline()
+    tools = LocalTools(pipeline, tool_log_path if log else None)
+    app.extensions['day10_tools'] = tools
+
+    def owner():
+        if 'tool_owner' not in session:
+            session['tool_owner'] = secrets.token_urlsafe(24)
+        return session['tool_owner']
+
+    @app.errorhandler(ToolError)
+    def tool_error(error):
+        return error_response(error.code, str(error), error.http_status)
+
+    @app.get('/api/action/pending')
+    def pending_action():
+        return jsonify(action=tools.pending(owner()))
+
+    @app.post('/api/action/decision')
+    def decide_action():
+        body = request.get_json(silent=True)
+        if not isinstance(body, dict):
+            raise ToolError('Expected a confirmation or cancellation.')
+        try:
+            return jsonify(action=tools.decide(body.get('action_id'), body.get('decision'), owner()))
+        except ToolError as exc:
+            tools.log('simulate_leave', 'rejected', simulated=True, error=str(exc))
+            raise
+        except OSError:
+            return error_response('log_unavailable', 'Could not save the simulation log. No action was executed; try again.', 503)
 
     @app.get("/")
     def index():
@@ -62,6 +94,8 @@ def create_app(pipeline=None, log=True):
     @app.post("/api/ask")
     def ask():
         body = request.get_json(silent=True) or {}
+        if not isinstance(body, dict):
+            return error_response('bad_request', 'Please send a question.', 400)
         question = body.get("question")
         if not isinstance(question, str) or not question.strip():
             return error_response("bad_request", "Please type a question.", 400)
@@ -69,7 +103,11 @@ def create_app(pipeline=None, log=True):
             return error_response("bad_request",
                                   f"Questions are limited to {MAX_QUESTION_CHARS} characters.", 400)
         try:
-            result = pipeline.ask(question)
+            if is_leave_request(question):
+                return jsonify(action=tools.stage_leave(question, owner()))
+            result = tools.read_policy(question)
+        except ToolError:
+            raise
         except QAError as e:
             if log:
                 log_answer(question, error=e.code)

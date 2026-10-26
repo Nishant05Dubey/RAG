@@ -411,3 +411,60 @@ Optional real-server launch smoke check (starts an unused local port, then stops
 ```powershell
 python tests/smoke_launch_day08.py
 ```
+
+## 9. Day 10: test local tools in the browser
+
+Start Ollama as usual. From the workspace root, start the existing app without needing
+virtual-environment activation:
+
+```powershell
+cd rag
+.\.venv\Scripts\python.exe run_rag.py web
+```
+
+Open **http://127.0.0.1:5000**. If an older server is running, stop it with Ctrl+C and
+restart to load the changes. Refresh the page to load the updated chat controls.
+No new packages, API key, cloud model or HR connection are needed.
+
+Use the existing question box and **Ask** button:
+
+| Browser test | Type this | Expected result |
+|---|---|---|
+| Read policy | `What is the remote work policy?` | The read tool calls the existing Ollama RAG pipeline; the answer shows citations, source sections/pages and retrieved evidence. |
+| Reject confirmation | `Request annual leave from 2026-11-02 to 2026-11-04` | A simulation preview appears. Click **Cancel**. It says cancelled; no execution is recorded. |
+| Confirm simulation | Enter the same leave request again | Review dates, type and calendar-day count, then click **Confirm simulation**. One simulated execution is logged; no real request is submitted or approved. |
+| Invalid calendar date | `Request leave from 2026-02-30 to 2026-03-02` | A clear date error; no pending request and no execution. |
+| Reversed date range | `Request leave from 2026-11-04 to 2026-11-02` | End-date validation error; no execution. |
+
+Dates must be exact `YYYY-MM-DD` calendar dates. Supply both start and end; repeat the date
+for a single day. Types recognized are annual, sick and unpaid; otherwise the preview says
+unspecified. You can add `reason: holiday`. This demo validates date format/calendar/range;
+it does not check leave balances, working days, eligibility or HR approval. Calendar-day
+count is not a deduction from a leave balance. Informational questions such as
+`How do I request leave?` remain policy reads. Natural-language routing is deliberately
+simple; use the explicit examples above for action requests.
+
+Resolve a pending request with its buttons before asking another question. Pending actions
+belong to the browser session, survive page refresh, and expire after 15 minutes. They are
+held in memory: restarting the server invalidates them safely. Repeated confirmation cannot
+execute the same action twice. Cancelled, expired and replaced actions cannot be confirmed.
+Only the reviewed server-side dates are used; a confirmation cannot alter the request.
+
+Tool results are saved to **`logs/tool_execution_log.jsonl`**. Each line includes the tool,
+status and result/error. Read results include the answer and sources. Simulations include
+`simulated: true`; only confirmed simulations have `status: "executed"` and `executed: true`.
+Pending, cancelled, validation-error and expired events have `executed: false`. The existing
+web question log is retained. These logs are local and include the question/reason you type.
+
+Implementation: `day10_tools.py` provides `read_policy` and the staged simulated write;
+`web_app.py` routes the existing question endpoint and provides confirmation endpoints.
+The page adds one confirmation card; the existing dashboard and QA pipeline remain in place.
+There is no agent framework and the LLM cannot authorize a write.
+
+Developer verification (not required for browser use):
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+# With the app running; this creates clearly labelled simulated smoke-test log entries:
+.\.venv\Scripts\python.exe tests/smoke_day10_http.py http://127.0.0.1:5000
+```
