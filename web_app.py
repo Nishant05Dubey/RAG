@@ -6,15 +6,17 @@
 Endpoints:
     GET  /             the RAG page (templates/index.html)
     GET  /api/health   can the app read the chunks and reach Ollama + the model?
-    POST /api/ask      {"question": "..."} -> {answer, citations, sources, debug}
+    POST /api/ask      {"question": "..."} -> {answer, citations, sources, debug} or {action}
+    GET  /api/action/pending   recover this session's pending simulation
+    POST /api/action/decision  {"action_id": "...", "decision": "confirm" or "cancel"}
 
 Errors come back as {"error": {"code", "message"}} with a matching HTTP status.
 Every question asked in the browser is appended to logs/web_qa_log.jsonl.
 """
 import argparse
 import json
-import sys
 import secrets
+import sys
 from datetime import datetime
 
 from flask import Flask, jsonify, render_template, request, session
@@ -29,10 +31,10 @@ WEB_LOG = LOGS_DIR / "web_qa_log.jsonl"
 def log_answer(question, result=None, error=None):
     rec = {"timestamp": datetime.now().isoformat(timespec="seconds"), "question": question}
     if result:
-        d = result["debug"]
-        rec.update(status=d["status"], answer=result["answer"], citations=result["citations"],
-                   model=d["model"], index=d["index"], timings_ms=d["timings_ms"],
-                   retrieved=[(r["chunk_id"], r["similarity_score"]) for r in d["retrieved"]])
+        debug = result["debug"]
+        rec.update(status=debug["status"], answer=result["answer"], citations=result["citations"],
+                   model=debug["model"], index=debug["index"], timings_ms=debug["timings_ms"],
+                   retrieved=[(r["chunk_id"], r["similarity_score"]) for r in debug["retrieved"]])
     if error:
         rec["error"] = error
     LOGS_DIR.mkdir(parents=True, exist_ok=True)

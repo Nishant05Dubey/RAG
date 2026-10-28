@@ -80,9 +80,9 @@ def chunk():
     console_file.write_text(console.getvalue(), encoding="utf-8")
     # Print the summary table only; the full side-by-side view is in the file.
     lines = console.getvalue().splitlines()
-    end = next((i for i, l in enumerate(lines) if "ORPHANED HEADINGS" in l), len(lines))
+    end = next((i for i, line in enumerate(lines) if "ORPHANED HEADINGS" in line), len(lines))
     print("\n".join(lines[:end]).rstrip())
-    print("\n".join(l for l in lines if l.startswith("Saved")))
+    print("\n".join(line for line in lines if line.startswith("Saved")))
     print(f"Full comparison output: {console_file}")
 
     banner("Day 05 | Step 3: export metadata, readable chunks and reports")

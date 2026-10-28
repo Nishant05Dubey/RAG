@@ -49,6 +49,8 @@ def parse_leave(question):
 
 
 class LocalTools:
+    """Policy reads and session-owned simulations with serialized state changes."""
+
     def __init__(self, pipeline, log_path=TOOL_LOG, ttl=900, clock=time.monotonic):
         self.pipeline, self.log_path, self.ttl, self.clock = pipeline, log_path, ttl, clock
         self.records = {}
@@ -76,7 +78,14 @@ class LocalTools:
 
     @staticmethod
     def public(record):
+        """Expose only the action fields consumed by the browser."""
         return {key: record[key] for key in ('id', 'status', 'simulated', 'request', 'message')}
+
+    def _expire(self, record, message):
+        """Expire a pending record under the caller's lock, logging before mutation."""
+        if record['status'] == 'pending' and self.clock() >= record['expires']:
+            self.log('simulate_leave', 'expired', simulated=True, action_id=record['id'])
+            record.update(status='expired', message=message)
 
     def stage_leave(self, question, owner):
         try:
@@ -103,9 +112,7 @@ class LocalTools:
             record = self.records.get(action_id)
             if not record or record['owner'] != owner:
                 raise ToolError('Request not found in this browser session. Enter a new request.', 'unknown_action', 404)
-            if record['status'] == 'pending' and self.clock() >= record['expires']:
-                self.log('simulate_leave', 'expired', simulated=True, action_id=action_id)
-                record.update(status='expired', message='Confirmation expired; nothing was executed. Enter a new request.')
+            self._expire(record, 'Confirmation expired; nothing was executed. Enter a new request.')
             if record['status'] != 'pending':
                 if (decision == 'confirm' and record['status'] == 'executed') or (decision == 'cancel' and record['status'] == 'cancelled'):
                     return self.public(record)  # retry: do not execute/log a second action
@@ -123,8 +130,6 @@ class LocalTools:
         with self.lock:
             for record in reversed(list(self.records.values())):
                 if record['owner'] == owner and record['status'] == 'pending':
-                    if self.clock() >= record['expires']:
-                        self.log('simulate_leave', 'expired', simulated=True, action_id=record['id'])
-                        record.update(status='expired', message='Confirmation expired; nothing was executed.')
+                    self._expire(record, 'Confirmation expired; nothing was executed.')
                     return self.public(record)
         return None

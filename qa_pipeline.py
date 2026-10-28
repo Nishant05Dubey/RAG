@@ -17,7 +17,7 @@ service and is called through its native HTTP API with the standard library.
 Configuration (environment variables, so no code change is needed):
     OLLAMA_HOST     default http://127.0.0.1:11434
     OLLAMA_MODEL    default llama3.2   (for example llama3.2:3b)
-    OLLAMA_TIMEOUT  seconds per model call, default 120
+    OLLAMA_TIMEOUT  seconds per model call, default 180
     RAG_INDEX       child (default: Day 06 heading-aligned chunks) or parent
 """
 import json

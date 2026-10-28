@@ -5,8 +5,9 @@ import tempfile
 import unittest
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
+from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from day10_tools import LocalTools, ToolError, is_leave_request
+from day10_tools import LocalTools, is_leave_request
 from web_app import create_app
 from test_qa_pipeline import pipeline, good_reply
 
@@ -18,6 +19,9 @@ class ToolWebTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.path = Path(self.temp.name)/'tools.jsonl'
+        web_log = patch('web_app.WEB_LOG', Path(self.temp.name)/'web_qa_log.jsonl')
+        web_log.start()
+        self.addCleanup(web_log.stop)
         self.pipeline = pipeline(good_reply())
         self.app = create_app(self.pipeline, tool_log_path=self.path)
         self.client = self.app.test_client()
@@ -83,6 +87,28 @@ class ToolWebTests(unittest.TestCase):
         self.app.extensions['day10_tools'].records[action['id']]['expires'] = 0
         self.assertEqual(self.decide(action, 'confirm').status_code, 409)
         self.assertFalse(any(row['executed'] for row in self.events()))
+
+    def test_pending_expiry_is_logged_once(self):
+        action = self.stage()
+        self.app.extensions['day10_tools'].records[action['id']]['expires'] = 0
+        expired = self.client.get('/api/action/pending').json['action']
+        self.assertEqual(expired['status'], 'expired')
+        self.assertEqual(expired['message'], 'Confirmation expired; nothing was executed.')
+        self.assertIsNone(self.client.get('/api/action/pending').json['action'])
+        self.assertEqual(sum(row['status'] == 'expired' for row in self.events()), 1)
+        self.assertFalse(any(row['executed'] for row in self.events()))
+
+    def test_expiry_log_failure_preserves_pending_record(self):
+        tools = LocalTools(self.pipeline, self.path, clock=lambda: 0)
+        action = tools.stage_leave(QUESTION, 'owner')
+        tools.records[action['id']]['expires'] = 0
+        tools.log_path = Path(self.temp.name)
+        with self.assertRaises(OSError):
+            tools.pending('owner')
+        self.assertEqual(tools.records[action['id']]['status'], 'pending')
+        with self.assertRaises(OSError):
+            tools.decide(action['id'], 'confirm', 'owner')
+        self.assertEqual(tools.records[action['id']]['status'], 'pending')
 
     def test_confirmation_cannot_change_reviewed_dates(self):
         action = self.stage()

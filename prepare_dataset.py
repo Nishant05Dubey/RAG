@@ -1,3 +1,4 @@
+"""Extract the policy PDF and restore headings for manual review before chunking."""
 import hashlib
 import json
 import re

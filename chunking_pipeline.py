@@ -258,10 +258,7 @@ def segment_units(text: str):
     # as one long blob of text) is packed into line-, then word-sized pieces.
     final = []
     for s, e, kind in glued:
-        if (
-    e - s <= SEMANTIC_MAX_CHARS
-    or kind in {"table", "code"}
-):
+        if e - s <= SEMANTIC_MAX_CHARS or kind in {"table", "code"}:
             final.append((s, e, kind))
             continue
         pieces = [(m.start(), m.end()) for m in re.finditer(r"[^\n]+", text[s:e])]

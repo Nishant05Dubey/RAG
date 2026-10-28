@@ -1,3 +1,4 @@
+"""Enrich reviewed Day 05 chunks with provenance and export comparison reports."""
 import csv
 import json
 import re
@@ -42,7 +43,6 @@ def main(reviewed=None):
     if not page_spans:
         raise ValueError("Page markers are missing from the cleaned TXT.")
 
-    results = {}
     summary = {}
 
     for strategy in STRATEGIES:
@@ -109,7 +109,6 @@ def main(reviewed=None):
             encoding="utf-8",
         )
 
-        results[strategy] = chunks
         summary[strategy] = pipeline.summarize(chunks)
 
     (OUTPUTS_DIR / "comparison_summary.json").write_text(
