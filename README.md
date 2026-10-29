@@ -468,3 +468,93 @@ Developer verification (not required for browser use):
 # With the app running; this creates clearly labelled simulated smoke-test log entries:
 .\.venv\Scripts\python.exe tests/smoke_day10_http.py http://127.0.0.1:5000
 ```
+
+## 10. Day 11: ReAct agent challenge (terminal)
+
+`day11_agent.py` adds a standalone **Thought -> Action -> Observation** loop using
+the existing Ollama client and local `llama3.2`. No API key or new dependency is needed.
+The Flask dashboard and its Day 10 confirmation flow continue to work as before;
+this Day 11 challenge runs separately in the terminal.
+
+On each turn, the model returns a short decision summary (`thought`), an action,
+its input, and an optional final answer. It can answer greetings/general questions
+directly, call `read_policy` for company policy evidence, or call `simulate_leave`
+to stage an explicit leave request. Names and arguments are checked in Python
+before dispatch; unknown tools, extra arguments, and model-generated confirmation
+commands are rejected. Actual tool results (including sources, errors, or action
+status) are sent back to the model as the next observation.
+
+The loop stops on `final`, after **5 agent iterations**, or on an Ollama error.
+The final-answer turn counts toward five; a policy lookup also makes its existing
+internal RAG model call. A limit stop reports that no final answer was reached.
+Every decision/action/input, observation, and final answer is printed as JSONL and
+appended to the separate `logs/day11_react_log.jsonl`. Existing log formats and
+historical outputs are unchanged; Day 10 tools retain their normal tool logging.
+
+### Step 1: run the offline tests first
+
+Open PowerShell in `Day 4 Rag`, then enter:
+
+```powershell
+cd rag
+.\.venv\Scripts\python.exe -m unittest discover -s tests -p test_day11_agent.py -v
+```
+
+The two challenge examples print their traces: `test_two_policy_calls_then_final`
+makes two policy calls, checks both real mocked observations were passed to the
+next model turns, and ends with a final answer; `test_direct_answer_without_tools`
+returns a greeting with zero tool calls. Mocked policy facts are test fixtures,
+not new policy evidence. Four additional tests cover tool/argument rejection,
+the five-turn cap, pending-only staging, and human confirmation/cancellation.
+All six tests run without Ollama, embeddings, or writes to project logs.
+
+To run either challenge example individually, or the full regression suite:
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -p test_day11_agent.py -k two_policy_calls -v
+.\.venv\Scripts\python.exe -m unittest discover -s tests -p test_day11_agent.py -k direct_answer -v
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+```
+
+### Step 2: run the real local agent
+
+Keep the same terminal in `rag`. Start the Ollama app, then check that the model
+is installed (run `ollama pull llama3.2` only if it is missing):
+
+```powershell
+ollama list
+.\.venv\Scripts\python.exe day11_agent.py -q "Hello!"
+.\.venv\Scripts\python.exe day11_agent.py -q "What are the remote work and annual leave policies? Look up each separately before answering."
+```
+
+The first question should produce a direct final answer. The second should show
+two `read_policy` actions, their observations, and a final answer. Live model
+choices can vary; the offline tests verify these paths deterministically. Policy
+lookups need the existing chunks, installed embedding dependencies/model cache,
+and Ollama, just as the dashboard does. Each call can take time on CPU.
+The agent explicitly uses `llama3.2`; existing Ollama host/timeout settings are reused.
+Its final synthesis is model-generated; inspect the validated RAG observations and
+citations in the trace when checking policy answers.
+
+### Step 3: optionally test the simulated action boundary
+
+```powershell
+.\.venv\Scripts\python.exe day11_agent.py -q "Request annual leave from 2026-11-02 to 2026-11-04"
+```
+
+If the model selects `simulate_leave`, the existing Day 10 tool stages the exact
+original request. Review the preview and type **cancel** or **confirm** at the
+human console prompt. Only that human response can call the existing `decide()`;
+the model cannot approve anything. `confirm` logs a simulation, never a real HR
+submission. Invalid input leaves the action pending; EOF/Ctrl+C at this prompt
+cancels. CLI pending actions are in memory and do not transfer to the dashboard.
+Without a human callback, programmatic use of `ReActAgent` only stages the action.
+
+Inspect the saved trace or choose a separate append-only trace destination:
+
+```powershell
+Get-Content .\logs\day11_react_log.jsonl -Encoding UTF8
+.\.venv\Scripts\python.exe day11_agent.py -q "Hello!" --trace-log .\logs\day11_manual_trace.jsonl
+```
+
+No Day 12 persistence, retry framework, or new idempotency system is included.
